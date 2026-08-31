@@ -11,109 +11,115 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     0. Apple-Style 3D On-Scroll Video Playback & Scrubbing Engine
+     0. 3D Interactive Particle Constellation Engine (Hero Background)
      ========================================================================== */
-  const heroContainer = document.getElementById('hero');
-  const heroVideo = document.getElementById('hero-scroll-video');
-  const heroScrollHint = document.getElementById('hero-scroll-hint');
-  const progressFill = document.getElementById('video-progress-fill');
-  const timecodeEl = document.getElementById('video-timecode');
+  const heroCanvas = document.getElementById('hero-particle-canvas');
+  if (heroCanvas) {
+    const ctx = heroCanvas.getContext('2d');
+    let width = (heroCanvas.width = heroCanvas.offsetWidth);
+    let height = (heroCanvas.height = heroCanvas.offsetHeight);
 
-  if (heroVideo && heroContainer) {
-    let videoDuration = 7.07; // exact duration of b44e9b5e8363fa925601c248e90fc6e7.mp4
-    let targetProgress = 0;
-    let smoothProgress = 0;
-    let isReady = false;
+    let mouse = { x: width / 2, y: height / 2, active: false };
 
-    // Ensure video is properly configured for background scrubbing
-    heroVideo.muted = true;
-    heroVideo.defaultMuted = true;
-    heroVideo.playsInline = true;
-    heroVideo.pause();
-
-    function initVideo() {
-      if (heroVideo.duration && !isNaN(heroVideo.duration) && heroVideo.duration > 0) {
-        videoDuration = heroVideo.duration;
-      }
-      isReady = true;
-    }
-
-    heroVideo.addEventListener('loadedmetadata', initVideo);
-    heroVideo.addEventListener('durationchange', initVideo);
-    heroVideo.addEventListener('canplay', initVideo);
-    heroVideo.addEventListener('loadeddata', () => {
-      initVideo();
-      try {
-        heroVideo.currentTime = 0.001;
-      } catch (e) {}
+    window.addEventListener('resize', () => {
+      if (!heroCanvas) return;
+      width = heroCanvas.width = heroCanvas.offsetWidth;
+      height = heroCanvas.height = heroCanvas.offsetHeight;
     });
 
-    if (heroVideo.readyState >= 2) {
-      initVideo();
-    } else {
-      heroVideo.load();
+    const heroEl = document.getElementById('hero');
+    if (heroEl) {
+      heroEl.addEventListener('mousemove', (e) => {
+        const rect = heroEl.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+        mouse.active = true;
+      });
+
+      heroEl.addEventListener('mouseleave', () => {
+        mouse.active = false;
+      });
     }
 
-    // Scroll listener updates the target progress immediately
-    function onScrollUpdate() {
-      const rect = heroContainer.getBoundingClientRect();
-      const scrollDist = -rect.top;
-      const maxScroll = heroContainer.offsetHeight - window.innerHeight;
-      targetProgress = Math.max(0, Math.min(1, maxScroll > 0 ? scrollDist / maxScroll : 0));
-    }
+    const particleCount = Math.min(65, Math.floor(width / 22));
+    const particles = [];
 
-    window.addEventListener('scroll', onScrollUpdate, { passive: true });
-    window.addEventListener('resize', onScrollUpdate, { passive: true });
-    onScrollUpdate();
-
-    // 60FPS / 120FPS Damped Physics Animation Loop
-    function smoothScrubLoop() {
-      // Damped spring interpolation: smooths out wheel tick quantization
-      smoothProgress += (targetProgress - smoothProgress) * 0.12;
-
-      if (Math.abs(targetProgress - smoothProgress) < 0.0001) {
-        smoothProgress = targetProgress;
+    class Particle {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 0.7;
+        this.vy = (Math.random() - 0.5) * 0.7;
+        this.radius = Math.random() * 2 + 1;
+        this.isGold = Math.random() > 0.4;
+        this.color = this.isGold ? '212, 162, 76' : '100, 180, 255';
+        this.baseAlpha = Math.random() * 0.5 + 0.2;
       }
 
-      const targetTime = smoothProgress * Math.max(0, videoDuration - 0.02);
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
 
-      // Perform seek smoothly if not currently blocked
-      if (isReady && Math.abs(heroVideo.currentTime - targetTime) > 0.01) {
-        try {
-          if ('fastSeek' in heroVideo) {
-            heroVideo.fastSeek(targetTime);
-          } else {
-            heroVideo.currentTime = targetTime;
+        if (this.x < 0 || this.x > width) this.vx *= -1;
+        if (this.y < 0 || this.y > height) this.vy *= -1;
+
+        // Gentle cursor gravity
+        if (mouse.active) {
+          const dx = mouse.x - this.x;
+          const dy = mouse.y - this.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 180 && dist > 10) {
+            const force = (180 - dist) / 180 * 0.02;
+            this.x += (dx / dist) * force * 15;
+            this.y += (dy / dist) * force * 15;
           }
-        } catch (err) {
-          heroVideo.currentTime = targetTime;
         }
       }
 
-      // Update Scrubber Progress Bar & Timecode Pill
-      if (progressFill) {
-        progressFill.style.width = `${smoothProgress * 100}%`;
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${this.color}, ${this.baseAlpha})`;
+        ctx.fill();
       }
-      if (timecodeEl) {
-        const displayTime = heroVideo.currentTime || targetTime || 0;
-        timecodeEl.textContent = `${displayTime.toFixed(1)}s / ${videoDuration.toFixed(1)}s`;
-      }
-
-      // Fade out indicator at the bottom of the section
-      if (heroScrollHint) {
-        if (smoothProgress > 0.95) {
-          heroScrollHint.style.opacity = '0';
-          heroScrollHint.style.transform = 'translateX(-50%) translateY(20px)';
-        } else {
-          heroScrollHint.style.opacity = '1';
-          heroScrollHint.style.transform = 'translateX(-50%) translateY(0)';
-        }
-      }
-
-      requestAnimationFrame(smoothScrubLoop);
     }
 
-    requestAnimationFrame(smoothScrubLoop);
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    function animateParticles() {
+      if (!heroCanvas) return;
+      ctx.clearRect(0, 0, width, height);
+
+      // Connect near particles with delicate glowing lines
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 130) {
+            const alpha = (1 - dist / 130) * 0.25;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(212, 162, 76, ${alpha})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+      }
+
+      particles.forEach((p) => {
+        p.update();
+        p.draw();
+      });
+
+      requestAnimationFrame(animateParticles);
+    }
+
+    animateParticles();
   }
 
   /* ==========================================================================
