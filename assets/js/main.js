@@ -21,18 +21,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (heroVideo && heroContainer) {
     let videoDuration = 7.07; // exact duration of b44e9b5e8363fa925601c248e90fc6e7.mp4
-    let targetTime = 0;
-    let isSeeking = false;
+    let targetProgress = 0;
+    let smoothProgress = 0;
+    let isReady = false;
 
     // Ensure video is properly configured for background scrubbing
     heroVideo.muted = true;
     heroVideo.defaultMuted = true;
     heroVideo.playsInline = true;
+    heroVideo.pause();
 
     function initVideo() {
       if (heroVideo.duration && !isNaN(heroVideo.duration) && heroVideo.duration > 0) {
         videoDuration = heroVideo.duration;
       }
+      isReady = true;
     }
 
     heroVideo.addEventListener('loadedmetadata', initVideo);
@@ -45,19 +48,37 @@ document.addEventListener('DOMContentLoaded', () => {
       } catch (e) {}
     });
 
-    if (heroVideo.readyState >= 1) {
+    if (heroVideo.readyState >= 2) {
       initVideo();
     } else {
       heroVideo.load();
     }
 
-    // High-performance seek controller (non-blocking)
-    function performSeek() {
-      if (!heroVideo || isSeeking) return;
+    // Scroll listener updates the target progress immediately
+    function onScrollUpdate() {
+      const rect = heroContainer.getBoundingClientRect();
+      const scrollDist = -rect.top;
+      const maxScroll = heroContainer.offsetHeight - window.innerHeight;
+      targetProgress = Math.max(0, Math.min(1, maxScroll > 0 ? scrollDist / maxScroll : 0));
+    }
 
-      const diff = Math.abs(heroVideo.currentTime - targetTime);
-      if (diff > 0.01) {
-        isSeeking = true;
+    window.addEventListener('scroll', onScrollUpdate, { passive: true });
+    window.addEventListener('resize', onScrollUpdate, { passive: true });
+    onScrollUpdate();
+
+    // 60FPS / 120FPS Damped Physics Animation Loop
+    function smoothScrubLoop() {
+      // Damped spring interpolation: smooths out wheel tick quantization
+      smoothProgress += (targetProgress - smoothProgress) * 0.12;
+
+      if (Math.abs(targetProgress - smoothProgress) < 0.0001) {
+        smoothProgress = targetProgress;
+      }
+
+      const targetTime = smoothProgress * Math.max(0, videoDuration - 0.02);
+
+      // Perform seek smoothly if not currently blocked
+      if (isReady && Math.abs(heroVideo.currentTime - targetTime) > 0.01) {
         try {
           if ('fastSeek' in heroVideo) {
             heroVideo.fastSeek(targetTime);
@@ -65,38 +86,22 @@ document.addEventListener('DOMContentLoaded', () => {
             heroVideo.currentTime = targetTime;
           }
         } catch (err) {
-          isSeeking = false;
+          heroVideo.currentTime = targetTime;
         }
       }
-    }
 
-    heroVideo.addEventListener('seeked', () => {
-      isSeeking = false;
-      performSeek();
-    });
-
-    // Update on scroll progress
-    function updateScrollProgress() {
-      const rect = heroContainer.getBoundingClientRect();
-      const scrollDist = -rect.top;
-      const maxScroll = heroContainer.offsetHeight - window.innerHeight;
-      const progress = Math.max(0, Math.min(1, maxScroll > 0 ? scrollDist / maxScroll : 0));
-
-      targetTime = progress * Math.max(0, videoDuration - 0.01);
-      performSeek();
-
-      // Update Scrubber Progress & Timecode
+      // Update Scrubber Progress Bar & Timecode Pill
       if (progressFill) {
-        progressFill.style.width = `${progress * 100}%`;
+        progressFill.style.width = `${smoothProgress * 100}%`;
       }
       if (timecodeEl) {
         const displayTime = heroVideo.currentTime || targetTime || 0;
         timecodeEl.textContent = `${displayTime.toFixed(1)}s / ${videoDuration.toFixed(1)}s`;
       }
 
-      // Hide scroll hint once user reaches the end of the video
+      // Fade out indicator at the bottom of the section
       if (heroScrollHint) {
-        if (progress > 0.95) {
+        if (smoothProgress > 0.95) {
           heroScrollHint.style.opacity = '0';
           heroScrollHint.style.transform = 'translateX(-50%) translateY(20px)';
         } else {
@@ -104,17 +109,11 @@ document.addEventListener('DOMContentLoaded', () => {
           heroScrollHint.style.transform = 'translateX(-50%) translateY(0)';
         }
       }
+
+      requestAnimationFrame(smoothScrubLoop);
     }
 
-    window.addEventListener('scroll', updateScrollProgress, { passive: true });
-    window.addEventListener('resize', updateScrollProgress, { passive: true });
-
-    function loop() {
-      performSeek();
-      requestAnimationFrame(loop);
-    }
-    requestAnimationFrame(loop);
-    updateScrollProgress();
+    requestAnimationFrame(smoothScrubLoop);
   }
 
   /* ==========================================================================

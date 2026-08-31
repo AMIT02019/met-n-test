@@ -189,8 +189,8 @@ body {
    ========================================================================== */
 .hero-scroll-container {
   position: relative;
-  height: 400vh;
-  min-height: 400vh;
+  height: 350vh;
+  min-height: 350vh;
   width: 100%;
 }
 
@@ -208,12 +208,13 @@ body {
 }
 
 .hero-video-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  max-width: 100vw;
+  max-height: 100vh;
+  object-fit: contain;
+  object-position: center center;
   z-index: 1;
   will-change: transform;
 }
@@ -223,8 +224,8 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 140px;
-  background: linear-gradient(to top, #07172b 0%, rgba(7, 23, 43, 0.7) 60%, transparent 100%);
+  height: 60px;
+  background: linear-gradient(to top, #07172b 0%, rgba(7, 23, 43, 0.3) 50%, transparent 100%);
   z-index: 3;
   pointer-events: none;
 }
