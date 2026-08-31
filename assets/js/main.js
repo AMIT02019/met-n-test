@@ -268,6 +268,84 @@ document.addEventListener('DOMContentLoaded', () => {
   const estPhases = document.getElementById('est-result-phases');
   const estDeliverables = document.getElementById('est-result-deliverables');
 
+  // Finvvritti Chip & Slider Controls
+  const standardChips = document.querySelectorAll('#estimator-standard-chips button');
+  const paceChips = document.querySelectorAll('#estimator-pace-chips button');
+  const teamSlider = document.getElementById('estimator-team-slider');
+  const sliderTeamVal = document.getElementById('slider-team-val');
+  const calcDuration = document.getElementById('calc-duration');
+
+  let selectedStandard = 'iso9001';
+  let selectedPace = 'standard';
+  let selectedSizeIndex = 2; // 25-50 members
+
+  const teamSizes = [
+    '1 - 25 Members',
+    '25 - 50 Members',
+    '50 - 250 Members',
+    '250+ Enterprise'
+  ];
+
+  function updateFinvvrittiEstimator() {
+    if (!calcDuration) return;
+
+    let baseWeeks = 5;
+    if (selectedStandard === 'iatf16949') baseWeeks = 10;
+    else if (selectedStandard === 'ims') baseWeeks = 8;
+    else if (selectedStandard === 'tpi') baseWeeks = 1;
+    else if (selectedStandard === 'iso14001' || selectedStandard === 'iso45001') baseWeeks = 6;
+
+    if (selectedSizeIndex === 1) baseWeeks = Math.max(1, baseWeeks - 1);
+    if (selectedSizeIndex === 3) baseWeeks += 2;
+    if (selectedSizeIndex === 4) baseWeeks += 4;
+
+    if (selectedPace === 'express') {
+      baseWeeks = Math.max(1, Math.round(baseWeeks * 0.6));
+    }
+
+    if (selectedStandard === 'tpi') {
+      calcDuration.textContent = '24 - 48 Hours';
+    } else {
+      calcDuration.textContent = `${baseWeeks} - ${baseWeeks + 2} Weeks`;
+    }
+  }
+
+  if (standardChips.length > 0) {
+    standardChips.forEach(btn => {
+      btn.addEventListener('click', () => {
+        standardChips.forEach(b => {
+          b.className = 'px-3 py-2 rounded-xl text-xs font-bold border border-[#e2e8f0] bg-white text-[#64748b] hover:border-[#d4a24c] text-center';
+        });
+        btn.className = 'px-3 py-2 rounded-xl text-xs font-bold border border-[#d4a24c] bg-[#d4a24c] text-[#0a2540] text-center';
+        selectedStandard = btn.getAttribute('data-val');
+        updateFinvvrittiEstimator();
+      });
+    });
+  }
+
+  if (paceChips.length > 0) {
+    paceChips.forEach(btn => {
+      btn.addEventListener('click', () => {
+        paceChips.forEach(b => {
+          b.className = 'px-4 py-2.5 rounded-xl text-xs font-bold border border-[#e2e8f0] bg-white text-[#64748b] hover:border-[#d4a24c] text-center';
+        });
+        btn.className = 'px-4 py-2.5 rounded-xl text-xs font-bold border border-[#d4a24c] bg-[#d4a24c] text-[#0a2540] text-center';
+        selectedPace = btn.getAttribute('data-pace');
+        updateFinvvrittiEstimator();
+      });
+    });
+  }
+
+  if (teamSlider && sliderTeamVal) {
+    teamSlider.addEventListener('input', (e) => {
+      selectedSizeIndex = parseInt(e.target.value);
+      sliderTeamVal.textContent = teamSizes[selectedSizeIndex - 1] || '25 - 50 Members';
+      updateFinvvrittiEstimator();
+    });
+  }
+
+  updateFinvvrittiEstimator();
+
   function calculateRoadmap() {
     if (!estimatorService || !estimatorSize || !estimatorIndustry) return;
 
