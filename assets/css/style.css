@@ -455,12 +455,12 @@ body {
 }
 
 /* ==========================================================================
-   Cartier Luxury Pinned Card Scroller Physics Engine
+   Cartier WAW 2025 Luxury Panoramic 3D Spatial Scroller Engine
    ========================================================================== */
 .cartier-scroll-track {
   position: relative;
-  height: 400vh;
-  min-height: 400vh;
+  height: 360vh;
+  min-height: 360vh;
   width: 100%;
 }
 
@@ -470,30 +470,61 @@ body {
   height: 100vh;
   width: 100%;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.cartier-card {
-  position: absolute;
-  inset: 0;
-  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.15s cubic-bezier(0.16, 1, 0.3, 1), filter 0.15s ease;
+.cartier-perspective-stage {
+  perspective: 1600px;
+  transform-style: preserve-3d;
+  width: 100%;
+  overflow: visible;
+}
+
+.cartier-horizontal-track {
+  display: flex;
+  gap: 2rem;
+  will-change: transform;
+  transform-style: preserve-3d;
+  cursor: grab;
+  user-select: none;
+}
+
+.cartier-horizontal-track:active {
+  cursor: grabbing;
+}
+
+.cartier-horizontal-card {
+  width: 85vw;
+  max-width: 960px;
+  flex-shrink: 0;
+  border-radius: 1.75rem;
+  overflow: hidden;
+  background: radial-gradient(circle at 75% 30%, #11355a 0%, #0a2540 60%, #07192c 100%);
+  border: 1px solid rgba(212, 162, 76, 0.35);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.75), 0 0 25px rgba(212, 162, 76, 0.12);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
   will-change: transform, opacity, filter;
   transform-origin: center center;
 }
 
-.cartier-card:nth-child(1) { z-index: 10; }
-.cartier-card:nth-child(2) { z-index: 20; }
-.cartier-card:nth-child(3) { z-index: 30; }
-.cartier-card:nth-child(4) { z-index: 40; }
+.cartier-horizontal-card.is-active {
+  border-color: rgba(212, 162, 76, 0.85);
+  box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.9), 0 0 45px rgba(212, 162, 76, 0.3);
+}
 
 .cartier-nav-btn {
   color: #94a3b8;
   background: transparent;
+  transition: all 0.25s ease;
 }
 
 .cartier-nav-btn.active {
   color: #0a2540;
   background: #d4a24c;
-  box-shadow: 0 4px 15px rgba(212, 162, 76, 0.4);
+  box-shadow: 0 4px 18px rgba(212, 162, 76, 0.5);
+  transform: scale(1.04);
 }
 
 /* ==========================================================================

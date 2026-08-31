@@ -144,10 +144,11 @@ document.addEventListener('DOMContentLoaded', () => {
   revealElements.forEach(el => revealObserver.observe(el));
 
   /* ==========================================================================
-     2. Cartier Luxury Pinned Card Scroller Physics Engine
+     2. Cartier WAW 2025 Luxury Panoramic 3D Spatial Scroller Engine
      ========================================================================== */
-  const cartierTrack = document.querySelector('.cartier-scroll-track');
-  const cartierCards = document.querySelectorAll('.cartier-card');
+  const cartierScrollTrack = document.querySelector('.cartier-scroll-track');
+  const cartierHorizontalTrack = document.getElementById('cartier-track');
+  const cartierHorizontalCards = document.querySelectorAll('.cartier-horizontal-card');
   const cartierNavBtns = document.querySelectorAll('.cartier-nav-btn');
   const cartierStepLabel = document.getElementById('cartier-step-label');
   const cartierProgressBar = document.getElementById('cartier-progress-bar');
@@ -159,14 +160,26 @@ document.addEventListener('DOMContentLoaded', () => {
     '04 / 04 — Corporate Training & 5S Kaizen'
   ];
 
-  if (cartierTrack && cartierCards.length > 0) {
+  if (cartierScrollTrack && cartierHorizontalTrack && cartierHorizontalCards.length > 0) {
     let targetProgress = 0;
     let smoothProgress = 0;
 
+    function getCardCenters() {
+      const cardWidth = cartierHorizontalCards[0].offsetWidth;
+      const windowWidth = window.innerWidth;
+      const firstCardLeft = cartierHorizontalCards[0].offsetLeft;
+      const lastCardLeft = cartierHorizontalCards[cartierHorizontalCards.length - 1].offsetLeft;
+      
+      // Calculate total translation needed to center first card at start and last card at end
+      const startX = (windowWidth / 2) - (firstCardLeft + cardWidth / 2);
+      const endX = (windowWidth / 2) - (lastCardLeft + cardWidth / 2);
+      return { startX, endX, totalDist: startX - endX };
+    }
+
     function onScrollCartier() {
-      const rect = cartierTrack.getBoundingClientRect();
+      const rect = cartierScrollTrack.getBoundingClientRect();
       const scrollDist = -rect.top;
-      const maxScroll = cartierTrack.offsetHeight - window.innerHeight;
+      const maxScroll = cartierScrollTrack.offsetHeight - window.innerHeight;
       targetProgress = Math.max(0, Math.min(1, maxScroll > 0 ? scrollDist / maxScroll : 0));
     }
 
@@ -174,109 +187,64 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', onScrollCartier, { passive: true });
     onScrollCartier();
 
-    // Cartier Damped Physics Loop
-    function cartierAnimationLoop() {
-      smoothProgress += (targetProgress - smoothProgress) * 0.12;
+    // 60FPS Cartier Damped Momentum Loop
+    function cartierSpatialLoop() {
+      smoothProgress += (targetProgress - smoothProgress) * 0.09;
 
-      // Card 0 (ISO)
-      if (smoothProgress <= 0.05) {
-        cartierCards[0].style.transform = 'perspective(1200px) translateY(0%) scale(1) rotateX(0deg)';
-        cartierCards[0].style.opacity = '1';
-        cartierCards[0].style.filter = 'brightness(1) blur(0px)';
-      } else if (smoothProgress <= 0.35) {
-        const p = (smoothProgress - 0.05) / 0.30;
-        const scale = 1 - p * 0.08;
-        const translateY = -p * 24;
-        const rotateX = p * 6;
-        const brightness = 1 - p * 0.55;
-        const blur = p * 3;
-        const opacity = 1 - p * 0.5;
-        cartierCards[0].style.transform = `perspective(1200px) translateY(${translateY}px) scale(${scale}) rotateX(${rotateX}deg)`;
-        cartierCards[0].style.opacity = `${opacity}`;
-        cartierCards[0].style.filter = `brightness(${brightness}) blur(${blur}px)`;
-      } else {
-        cartierCards[0].style.transform = 'perspective(1200px) translateY(-30px) scale(0.90) rotateX(8deg)';
-        cartierCards[0].style.opacity = '0.2';
-        cartierCards[0].style.filter = 'brightness(0.35) blur(4px)';
-      }
+      const { startX, endX } = getCardCenters();
+      const currentTrackX = startX + (endX - startX) * smoothProgress;
+      const screenCenter = window.innerWidth / 2;
 
-      // Card 1 (TPI)
-      if (smoothProgress < 0.12) {
-        cartierCards[1].style.transform = 'perspective(1200px) translateY(115%) scale(0.92)';
-        cartierCards[1].style.opacity = '0';
-      } else if (smoothProgress <= 0.38) {
-        const p = (smoothProgress - 0.12) / 0.26;
-        const translateY = (1 - p) * 115;
-        const scale = 0.92 + p * 0.08;
-        cartierCards[1].style.transform = `perspective(1200px) translateY(${translateY}%) scale(${scale}) rotateX(0deg)`;
-        cartierCards[1].style.opacity = `${p}`;
-        cartierCards[1].style.filter = 'brightness(1) blur(0px)';
-      } else if (smoothProgress <= 0.68) {
-        const p = (smoothProgress - 0.38) / 0.30;
-        const scale = 1 - p * 0.08;
-        const translateY = -p * 24;
-        const rotateX = p * 6;
-        const brightness = 1 - p * 0.55;
-        const blur = p * 3;
-        const opacity = 1 - p * 0.5;
-        cartierCards[1].style.transform = `perspective(1200px) translateY(${translateY}px) scale(${scale}) rotateX(${rotateX}deg)`;
-        cartierCards[1].style.opacity = `${opacity}`;
-        cartierCards[1].style.filter = `brightness(${brightness}) blur(${blur}px)`;
-      } else {
-        cartierCards[1].style.transform = 'perspective(1200px) translateY(-30px) scale(0.90) rotateX(8deg)';
-        cartierCards[1].style.opacity = '0.2';
-        cartierCards[1].style.filter = 'brightness(0.35) blur(4px)';
-      }
+      // Translate the entire panoramic horizontal deck
+      cartierHorizontalTrack.style.transform = `translateX(${currentTrackX}px)`;
 
-      // Card 2 (Sourcing)
-      if (smoothProgress < 0.42) {
-        cartierCards[2].style.transform = 'perspective(1200px) translateY(115%) scale(0.92)';
-        cartierCards[2].style.opacity = '0';
-      } else if (smoothProgress <= 0.68) {
-        const p = (smoothProgress - 0.42) / 0.26;
-        const translateY = (1 - p) * 115;
-        const scale = 0.92 + p * 0.08;
-        cartierCards[2].style.transform = `perspective(1200px) translateY(${translateY}%) scale(${scale}) rotateX(0deg)`;
-        cartierCards[2].style.opacity = `${p}`;
-        cartierCards[2].style.filter = 'brightness(1) blur(0px)';
-      } else if (smoothProgress <= 0.95) {
-        const p = (smoothProgress - 0.68) / 0.27;
-        const scale = 1 - p * 0.08;
-        const translateY = -p * 24;
-        const rotateX = p * 6;
-        const brightness = 1 - p * 0.55;
-        const blur = p * 3;
-        const opacity = 1 - p * 0.5;
-        cartierCards[2].style.transform = `perspective(1200px) translateY(${translateY}px) scale(${scale}) rotateX(${rotateX}deg)`;
-        cartierCards[2].style.opacity = `${opacity}`;
-        cartierCards[2].style.filter = `brightness(${brightness}) blur(${blur}px)`;
-      } else {
-        cartierCards[2].style.transform = 'perspective(1200px) translateY(-30px) scale(0.90) rotateX(8deg)';
-        cartierCards[2].style.opacity = '0.2';
-        cartierCards[2].style.filter = 'brightness(0.35) blur(4px)';
-      }
+      let closestIdx = 0;
+      let minDistance = Infinity;
 
-      // Card 3 (Training)
-      if (smoothProgress < 0.72) {
-        cartierCards[3].style.transform = 'perspective(1200px) translateY(115%) scale(0.92)';
-        cartierCards[3].style.opacity = '0';
-      } else {
-        const p = Math.min(1, (smoothProgress - 0.72) / 0.25);
-        const translateY = (1 - p) * 115;
-        const scale = 0.92 + p * 0.08;
-        cartierCards[3].style.transform = `perspective(1200px) translateY(${translateY}%) scale(${scale}) rotateX(0deg)`;
-        cartierCards[3].style.opacity = `${p}`;
-        cartierCards[3].style.filter = 'brightness(1) blur(0px)';
-      }
+      // Calculate 3D turntable perspective, depth, scale, and parallax for each card
+      cartierHorizontalCards.forEach((card, idx) => {
+        const cardWidth = card.offsetWidth;
+        const cardCenter = card.offsetLeft + currentTrackX + cardWidth / 2;
+        const distFromCenter = cardCenter - screenCenter;
+        const absDist = Math.abs(distFromCenter);
 
-      // Active Step Calculation
-      let activeIndex = 0;
-      if (smoothProgress >= 0.75) activeIndex = 3;
-      else if (smoothProgress >= 0.48) activeIndex = 2;
-      else if (smoothProgress >= 0.20) activeIndex = 1;
+        if (absDist < minDistance) {
+          minDistance = absDist;
+          closestIdx = idx;
+        }
 
+        // Normalized distance factor from center (-1 to 1)
+        const u = Math.max(-1.5, Math.min(1.5, distFromCenter / (window.innerWidth * 0.55)));
+        const absU = Math.abs(u);
+
+        // Cartier 3D spatial rotation and scale curve
+        const rotateY = u * -18; // 3D Turntable rotation
+        const scale = 1 - Math.min(0.18, absU * 0.16);
+        const translateZ = Math.max(0, (1 - absU) * 40);
+        const opacity = Math.max(0.35, 1 - absU * 0.55);
+        const brightness = Math.max(0.45, 1 - absU * 0.50);
+        const blur = Math.min(4, absU * 3.5);
+
+        card.style.transform = `perspective(1600px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`;
+        card.style.opacity = `${opacity}`;
+        card.style.filter = `brightness(${brightness}) blur(${blur}px)`;
+
+        // Image Parallax within active card
+        const img = card.querySelector('.card-parallax-img');
+        if (img) {
+          img.style.transform = `scale(1.08) translateX(${u * 25}px)`;
+        }
+
+        if (absU < 0.35) {
+          card.classList.add('is-active');
+        } else {
+          card.classList.remove('is-active');
+        }
+      });
+
+      // Update Nav Pills & Telemetry
       cartierNavBtns.forEach((btn, idx) => {
-        if (idx === activeIndex) {
+        if (idx === closestIdx) {
           btn.classList.add('active');
         } else {
           btn.classList.remove('active');
@@ -284,34 +252,64 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (cartierStepLabel) {
-        cartierStepLabel.textContent = stepLabels[activeIndex];
+        cartierStepLabel.textContent = stepLabels[closestIdx];
       }
 
       if (cartierProgressBar) {
-        cartierProgressBar.style.width = `${Math.max(25, (activeIndex + 1) * 25)}%`;
+        cartierProgressBar.style.width = `${Math.max(25, (closestIdx + 1) * 25)}%`;
       }
 
-      requestAnimationFrame(cartierAnimationLoop);
+      requestAnimationFrame(cartierSpatialLoop);
     }
 
-    requestAnimationFrame(cartierAnimationLoop);
+    requestAnimationFrame(cartierSpatialLoop);
 
-    // Interactive Click to Jump on Navigation Pills
+    // Interactive Navigation Buttons: Smooth Jump to Center Card
     cartierNavBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
         const step = parseInt(btn.getAttribute('data-step') || '0', 10);
-        const targets = [0.02, 0.32, 0.62, 0.92];
-        const targetFrac = targets[step] || 0;
-        const rect = cartierTrack.getBoundingClientRect();
+        const stepFrac = step / (cartierHorizontalCards.length - 1);
+        const rect = cartierScrollTrack.getBoundingClientRect();
         const absoluteTop = window.scrollY + rect.top;
-        const maxScroll = cartierTrack.offsetHeight - window.innerHeight;
-        const scrollToY = absoluteTop + targetFrac * maxScroll;
+        const maxScroll = cartierScrollTrack.offsetHeight - window.innerHeight;
+        const scrollToY = absoluteTop + stepFrac * maxScroll;
 
         window.scrollTo({
           top: scrollToY,
           behavior: 'smooth'
         });
       });
+    });
+
+    // Touch and Drag Inertia Support
+    let isDragging = false;
+    let dragStartX = 0;
+    let dragStartProgress = 0;
+
+    cartierHorizontalTrack.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      dragStartX = e.clientX;
+      dragStartProgress = targetProgress;
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      const deltaX = e.clientX - dragStartX;
+      const windowWidth = window.innerWidth;
+      const progressDelta = -deltaX / (windowWidth * 1.5);
+      targetProgress = Math.max(0, Math.min(1, dragStartProgress + progressDelta));
+      
+      const rect = cartierScrollTrack.getBoundingClientRect();
+      const absoluteTop = window.scrollY + rect.top;
+      const maxScroll = cartierScrollTrack.offsetHeight - window.innerHeight;
+      window.scrollTo({
+        top: absoluteTop + targetProgress * maxScroll,
+        behavior: 'auto'
+      });
+    });
+
+    window.addEventListener('mouseup', () => {
+      isDragging = false;
     });
   }
 

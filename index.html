@@ -538,29 +538,28 @@
   </section>
 
   <!-- ==========================================================================
-       3D SERVICE PILLARS (Cartier Luxury Pinned Chapter Scroller Experience)
+       3D SERVICE PILLARS (Cartier WAW 2025 Panoramic 3D Spatial Scroller)
        ========================================================================== -->
   <section id="services-3d" class="cartier-scroll-track relative bg-[#07172b] text-white">
     <!-- Pinned 100vh Sticky Viewport Stage -->
-    <div class="cartier-sticky-viewport sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden z-20">
+    <div class="cartier-sticky-viewport sticky top-0 h-screen w-full overflow-hidden z-20 flex flex-col justify-between py-6 sm:py-8">
       
       <!-- Ambient Radial Glows -->
-      <div class="hero-glow-orb w-[500px] h-[500px] bg-[#14365c]/40 top-1/4 -left-32"></div>
-      <div class="hero-glow-orb w-[450px] h-[450px] bg-[#d4a24c]/15 bottom-10 right-0"></div>
+      <div class="hero-glow-orb w-[550px] h-[550px] bg-[#14365c]/40 top-1/4 -left-32"></div>
+      <div class="hero-glow-orb w-[500px] h-[500px] bg-[#d4a24c]/15 bottom-10 right-0"></div>
 
+      <!-- Top Header & Chapter Navigation -->
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-        
-        <!-- Section Header with Cartier Pillar Progress Indicators -->
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 gap-4">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div class="text-left">
             <span class="text-xs tracking-[0.2em] text-[#e8bd6e] font-bold uppercase">Comprehensive Capabilities</span>
-            <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight text-white mt-1">
+            <h2 class="font-display text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mt-1">
               Our 4 Core <span class="italic text-gradient-gold">Service Pillars</span>
             </h2>
           </div>
 
           <!-- Cartier Interactive Chapter Navigation Pills -->
-          <div class="flex items-center gap-1.5 sm:gap-2 bg-[#0a2540]/90 border border-[#d4a24c]/30 p-1.5 rounded-full backdrop-blur-xl shadow-lg" id="cartier-nav-pills">
+          <div class="flex items-center gap-1.5 sm:gap-2 bg-[#0a2540]/90 border border-[#d4a24c]/35 p-1.5 rounded-full backdrop-blur-xl shadow-lg" id="cartier-nav-pills">
             <button type="button" class="cartier-nav-btn active px-3.5 py-1.5 rounded-full text-xs font-bold transition-all" data-step="0">
               <span>01 ISO</span>
             </button>
@@ -575,14 +574,16 @@
             </button>
           </div>
         </div>
+      </div>
 
-        <!-- 3D Pinned Card Deck Stage -->
-        <div class="relative w-full max-w-5xl mx-auto h-[480px] sm:h-[450px]" id="cartier-deck">
+      <!-- Center: Cartier 3D Perspective Panoramic Stage -->
+      <div class="cartier-perspective-stage w-full relative z-10 my-auto py-2">
+        <div class="cartier-horizontal-track px-4 sm:px-12 lg:px-20" id="cartier-track">
           
           <!-- Card 1: ISO Certification -->
-          <div class="cartier-card absolute inset-0 rounded-[28px] bg-gradient-to-b from-[#0a2540] to-[#07172b] border border-[#d4a24c]/40 p-6 sm:p-10 shadow-2xl overflow-hidden flex items-center" data-index="0">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full">
-              <div class="lg:col-span-7 space-y-4 text-left">
+          <div class="cartier-horizontal-card p-6 sm:p-10 is-active" data-index="0">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center w-full">
+              <div class="lg:col-span-7 space-y-3.5 text-left">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#d4a24c]/15 border border-[#d4a24c]/30 text-[#e8bd6e] text-xs font-bold uppercase tracking-wider">
                   <i data-lucide="award" class="w-3.5 h-3.5"></i>
                   <span>Pillar 01 · Management Systems</span>
@@ -608,16 +609,16 @@
               </div>
               <div class="lg:col-span-5 relative">
                 <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-[#d4a24c]/30 shadow-2xl">
-                  <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="ISO Certification" class="w-full h-full object-cover">
+                  <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="ISO Certification" class="w-full h-full object-cover card-parallax-img">
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Card 2: Third Party Inspection (TPI) -->
-          <div class="cartier-card absolute inset-0 rounded-[28px] bg-gradient-to-b from-[#0a2540] to-[#07172b] border border-[#d4a24c]/40 p-6 sm:p-10 shadow-2xl overflow-hidden flex items-center" data-index="1">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full">
-              <div class="lg:col-span-7 space-y-4 text-left">
+          <div class="cartier-horizontal-card p-6 sm:p-10" data-index="1">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center w-full">
+              <div class="lg:col-span-7 space-y-3.5 text-left">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#d4a24c]/15 border border-[#d4a24c]/30 text-[#e8bd6e] text-xs font-bold uppercase tracking-wider">
                   <i data-lucide="microscope" class="w-3.5 h-3.5"></i>
                   <span>Pillar 02 · Technical Assurance</span>
@@ -643,16 +644,16 @@
               </div>
               <div class="lg:col-span-5 relative">
                 <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-[#d4a24c]/30 shadow-2xl">
-                  <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="TPI Inspection" class="w-full h-full object-cover">
+                  <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="TPI Inspection" class="w-full h-full object-cover card-parallax-img">
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Card 3: Strategic Sourcing -->
-          <div class="cartier-card absolute inset-0 rounded-[28px] bg-gradient-to-b from-[#0a2540] to-[#07172b] border border-[#d4a24c]/40 p-6 sm:p-10 shadow-2xl overflow-hidden flex items-center" data-index="2">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full">
-              <div class="lg:col-span-7 space-y-4 text-left">
+          <div class="cartier-horizontal-card p-6 sm:p-10" data-index="2">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center w-full">
+              <div class="lg:col-span-7 space-y-3.5 text-left">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#d4a24c]/15 border border-[#d4a24c]/30 text-[#e8bd6e] text-xs font-bold uppercase tracking-wider">
                   <i data-lucide="git-branch" class="w-3.5 h-3.5"></i>
                   <span>Pillar 03 · Supply Chain Resilience</span>
@@ -678,16 +679,16 @@
               </div>
               <div class="lg:col-span-5 relative">
                 <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-[#d4a24c]/30 shadow-2xl">
-                  <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Strategic Sourcing" class="w-full h-full object-cover">
+                  <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Strategic Sourcing" class="w-full h-full object-cover card-parallax-img">
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Card 4: Corporate Training & 5S -->
-          <div class="cartier-card absolute inset-0 rounded-[28px] bg-gradient-to-b from-[#0a2540] to-[#07172b] border border-[#d4a24c]/40 p-6 sm:p-10 shadow-2xl overflow-hidden flex items-center" data-index="3">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full">
-              <div class="lg:col-span-7 space-y-4 text-left">
+          <div class="cartier-horizontal-card p-6 sm:p-10" data-index="3">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center w-full">
+              <div class="lg:col-span-7 space-y-3.5 text-left">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#d4a24c]/15 border border-[#d4a24c]/30 text-[#e8bd6e] text-xs font-bold uppercase tracking-wider">
                   <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
                   <span>Pillar 04 · Continuous Improvement</span>
@@ -713,24 +714,26 @@
               </div>
               <div class="lg:col-span-5 relative">
                 <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-[#d4a24c]/30 shadow-2xl">
-                  <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80" alt="Corporate Training" class="w-full h-full object-cover">
+                  <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80" alt="Corporate Training" class="w-full h-full object-cover card-parallax-img">
                 </div>
               </div>
             </div>
           </div>
 
         </div>
+      </div>
 
-        <!-- Cartier Bottom Progress Line -->
-        <div class="w-full max-w-5xl mx-auto mt-6 flex items-center justify-between text-xs text-slate-400 font-mono">
-          <span id="cartier-step-label">01 / 04 — ISO Certification</span>
-          <div class="w-40 sm:w-56 h-1.5 bg-white/10 rounded-full overflow-hidden">
+      <!-- Bottom Progress Bar & Navigation Instructions -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+        <div class="flex items-center justify-between text-xs text-slate-400 font-mono">
+          <span id="cartier-step-label">01 / 04 — ISO Certification & Systems</span>
+          <div class="w-36 sm:w-64 h-1.5 bg-white/10 rounded-full overflow-hidden">
             <div id="cartier-progress-bar" class="h-full bg-gradient-to-r from-[#d4a24c] to-[#e8bd6e] transition-all duration-150" style="width: 25%;"></div>
           </div>
-          <span class="text-[#e8bd6e] hidden sm:inline">Scroll to Experience Pillars ↓</span>
+          <span class="text-[#e8bd6e] hidden sm:inline">Scroll or Drag to Explore ↔</span>
         </div>
-
       </div>
+
     </div>
   </section>
 
