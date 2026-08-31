@@ -144,42 +144,175 @@ document.addEventListener('DOMContentLoaded', () => {
   revealElements.forEach(el => revealObserver.observe(el));
 
   /* ==========================================================================
-     2. 3D Stacking Cards Scroll Physics
+     2. Cartier Luxury Pinned Card Scroller Physics Engine
      ========================================================================== */
-  const stackCards = document.querySelectorAll('.stack-card');
-  
-  function updateCardStack() {
-    const windowHeight = window.innerHeight;
+  const cartierTrack = document.querySelector('.cartier-scroll-track');
+  const cartierCards = document.querySelectorAll('.cartier-card');
+  const cartierNavBtns = document.querySelectorAll('.cartier-nav-btn');
+  const cartierStepLabel = document.getElementById('cartier-step-label');
+  const cartierProgressBar = document.getElementById('cartier-progress-bar');
 
-    stackCards.forEach((card, index) => {
-      const rect = card.getBoundingClientRect();
-      const cardTop = rect.top;
-      
-      // Calculate how far the card is pinned
-      if (cardTop <= 110) {
-        const nextCard = stackCards[index + 1];
-        if (nextCard) {
-          const nextRect = nextCard.getBoundingClientRect();
-          const progress = Math.max(0, Math.min(1, (110 - nextRect.top + windowHeight * 0.7) / (windowHeight * 0.7)));
-          
-          const scale = 1 - (progress * 0.05);
-          const translateY = progress * -10;
-          const rotateX = progress * 4;
-          const brightness = 1 - (progress * 0.25);
+  const stepLabels = [
+    '01 / 04 — ISO Certification & Systems',
+    '02 / 04 — Third-Party Inspection (TPI)',
+    '03 / 04 — Strategic Sourcing & Vetting',
+    '04 / 04 — Corporate Training & 5S Kaizen'
+  ];
 
-          card.style.transform = `scale(${scale}) translateY(${translateY}px) rotateX(${rotateX}deg)`;
-          card.style.filter = `brightness(${brightness})`;
-        }
+  if (cartierTrack && cartierCards.length > 0) {
+    let targetProgress = 0;
+    let smoothProgress = 0;
+
+    function onScrollCartier() {
+      const rect = cartierTrack.getBoundingClientRect();
+      const scrollDist = -rect.top;
+      const maxScroll = cartierTrack.offsetHeight - window.innerHeight;
+      targetProgress = Math.max(0, Math.min(1, maxScroll > 0 ? scrollDist / maxScroll : 0));
+    }
+
+    window.addEventListener('scroll', onScrollCartier, { passive: true });
+    window.addEventListener('resize', onScrollCartier, { passive: true });
+    onScrollCartier();
+
+    // Cartier Damped Physics Loop
+    function cartierAnimationLoop() {
+      smoothProgress += (targetProgress - smoothProgress) * 0.12;
+
+      // Card 0 (ISO)
+      if (smoothProgress <= 0.05) {
+        cartierCards[0].style.transform = 'perspective(1200px) translateY(0%) scale(1) rotateX(0deg)';
+        cartierCards[0].style.opacity = '1';
+        cartierCards[0].style.filter = 'brightness(1) blur(0px)';
+      } else if (smoothProgress <= 0.35) {
+        const p = (smoothProgress - 0.05) / 0.30;
+        const scale = 1 - p * 0.08;
+        const translateY = -p * 24;
+        const rotateX = p * 6;
+        const brightness = 1 - p * 0.55;
+        const blur = p * 3;
+        const opacity = 1 - p * 0.5;
+        cartierCards[0].style.transform = `perspective(1200px) translateY(${translateY}px) scale(${scale}) rotateX(${rotateX}deg)`;
+        cartierCards[0].style.opacity = `${opacity}`;
+        cartierCards[0].style.filter = `brightness(${brightness}) blur(${blur}px)`;
       } else {
-        card.style.transform = 'scale(1) translateY(0) rotateX(0deg)';
-        card.style.filter = 'brightness(1)';
+        cartierCards[0].style.transform = 'perspective(1200px) translateY(-30px) scale(0.90) rotateX(8deg)';
+        cartierCards[0].style.opacity = '0.2';
+        cartierCards[0].style.filter = 'brightness(0.35) blur(4px)';
       }
-    });
-  }
 
-  if (window.innerWidth > 768 && stackCards.length > 0) {
-    window.addEventListener('scroll', updateCardStack, { passive: true });
-    updateCardStack();
+      // Card 1 (TPI)
+      if (smoothProgress < 0.12) {
+        cartierCards[1].style.transform = 'perspective(1200px) translateY(115%) scale(0.92)';
+        cartierCards[1].style.opacity = '0';
+      } else if (smoothProgress <= 0.38) {
+        const p = (smoothProgress - 0.12) / 0.26;
+        const translateY = (1 - p) * 115;
+        const scale = 0.92 + p * 0.08;
+        cartierCards[1].style.transform = `perspective(1200px) translateY(${translateY}%) scale(${scale}) rotateX(0deg)`;
+        cartierCards[1].style.opacity = `${p}`;
+        cartierCards[1].style.filter = 'brightness(1) blur(0px)';
+      } else if (smoothProgress <= 0.68) {
+        const p = (smoothProgress - 0.38) / 0.30;
+        const scale = 1 - p * 0.08;
+        const translateY = -p * 24;
+        const rotateX = p * 6;
+        const brightness = 1 - p * 0.55;
+        const blur = p * 3;
+        const opacity = 1 - p * 0.5;
+        cartierCards[1].style.transform = `perspective(1200px) translateY(${translateY}px) scale(${scale}) rotateX(${rotateX}deg)`;
+        cartierCards[1].style.opacity = `${opacity}`;
+        cartierCards[1].style.filter = `brightness(${brightness}) blur(${blur}px)`;
+      } else {
+        cartierCards[1].style.transform = 'perspective(1200px) translateY(-30px) scale(0.90) rotateX(8deg)';
+        cartierCards[1].style.opacity = '0.2';
+        cartierCards[1].style.filter = 'brightness(0.35) blur(4px)';
+      }
+
+      // Card 2 (Sourcing)
+      if (smoothProgress < 0.42) {
+        cartierCards[2].style.transform = 'perspective(1200px) translateY(115%) scale(0.92)';
+        cartierCards[2].style.opacity = '0';
+      } else if (smoothProgress <= 0.68) {
+        const p = (smoothProgress - 0.42) / 0.26;
+        const translateY = (1 - p) * 115;
+        const scale = 0.92 + p * 0.08;
+        cartierCards[2].style.transform = `perspective(1200px) translateY(${translateY}%) scale(${scale}) rotateX(0deg)`;
+        cartierCards[2].style.opacity = `${p}`;
+        cartierCards[2].style.filter = 'brightness(1) blur(0px)';
+      } else if (smoothProgress <= 0.95) {
+        const p = (smoothProgress - 0.68) / 0.27;
+        const scale = 1 - p * 0.08;
+        const translateY = -p * 24;
+        const rotateX = p * 6;
+        const brightness = 1 - p * 0.55;
+        const blur = p * 3;
+        const opacity = 1 - p * 0.5;
+        cartierCards[2].style.transform = `perspective(1200px) translateY(${translateY}px) scale(${scale}) rotateX(${rotateX}deg)`;
+        cartierCards[2].style.opacity = `${opacity}`;
+        cartierCards[2].style.filter = `brightness(${brightness}) blur(${blur}px)`;
+      } else {
+        cartierCards[2].style.transform = 'perspective(1200px) translateY(-30px) scale(0.90) rotateX(8deg)';
+        cartierCards[2].style.opacity = '0.2';
+        cartierCards[2].style.filter = 'brightness(0.35) blur(4px)';
+      }
+
+      // Card 3 (Training)
+      if (smoothProgress < 0.72) {
+        cartierCards[3].style.transform = 'perspective(1200px) translateY(115%) scale(0.92)';
+        cartierCards[3].style.opacity = '0';
+      } else {
+        const p = Math.min(1, (smoothProgress - 0.72) / 0.25);
+        const translateY = (1 - p) * 115;
+        const scale = 0.92 + p * 0.08;
+        cartierCards[3].style.transform = `perspective(1200px) translateY(${translateY}%) scale(${scale}) rotateX(0deg)`;
+        cartierCards[3].style.opacity = `${p}`;
+        cartierCards[3].style.filter = 'brightness(1) blur(0px)';
+      }
+
+      // Active Step Calculation
+      let activeIndex = 0;
+      if (smoothProgress >= 0.75) activeIndex = 3;
+      else if (smoothProgress >= 0.48) activeIndex = 2;
+      else if (smoothProgress >= 0.20) activeIndex = 1;
+
+      cartierNavBtns.forEach((btn, idx) => {
+        if (idx === activeIndex) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      if (cartierStepLabel) {
+        cartierStepLabel.textContent = stepLabels[activeIndex];
+      }
+
+      if (cartierProgressBar) {
+        cartierProgressBar.style.width = `${Math.max(25, (activeIndex + 1) * 25)}%`;
+      }
+
+      requestAnimationFrame(cartierAnimationLoop);
+    }
+
+    requestAnimationFrame(cartierAnimationLoop);
+
+    // Interactive Click to Jump on Navigation Pills
+    cartierNavBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const step = parseInt(btn.getAttribute('data-step') || '0', 10);
+        const targets = [0.02, 0.32, 0.62, 0.92];
+        const targetFrac = targets[step] || 0;
+        const rect = cartierTrack.getBoundingClientRect();
+        const absoluteTop = window.scrollY + rect.top;
+        const maxScroll = cartierTrack.offsetHeight - window.innerHeight;
+        const scrollToY = absoluteTop + targetFrac * maxScroll;
+
+        window.scrollTo({
+          top: scrollToY,
+          behavior: 'smooth'
+        });
+      });
+    });
   }
 
   /* ==========================================================================

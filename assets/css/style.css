@@ -455,30 +455,46 @@ body {
 }
 
 /* ==========================================================================
-   3D Stacking Service Cards Physics Engine (Deck Stacking on Scroll)
+   Cartier Luxury Pinned Card Scroller Physics Engine
    ========================================================================== */
-.services-deck-container {
+.cartier-scroll-track {
   position: relative;
+  height: 400vh;
+  min-height: 400vh;
   width: 100%;
 }
 
-.stack-card {
+.cartier-sticky-viewport {
   position: sticky;
-  top: 100px;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
-  transform-origin: center top;
-  will-change: transform, filter;
-  border-radius: 1.75rem;
+  top: 0;
+  height: 100vh;
+  width: 100%;
   overflow: hidden;
-  background: #0a2540;
-  border: 1px solid rgba(212, 162, 76, 0.3);
-  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.75), 0 0 25px rgba(212, 162, 76, 0.15);
 }
 
-.stack-card:nth-child(1) { z-index: 10; }
-.stack-card:nth-child(2) { z-index: 20; }
-.stack-card:nth-child(3) { z-index: 30; }
-.stack-card:nth-child(4) { z-index: 40; }
+.cartier-card {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.15s cubic-bezier(0.16, 1, 0.3, 1), filter 0.15s ease;
+  will-change: transform, opacity, filter;
+  transform-origin: center center;
+}
+
+.cartier-card:nth-child(1) { z-index: 10; }
+.cartier-card:nth-child(2) { z-index: 20; }
+.cartier-card:nth-child(3) { z-index: 30; }
+.cartier-card:nth-child(4) { z-index: 40; }
+
+.cartier-nav-btn {
+  color: #94a3b8;
+  background: transparent;
+}
+
+.cartier-nav-btn.active {
+  color: #0a2540;
+  background: #d4a24c;
+  box-shadow: 0 4px 15px rgba(212, 162, 76, 0.4);
+}
 
 /* ==========================================================================
    Comprehensive 3D On-Scroll Animation Engine
