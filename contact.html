@@ -50,43 +50,48 @@
   </div>
 
   <!-- Navigation -->
-  <header id="main-header" class="fixed top-4 sm:top-5 left-0 right-0 z-50 px-3 sm:px-6 max-w-7xl mx-auto transition-all duration-300">
-    <nav class="glass-pill rounded-full px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between shadow-2xl backdrop-blur-2xl">
-      <a href="index.html" class="flex items-center gap-3 group shrink-0">
-        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-[#d4a24c] via-[#e8bd6e] to-[#0a2540] p-[1.5px] shadow-lg shadow-[#d4a24c]/20">
+  <header id="main-header" class="fixed top-3 sm:top-5 left-0 right-0 z-50 px-3 sm:px-6 max-w-7xl mx-auto transition-all duration-300">
+    <nav id="navbar-pill" class="glass-pill rounded-full px-4 sm:px-5 py-2 sm:py-2.5 flex items-center justify-between shadow-2xl backdrop-blur-2xl">
+      <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-[#d4a24c] via-[#e8bd6e] to-[#0a2540] p-[1.5px] shadow-lg shadow-[#d4a24c]/20 group-hover:shadow-[#d4a24c]/40 transition-all duration-300 shrink-0">
           <div class="w-full h-full bg-[#0a2540] rounded-[10px] flex items-center justify-center">
             <i data-lucide="shield-check" class="w-5 h-5 text-[#d4a24c]"></i>
           </div>
         </div>
-        <div class="flex flex-col">
+        <div class="flex flex-col justify-center">
           <div class="flex items-center gap-2">
-            <span class="font-display font-bold text-base sm:text-lg text-white">MET<span class="text-[#d4a24c]">·N·</span>TEST</span>
-            <span class="hidden md:inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#d4a24c]/15 border border-[#d4a24c]/30 text-[9px] font-bold text-[#e8bd6e] uppercase">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#d4a24c] animate-pulse"></span> ISO & NABL
+            <span class="font-display font-bold text-base sm:text-lg tracking-tight text-white flex items-center whitespace-nowrap">
+              MET<span class="text-[#d4a24c]">·N·</span>TEST
+            </span>
+            <span class="hidden xl:inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#d4a24c]/15 border border-[#d4a24c]/30 text-[9px] font-bold text-[#e8bd6e] uppercase tracking-wider whitespace-nowrap">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#d4a24c] animate-pulse"></span>
+              ISO & NABL
             </span>
           </div>
-          <span class="text-[9px] sm:text-[10px] tracking-widest uppercase font-semibold text-slate-300 -mt-0.5">Inspection & Consulting</span>
+          <span class="text-[9px] sm:text-[10px] tracking-widest uppercase font-semibold text-slate-300 -mt-0.5 whitespace-nowrap">
+            Inspection & Consulting
+          </span>
         </div>
       </a>
 
-      <div class="hidden lg:flex items-center gap-1 text-xs font-semibold text-slate-200">
-        <a href="index.html" class="nav-item-btn">Home</a>
-        <a href="about.html" class="nav-item-btn">About Us</a>
-        <a href="services.html" class="nav-item-btn">Services</a>
-        <a href="index.html#estimator" class="nav-item-btn">Audit Estimator</a>
-        <a href="index.html#industries" class="nav-item-btn">Industries</a>
-        <a href="contact.html" class="nav-item-btn active text-[#0a2540] bg-[#d4a24c]">Contact</a>
+      <div class="hidden lg:flex items-center gap-1 xl:gap-1.5 text-xs font-semibold text-slate-200">
+        <a href="index.html" class="nav-item-btn whitespace-nowrap">Home</a>
+        <a href="about.html" class="nav-item-btn whitespace-nowrap">About Us</a>
+        <a href="services.html" class="nav-item-btn whitespace-nowrap">Services</a>
+        <a href="index.html#estimator" class="nav-item-btn whitespace-nowrap">Audit Estimator</a>
+        <a href="index.html#industries" class="nav-item-btn whitespace-nowrap">Industries</a>
+        <a href="contact.html" class="nav-item-btn active whitespace-nowrap">Contact</a>
       </div>
 
-      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-        <a href="tel:+917977965488" class="hidden xl:inline-flex items-center gap-2 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-[#0a2540] hover:bg-[#14365c] border border-[#d4a24c]/40 text-[#e8bd6e]">
+      <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+        <a href="tel:+917977965488" class="hidden 2xl:inline-flex items-center gap-2 text-xs font-semibold px-3.5 h-[36px] rounded-full bg-[#0a2540] hover:bg-[#14365c] border border-[#d4a24c]/40 text-[#e8bd6e] transition-all shadow-md whitespace-nowrap">
           <i data-lucide="phone-call" class="w-3.5 h-3.5 text-[#d4a24c] animate-pulse"></i>
           <span>+91 79779 65488</span>
         </a>
-        <a href="https://wa.me/917977965488?text=Hello%20MET-N-TEST" target="_blank" class="hidden sm:flex p-2 rounded-full bg-[#25D366]/15 hover:bg-[#25D366]/25 text-[#25D366] border border-[#25D366]/30">
+        <a href="https://wa.me/917977965488?text=Hello%20MET-N-TEST" target="_blank" class="hidden sm:flex w-9 h-9 items-center justify-center rounded-full bg-[#25D366]/15 hover:bg-[#25D366]/25 text-[#25D366] border border-[#25D366]/40 transition-all shadow-md" title="Chat on WhatsApp">
           <i data-lucide="message-square" class="w-4 h-4"></i>
         </a>
-        <a href="contact.html" class="btn-gold px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold tracking-wide flex items-center gap-1.5">
+        <a href="contact.html" class="btn-gold px-4 sm:px-5 h-[36px] rounded-full text-xs font-bold tracking-wide flex items-center gap-1.5 shadow-xl whitespace-nowrap">
           <span>Book Consultation</span>
           <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
         </a>

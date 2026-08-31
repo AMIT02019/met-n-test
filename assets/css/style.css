@@ -270,10 +270,10 @@ body {
    Header & Floating Navigation Pill
    ========================================================================== */
 .glass-pill {
-  background: rgba(10, 37, 64, 0.88);
+  background: rgba(10, 37, 64, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(212, 162, 76, 0.25);
+  border: 1px solid rgba(212, 162, 76, 0.3);
   box-shadow: 0 12px 35px -5px rgba(0, 0, 0, 0.6),
               inset 0 1px 0 rgba(255, 255, 255, 0.15),
               0 0 25px -5px rgba(212, 162, 76, 0.15);
@@ -281,8 +281,8 @@ body {
 }
 
 .glass-pill.scrolled {
-  background: rgba(7, 23, 43, 0.96);
-  border-color: rgba(212, 162, 76, 0.45);
+  background: rgba(7, 23, 43, 0.98);
+  border-color: rgba(212, 162, 76, 0.5);
   box-shadow: 0 16px 45px -8px rgba(0, 0, 0, 0.8),
               inset 0 1px 0 rgba(255, 255, 255, 0.2),
               0 0 30px -5px rgba(212, 162, 76, 0.25);
@@ -293,19 +293,25 @@ body {
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
+  justify-content: center;
+  white-space: nowrap;
+  gap: 5px;
+  height: 36px;
+  padding: 0 14px;
   border-radius: 9999px;
-  font-size: 0.825rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: #e2e8f0;
+  line-height: 1;
   transition: all 0.22s ease;
   border: 1px solid transparent;
+  flex-shrink: 0;
+  text-decoration: none;
 }
 
 .nav-item-btn:hover {
   color: #d4a24c;
-  background: rgba(212, 162, 76, 0.1);
+  background: rgba(212, 162, 76, 0.12);
   border-color: rgba(212, 162, 76, 0.3);
 }
 
@@ -313,7 +319,7 @@ body {
   color: #0a2540;
   background: #d4a24c;
   border-color: #e8bd6e;
-  box-shadow: 0 0 15px rgba(212, 162, 76, 0.3);
+  box-shadow: 0 0 15px rgba(212, 162, 76, 0.35);
 }
 
 /* Services Dropdown Menu */
