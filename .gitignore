@@ -8,4 +8,7 @@ Thumbs.db
 .vercel
 node_modules/
 npm-debug.log*
-.vercel
+
+# Local Backups & Temp
+*.orig.mp4
+*.temp.mp4
