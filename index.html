@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MET-N-TEST | Next-Gen Inspection, Certification & Management Consulting</title>
+  <meta name="description" content="MET-N-TEST provides premier ISO certification, Third-Party Inspection (TPI), Strategic Sourcing, and Corporate Training with uncompromised precision and integrity.">
+  <link rel="icon" href="https://img.icons8.com/fluency/96/shield.png" type="image/png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              900: '#0c4a6e',
+            },
+            cyan: {
+              400: '#22d3ee',
+              500: '#06b6d4',
+            },
+            dark: {
+              950: '#050811',
+              900: '#090d16',
+              850: '#0f172a',
+              800: '#1e293b',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            heading: ['"Space Grotesk"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles & 3D CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-[#050811] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-300">
+
+  <!-- ==========================================================================
+       Ambient Lighting Layer
+       ========================================================================== -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="glow-ambient glow-blue w-[600px] h-[600px] -top-40 -left-40"></div>
+    <div class="glow-ambient glow-cyan w-[500px] h-[500px] top-1/3 -right-40"></div>
+    <div class="glow-ambient glow-amber w-[450px] h-[450px] bottom-10 left-1/4"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:32px_32px] opacity-20"></div>
+  </div>
+
+  <!-- ==========================================================================
+       Floating Island Header & Navigation
+       ========================================================================== -->
+  <header id="main-header" class="fixed top-4 sm:top-5 left-0 right-0 z-50 px-3 sm:px-6 max-w-7xl mx-auto transition-all duration-300">
+    <nav id="navbar-pill" class="glass-pill rounded-full px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between shadow-2xl backdrop-blur-2xl">
+      <!-- Logo & Live Status -->
+      <a href="#hero" class="flex items-center gap-3 group shrink-0">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-sky-500 via-cyan-400 to-indigo-500 p-[1.5px] shadow-lg shadow-cyan-500/25 group-hover:shadow-cyan-400/50 transition-all duration-300">
+          <div class="w-full h-full bg-[#070b14] rounded-[10px] flex items-center justify-center">
+            <i data-lucide="shield-check" class="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform"></i>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2">
+            <span class="font-heading font-extrabold text-base sm:text-lg tracking-tight text-white flex items-center">
+              MET<span class="text-cyan-400">·N·</span>TEST
+            </span>
+            <span class="hidden md:inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-[9px] font-bold text-emerald-400 uppercase tracking-wider">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              ISO & NABL
+            </span>
+          </div>
+          <span class="text-[9px] sm:text-[10px] tracking-widest uppercase font-semibold text-slate-400 -mt-0.5">
+            Inspection & Consulting
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden lg:flex items-center gap-1.5 text-xs font-semibold text-slate-300">
+        <a href="#hero" class="nav-item-btn nav-link active">Home</a>
+        <a href="#about" class="nav-item-btn nav-link">About Us</a>
+
+        <!-- Interactive Services Dropdown -->
+        <div class="nav-dropdown">
+          <button class="nav-item-btn flex items-center gap-1 group">
+            <span>Services</span>
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-slate-400 group-hover:text-cyan-400 group-hover:rotate-180 transition-transform duration-200"></i>
+          </button>
+          <div class="nav-dropdown-menu">
+            <div class="text-[10px] font-bold uppercase tracking-wider text-cyan-400 px-3 py-1.5 border-b border-white/10 mb-1 flex items-center justify-between">
+              <span>Core Service Pillars</span>
+              <span class="text-slate-500 font-mono text-[9px]">4 Domains</span>
+            </div>
+            <a href="#services-3d" class="dropdown-item group">
+              <div class="w-8 h-8 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0 group-hover:bg-sky-500/20 transition-colors">
+                <i data-lucide="award" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <strong class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors block">ISO & Management Systems</strong>
+                <span class="text-[10px] text-slate-400 leading-tight block">ISO 9001, 14001, 45001, IATF 16949 & IMS</span>
+              </div>
+            </a>
+            <a href="#services-3d" class="dropdown-item group">
+              <div class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0 group-hover:bg-cyan-500/20 transition-colors">
+                <i data-lucide="microscope" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <strong class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors block">Third-Party Inspection (TPI)</strong>
+                <span class="text-[10px] text-slate-400 leading-tight block">Supplier audits, witness testing & pre-shipment</span>
+              </div>
+            </a>
+            <a href="#services-3d" class="dropdown-item group">
+              <div class="w-8 h-8 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center shrink-0 group-hover:bg-indigo-500/20 transition-colors">
+                <i data-lucide="git-branch" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <strong class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors block">Strategic Sourcing & Vetting</strong>
+                <span class="text-[10px] text-slate-400 leading-tight block">Cost optimization & supply chain resilience</span>
+              </div>
+            </a>
+            <a href="#services-3d" class="dropdown-item group">
+              <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0 group-hover:bg-amber-500/20 transition-colors">
+                <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <strong class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors block">Corporate Training & 5S</strong>
+                <span class="text-[10px] text-slate-400 leading-tight block">Certified internal auditor & lean toolkits</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <a href="#estimator" class="nav-item-btn nav-link">Audit Estimator</a>
+        <a href="#why-us" class="nav-item-btn nav-link">Why Us</a>
+        <a href="#industries" class="nav-item-btn nav-link">Industries</a>
+        <a href="#contact" class="nav-item-btn nav-link">Contact</a>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <!-- Hotline Link -->
+        <a href="tel:+917977965488" class="hidden xl:inline-flex items-center gap-2 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 text-cyan-300 hover:border-cyan-400/40 transition-all shadow-md">
+          <i data-lucide="phone-call" class="w-3.5 h-3.5 text-cyan-400 animate-pulse"></i>
+          <span>+91 79779 65488</span>
+        </a>
+
+        <!-- WhatsApp Quick Connect -->
+        <a href="https://wa.me/917977965488?text=Hello%20MET-N-TEST,%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="hidden sm:flex p-2 rounded-full bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 transition-all shadow-md" title="Chat on WhatsApp">
+          <i data-lucide="message-square" class="w-4 h-4"></i>
+        </a>
+
+        <!-- Main Consultation Trigger -->
+        <button class="open-quote-modal btn-glow-primary px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold tracking-wide flex items-center gap-1.5 shadow-xl">
+          <span>Book Audit</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-xl bg-slate-800/80 border border-white/10 text-slate-200 hover:text-white" aria-label="Toggle Menu">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-drawer" class="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-[#070b14]/98 backdrop-blur-2xl border-l border-cyan-500/30 p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden shadow-2xl">
+    <div>
+      <div class="flex items-center justify-between pb-5 border-b border-white/10">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          </div>
+          <span class="font-heading font-extrabold text-lg text-white">MET-N-TEST</span>
+        </div>
+        <button id="close-drawer-btn" class="p-2 text-slate-400 hover:text-white rounded-lg bg-slate-900 border border-white/10" aria-label="Close Menu">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="flex flex-col gap-2 mt-6 text-sm font-semibold text-slate-200">
+        <a href="#hero" class="mobile-nav-link hover:text-cyan-400 py-2.5 px-3 rounded-xl hover:bg-white/5 flex items-center justify-between">
+          <span>Home</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+        <a href="#about" class="mobile-nav-link hover:text-cyan-400 py-2.5 px-3 rounded-xl hover:bg-white/5 flex items-center justify-between">
+          <span>About Us</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+        <a href="#services-3d" class="mobile-nav-link hover:text-cyan-400 py-2.5 px-3 rounded-xl hover:bg-white/5 flex items-center justify-between">
+          <span>3D Services Pillars</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+        <a href="#estimator" class="mobile-nav-link hover:text-cyan-400 py-2.5 px-3 rounded-xl hover:bg-white/5 flex items-center justify-between">
+          <span>Audit Roadmap Estimator</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+        <a href="#why-us" class="mobile-nav-link hover:text-cyan-400 py-2.5 px-3 rounded-xl hover:bg-white/5 flex items-center justify-between">
+          <span>Why Choose Us</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+        <a href="#industries" class="mobile-nav-link hover:text-cyan-400 py-2.5 px-3 rounded-xl hover:bg-white/5 flex items-center justify-between">
+          <span>Industries Served</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+        <a href="#contact" class="mobile-nav-link hover:text-cyan-400 py-2.5 px-3 rounded-xl hover:bg-white/5 flex items-center justify-between">
+          <span>Contact & Locations</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="pt-6 border-t border-white/10 space-y-3">
+      <a href="tel:+917977965488" class="flex items-center gap-3 p-3 rounded-xl bg-slate-900 border border-white/10 text-xs font-bold text-cyan-400">
+        <i data-lucide="phone-call" class="w-4 h-4"></i>
+        <span>+91 79779 65488 (Mon-Sat)</span>
+      </a>
+      <a href="https://wa.me/917977965488?text=Hello%20MET-N-TEST" target="_blank" class="flex items-center gap-3 p-3 rounded-xl bg-emerald-950/50 border border-emerald-500/30 text-xs font-bold text-emerald-300">
+        <i data-lucide="message-square" class="w-4 h-4"></i>
+        <span>Chat on WhatsApp</span>
+      </a>
+      <button class="open-quote-modal w-full btn-glow-primary py-3 rounded-xl text-center font-bold text-xs">
+        Book Quick Audit Consultation
+      </button>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       HERO SECTION (Pure 3D On-Scroll Video Experience - Sticky Fullscreen)
+       ========================================================================== -->
+  <section id="hero" class="hero-scroll-container">
+    <div class="hero-sticky-stage">
+      <!-- Full-Screen On-Scroll Video (Clean & Unobstructed) -->
+      <video
+        id="hero-scroll-video"
+        class="hero-video-bg"
+        src="b44e9b5e8363fa925601c248e90fc6e7.mp4"
+        preload="auto"
+        muted
+        playsinline
+        webkit-playsinline
+      ></video>
+
+      <div class="hero-video-gradient-bottom"></div>
+
+      <!-- Minimal Floating Scroll Progress Pill -->
+      <div id="hero-scroll-hint" class="hero-scroll-hint">
+        <i data-lucide="mouse" class="w-4 h-4 text-cyan-400 animate-bounce"></i>
+        <span class="text-xs font-semibold text-slate-200">Scroll to Play Video</span>
+        <div class="hero-scroll-line">
+          <div id="video-progress-fill" class="hero-scroll-fill"></div>
+        </div>
+        <span id="video-timecode" class="text-[11px] font-mono text-cyan-400">0.0s</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       OVERVIEW & PERFORMANCE METRICS (Immediately Following Video Playback)
+       ========================================================================== -->
+  <section class="py-16 relative max-w-7xl mx-auto px-4 md:px-8 perspective-container">
+    <div class="text-center max-w-4xl mx-auto mb-12 card-3d-reveal">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/85 border border-cyan-500/30 text-cyan-300 text-xs font-semibold tracking-wider uppercase mb-4 shadow-xl shadow-cyan-950/40">
+        <span class="w-2 h-2 rounded-full bg-cyan-400 pulse-ring"></span>
+        <span>Certified Excellence in Inspection & ISO Consulting</span>
+      </div>
+      <h1 class="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl tracking-tight text-white mb-4">
+        Next-Gen Inspection, Certification &
+        <span class="text-gradient block mt-1">Strategic Management Solutions</span>
+      </h1>
+      <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+        MET-N-TEST delivers premier management consulting, ISO standard implementation, Third-Party Inspection (TPI), and strategic sourcing with uncompromised precision.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+        <a href="#services-3d" class="w-full sm:w-auto btn-glow-primary px-8 py-3.5 rounded-xl text-sm font-bold tracking-wide flex items-center justify-center gap-2">
+          <span>Explore 3D Services</span>
+          <i data-lucide="layers" class="w-4 h-4"></i>
+        </a>
+        <button class="open-quote-modal w-full sm:w-auto btn-glow-secondary px-8 py-3.5 rounded-xl text-sm font-bold tracking-wide flex items-center justify-center gap-2">
+          <i data-lucide="clipboard-check" class="w-4 h-4 text-cyan-400"></i>
+          <span>Schedule Inspection / Audit</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 3D Precision Stat Cards -->
+    <div id="stats-section" class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto perspective-container">
+      <!-- Stat 1 -->
+      <div class="tilt-card glass-panel rounded-2xl p-5 text-left border border-white/10 card-3d-reveal delay-100 shadow-2xl">
+        <div class="tilt-card-content">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Pass Rate</span>
+            <div class="p-1.5 rounded-lg bg-emerald-500/10 text-emerald-400"><i data-lucide="shield-check" class="w-4 h-4"></i></div>
+          </div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-white font-heading" data-counter-target="99.8" data-counter-suffix="%">+0%</div>
+          <p class="text-xs text-slate-400 mt-1">Audit success on first submission</p>
+        </div>
+      </div>
+
+      <!-- Stat 2 -->
+      <div class="tilt-card glass-panel rounded-2xl p-5 text-left border border-white/10 card-3d-reveal delay-200 shadow-2xl">
+        <div class="tilt-card-content">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Standards</span>
+            <div class="p-1.5 rounded-lg bg-sky-500/10 text-sky-400"><i data-lucide="award" class="w-4 h-4"></i></div>
+          </div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-white font-heading" data-counter-target="100" data-counter-suffix="+">0+</div>
+          <p class="text-xs text-slate-400 mt-1">ISO & Technical Frameworks</p>
+        </div>
+      </div>
+
+      <!-- Stat 3 -->
+      <div class="tilt-card glass-panel rounded-2xl p-5 text-left border border-white/10 card-3d-reveal delay-300 shadow-2xl">
+        <div class="tilt-card-content">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Industries</span>
+            <div class="p-1.5 rounded-lg bg-cyan-500/10 text-cyan-400"><i data-lucide="factory" class="w-4 h-4"></i></div>
+          </div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-white font-heading" data-counter-target="15" data-counter-suffix="+">0+</div>
+          <p class="text-xs text-slate-400 mt-1">Versatile global sectors</p>
+        </div>
+      </div>
+
+      <!-- Stat 4 -->
+      <div class="tilt-card glass-panel rounded-2xl p-5 text-left border border-white/10 card-3d-reveal delay-400 shadow-2xl">
+        <div class="tilt-card-content">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Turnaround</span>
+            <div class="p-1.5 rounded-lg bg-amber-500/10 text-amber-400"><i data-lucide="clock" class="w-4 h-4"></i></div>
+          </div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-white font-heading" data-counter-target="24" data-counter-suffix="h">0h</div>
+          <p class="text-xs text-slate-400 mt-1">Rapid inspection dispatch</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ACCREDITATION & STANDARDS MARQUEE
+       ========================================================================== -->
+  <div class="py-6 border-y border-white/5 bg-[#090d16]/50 overflow-hidden relative backdrop-blur-md">
+    <div class="marquee-track flex items-center gap-12 text-slate-400 font-heading text-xs sm:text-sm font-semibold tracking-wider uppercase">
+      <div class="flex items-center gap-2 text-slate-200"><i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400"></i> ISO 9001:2015 Quality</div>
+      <div class="flex items-center gap-2 text-slate-200"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> ISO 14001:2015 Environment</div>
+      <div class="flex items-center gap-2 text-slate-200"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400"></i> ISO 45001:2018 Health & Safety</div>
+      <div class="flex items-center gap-2 text-slate-200"><i data-lucide="check-circle-2" class="w-4 h-4 text-sky-400"></i> IATF 16949 Automotive</div>
+      <div class="flex items-center gap-2 text-slate-200"><i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400"></i> SEDEX / SMETA Audits</div>
+      <div class="flex items-center gap-2 text-slate-200"><i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400"></i> Third Party Inspections (TPI)</div>
+      <div class="flex items-center gap-2 text-slate-200"><i data-lucide="check-circle-2" class="w-4 h-4 text-purple-400"></i> 5S & Lean Six Sigma</div>
+      <div class="flex items-center gap-2 text-slate-200"><i data-lucide="check-circle-2" class="w-4 h-4 text-rose-400"></i> ISO 27001 ISMS Security</div>
+      <div class="flex items-center gap-2 text-slate-200"><i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400"></i> Strategic Sourcing Assurance</div>
+      <!-- Duplicate for infinite seamless scroll -->
+      <div class="flex items-center gap-2 text-slate-200"><i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400"></i> ISO 9001:2015 Quality</div>
+      <div class="flex items-center gap-2 text-slate-200"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> ISO 14001:2015 Environment</div>
+      <div class="flex items-center gap-2 text-slate-200"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400"></i> ISO 45001:2018 Health & Safety</div>
+      <div class="flex items-center gap-2 text-slate-200"><i data-lucide="check-circle-2" class="w-4 h-4 text-sky-400"></i> IATF 16949 Automotive</div>
+      <div class="flex items-center gap-2 text-slate-200"><i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-400"></i> SEDEX / SMETA Audits</div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       ABOUT US & 3D VALUES SECTION
+       ========================================================================== -->
+  <section id="about" class="py-24 relative max-w-7xl mx-auto px-4 md:px-8 perspective-container">
+    <div class="text-center max-w-3xl mx-auto mb-16 card-3d-reveal">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-3">
+        Who We Are
+      </div>
+      <h2 class="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-white">
+        Engineering Trust & <span class="text-gradient">Operational Excellence</span>
+      </h2>
+      <p class="text-slate-300 text-sm sm:text-base mt-4 leading-relaxed">
+        MET-N-TEST Inspection & Consulting Services is a premier management consulting firm committed to catalyzing business success through custom-engineered quality frameworks, comprehensive vendor assessments, and rigorous compliance auditing.
+      </p>
+    </div>
+
+    <!-- 3D Parallax Split Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <!-- Left Column: Story & Vision / Mission -->
+      <div class="lg:col-span-7 space-y-6 card-3d-reveal-left">
+        <!-- Vision & Mission 3D Card -->
+        <div class="tilt-card glass-panel rounded-3xl p-8 border border-white/10 relative overflow-hidden">
+          <div class="tilt-card-content space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
+                <i data-lucide="eye" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h3 class="font-heading text-xl font-bold text-white mb-2">Our Vision</h3>
+                <p class="text-slate-300 text-sm leading-relaxed">
+                  To be the leading management consulting and technical inspection authority, serving as trusted, high-value partners for enterprise clients, supply chains, and employee empowerment.
+                </p>
+              </div>
+            </div>
+
+            <div class="w-full h-px bg-white/10"></div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 shrink-0">
+                <i data-lucide="target" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h3 class="font-heading text-xl font-bold text-white mb-2">Our Mission</h3>
+                <p class="text-slate-300 text-sm leading-relaxed">
+                  To design and implement robust, sustainable systems, deliver innovative solutions, and offer unparalleled support that transcends traditional consulting—catalyzing lasting business impact.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quote / Leadership Box -->
+        <div class="glass-panel rounded-2xl p-6 border border-white/10 flex items-center gap-4 bg-gradient-to-r from-slate-900/90 to-sky-950/40">
+          <div class="p-3 rounded-full bg-cyan-500/20 text-cyan-300">
+            <i data-lucide="quote" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <p class="text-sm italic text-slate-200">
+              "We develop, support, and implement systems and processes in client organizations to systematically mitigate business risk and guarantee uncompromised quality."
+            </p>
+            <span class="text-xs font-semibold text-cyan-400 mt-1 block">— MET-N-TEST Executive Leadership</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: 4 3D Tilt Core Values Cards -->
+      <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4 card-3d-reveal-right">
+        <!-- Value 1 -->
+        <div class="tilt-card glass-panel rounded-2xl p-6 border border-white/10 hover:border-cyan-400/50 transition-all">
+          <div class="tilt-card-content">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-4">
+              <i data-lucide="sparkles" class="w-5 h-5"></i>
+            </div>
+            <h4 class="font-heading text-lg font-bold text-white mb-1">Excellence</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Delivering high-caliber solutions that consistently surpass client benchmarks and regulatory standards.
+            </p>
+          </div>
+        </div>
+
+        <!-- Value 2 -->
+        <div class="tilt-card glass-panel rounded-2xl p-6 border border-white/10 hover:border-emerald-400/50 transition-all">
+          <div class="tilt-card-content">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
+              <i data-lucide="shield" class="w-5 h-5"></i>
+            </div>
+            <h4 class="font-heading text-lg font-bold text-white mb-1">Integrity</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Upholding strict ethical transparency, unbiased reporting, and confidential client alignment.
+            </p>
+          </div>
+        </div>
+
+        <!-- Value 3 -->
+        <div class="tilt-card glass-panel rounded-2xl p-6 border border-white/10 hover:border-sky-400/50 transition-all">
+          <div class="tilt-card-content">
+            <div class="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center mb-4">
+              <i data-lucide="users-round" class="w-5 h-5"></i>
+            </div>
+            <h4 class="font-heading text-lg font-bold text-white mb-1">Collaboration</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Working as an agile extension of your organization to co-create tailored operational frameworks.
+            </p>
+          </div>
+        </div>
+
+        <!-- Value 4 -->
+        <div class="tilt-card glass-panel rounded-2xl p-6 border border-white/10 hover:border-amber-400/50 transition-all">
+          <div class="tilt-card-content">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
+              <i data-lucide="lightbulb" class="w-5 h-5"></i>
+            </div>
+            <h4 class="font-heading text-lg font-bold text-white mb-1">Innovation</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Applying agile methods, modern lean toolkits, and dynamic analytics to keep you at the cutting edge.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SIGNATURE 3D ON-SCROLL STACKING SERVICE CARDS DECK
+       ========================================================================== -->
+  <section id="services-3d" class="py-24 relative max-w-7xl mx-auto px-4 md:px-8 stacking-section perspective-container">
+    <div class="text-center max-w-3xl mx-auto mb-16 card-3d-reveal">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-3">
+        Core Service Architecture
+      </div>
+      <h2 class="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-white">
+        Comprehensive Solutions in <span class="text-gradient">3D Scroll Elevation</span>
+      </h2>
+      <p class="text-slate-300 text-sm sm:text-base mt-4">
+        Scroll down to experience our sticky 3D interactive service pillars—designed to empower businesses with standard-compliant processes, trusted supplier verification, and workforce expertise.
+      </p>
+    </div>
+
+    <!-- 3D STACK CARD 1: Management Systems & Certification -->
+    <div class="stack-card glass-panel border border-sky-500/30 bg-[#0c1424] p-8 sm:p-12 shadow-2xl">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="flex items-center gap-3">
+            <span class="px-3 py-1 rounded-md bg-sky-500/20 text-sky-400 text-xs font-mono font-bold tracking-wider">PILLAR 01</span>
+            <span class="text-xs font-semibold text-slate-400">Accredited ISO Architecture</span>
+          </div>
+          <h3 class="font-heading text-2xl sm:text-4xl font-bold text-white leading-tight">
+            Management Systems & <span class="text-gradient-cyan">Global Certification</span>
+          </h3>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            We architect, implement, and audit end-to-end management systems tailored precisely to your operational workflows, ensuring seamless first-time ISO accreditation and streamlined governance.
+          </p>
+
+          <!-- Interactive Standard Pills Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-white/10 flex items-start gap-3 hover:border-sky-400/50 transition-colors">
+              <i data-lucide="check-circle" class="w-5 h-5 text-sky-400 shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-xs font-bold text-white block">ISO 9001 : 2015 (QMS)</strong>
+                <span class="text-[11px] text-slate-400">Quality management & continuous improvement</span>
+              </div>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-white/10 flex items-start gap-3 hover:border-emerald-400/50 transition-colors">
+              <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-xs font-bold text-white block">ISO 14001 : 2015 (EMS)</strong>
+                <span class="text-[11px] text-slate-400">Environmental sustainability & footprint reduction</span>
+              </div>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-white/10 flex items-start gap-3 hover:border-amber-400/50 transition-colors">
+              <i data-lucide="check-circle" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-xs font-bold text-white block">ISO 45001 : 2018 (OH&S)</strong>
+                <span class="text-[11px] text-slate-400">Occupational health, hazard control & safety</span>
+              </div>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-white/10 flex items-start gap-3 hover:border-indigo-400/50 transition-colors">
+              <i data-lucide="check-circle" class="w-5 h-5 text-indigo-400 shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-xs font-bold text-white block">IATF 16949 & SEDEX</strong>
+                <span class="text-[11px] text-slate-400">Automotive supply standards & ethical audits</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 flex items-center gap-4">
+            <button class="open-quote-modal btn-glow-primary px-6 py-3 rounded-xl text-xs font-bold flex items-center gap-2">
+              <span>Start ISO Roadmap</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+            <span class="text-xs text-slate-400 flex items-center gap-1.5">
+              <i data-lucide="zap" class="w-4 h-4 text-amber-400"></i> Integrated IMS options available
+            </span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="w-full max-w-sm rounded-2xl bg-gradient-to-b from-sky-500/10 via-slate-900/80 to-[#0c1424] p-6 border border-sky-500/20 shadow-2xl relative">
+            <div class="flex items-center justify-between pb-4 border-b border-white/10">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+                <span class="w-3 h-3 rounded-full bg-green-400"></span>
+              </div>
+              <span class="text-[10px] font-mono text-cyan-400 uppercase tracking-widest">Live Audit Engine</span>
+            </div>
+            <div class="mt-5 space-y-3">
+              <div class="flex items-center justify-between text-xs p-2.5 rounded-lg bg-slate-900/90 border border-white/5">
+                <span class="text-slate-300">Phase 1: Gap Assessment</span>
+                <span class="text-emerald-400 font-semibold">100% Ready</span>
+              </div>
+              <div class="flex items-center justify-between text-xs p-2.5 rounded-lg bg-slate-900/90 border border-white/5">
+                <span class="text-slate-300">Phase 2: SOP & Manual Design</span>
+                <span class="text-emerald-400 font-semibold">Verified</span>
+              </div>
+              <div class="flex items-center justify-between text-xs p-2.5 rounded-lg bg-slate-900/90 border border-white/5">
+                <span class="text-slate-300">Phase 3: Internal Auditor Training</span>
+                <span class="text-cyan-400 font-semibold">Complete</span>
+              </div>
+              <div class="flex items-center justify-between text-xs p-2.5 rounded-lg bg-slate-900/90 border border-white/5">
+                <span class="text-slate-300">Phase 4: Certification Audit Defense</span>
+                <span class="text-amber-400 font-semibold">Guaranteed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3D STACK CARD 2: Third Party Inspections (TPI) -->
+    <div class="stack-card glass-panel border border-cyan-500/30 bg-[#091523] p-8 sm:p-12 shadow-2xl">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="flex items-center gap-3">
+            <span class="px-3 py-1 rounded-md bg-cyan-500/20 text-cyan-400 text-xs font-mono font-bold tracking-wider">PILLAR 02</span>
+            <span class="text-xs font-semibold text-slate-400">Independent Quality Assurance</span>
+          </div>
+          <h3 class="font-heading text-2xl sm:text-4xl font-bold text-white leading-tight">
+            Third-Party Inspections & <span class="text-gradient-cyan">Supplier Verification</span>
+          </h3>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            In complex global supply chains, our unbiased third-party inspectors meticulously evaluate products, assemblies, and manufacturing facilities to safeguard your quality, timeline, and commercial contracts.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-white/10 flex items-center gap-3">
+              <i data-lucide="clipboard-check" class="w-4 h-4 text-cyan-400"></i>
+              <span class="text-xs font-medium text-slate-200">Supplier Assessments & Capacity Audits</span>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-white/10 flex items-center gap-3">
+              <i data-lucide="timer" class="w-4 h-4 text-cyan-400"></i>
+              <span class="text-xs font-medium text-slate-200">Production Expediting & Tracking</span>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-white/10 flex items-center gap-3">
+              <i data-lucide="eye" class="w-4 h-4 text-cyan-400"></i>
+              <span class="text-xs font-medium text-slate-200">Witness Testing & Material Analysis</span>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-white/10 flex items-center gap-3">
+              <i data-lucide="package-check" class="w-4 h-4 text-cyan-400"></i>
+              <span class="text-xs font-medium text-slate-200">Final Random Inspection (FRI / Pre-Shipment)</span>
+            </div>
+          </div>
+
+          <div class="pt-4 flex items-center gap-4">
+            <button class="open-quote-modal btn-glow-primary px-6 py-3 rounded-xl text-xs font-bold flex items-center gap-2">
+              <span>Book TPI Inspector</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+            <span class="text-xs text-slate-400 flex items-center gap-1.5">
+              <i data-lucide="clock" class="w-4 h-4 text-cyan-400"></i> 24h Express Dispatch across India
+            </span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="w-full max-w-sm rounded-2xl bg-gradient-to-b from-cyan-500/10 via-slate-900/80 to-[#091523] p-6 border border-cyan-500/20 shadow-2xl">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="p-2 rounded-lg bg-cyan-500/20 text-cyan-400"><i data-lucide="microscope" class="w-5 h-5"></i></div>
+              <h4 class="font-heading font-bold text-white text-sm">Inspection Verification Seal</h4>
+            </div>
+            <p class="text-xs text-slate-300 mb-4">
+              Direct photographic documentation, non-destructive testing (NDT), dimensional checks, and real-time digital reporting.
+            </p>
+            <div class="bg-cyan-950/40 rounded-xl p-3 border border-cyan-500/20 flex items-center justify-between text-xs">
+              <span class="text-slate-400">Objective Reporting:</span>
+              <span class="text-cyan-300 font-mono font-bold">100% Unbiased</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3D STACK CARD 3: Strategic Sourcing -->
+    <div class="stack-card glass-panel border border-indigo-500/30 bg-[#0e122b] p-8 sm:p-12 shadow-2xl">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="flex items-center gap-3">
+            <span class="px-3 py-1 rounded-md bg-indigo-500/20 text-indigo-400 text-xs font-mono font-bold tracking-wider">PILLAR 03</span>
+            <span class="text-xs font-semibold text-slate-400">Procurement & Cost Optimization</span>
+          </div>
+          <h3 class="font-heading text-2xl sm:text-4xl font-bold text-white leading-tight">
+            Strategic Sourcing & <span class="text-gradient-cyan">Vendor Development</span>
+          </h3>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Sourcing is a strategic lever for profitability. We help organizations identify vetted manufacturers, negotiate commercial terms, evaluate trial prototype lots, and construct resilient supply chains.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-white/10 flex items-center gap-3">
+              <i data-lucide="search" class="w-4 h-4 text-indigo-400"></i>
+              <span class="text-xs font-medium text-slate-200">Supplier Discovery & Qualification</span>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-white/10 flex items-center gap-3">
+              <i data-lucide="trending-down" class="w-4 h-4 text-indigo-400"></i>
+              <span class="text-xs font-medium text-slate-200">Cost Structure & Price Optimization</span>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-white/10 flex items-center gap-3">
+              <i data-lucide="boxes" class="w-4 h-4 text-indigo-400"></i>
+              <span class="text-xs font-medium text-slate-200">Prototype & Sample Lot Testing</span>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-white/10 flex items-center gap-3">
+              <i data-lucide="leaf" class="w-4 h-4 text-indigo-400"></i>
+              <span class="text-xs font-medium text-slate-200">Ethical & Sustainable ESG Sourcing</span>
+            </div>
+          </div>
+
+          <div class="pt-4 flex items-center gap-4">
+            <button class="open-quote-modal btn-glow-primary px-6 py-3 rounded-xl text-xs font-bold flex items-center gap-2">
+              <span>Optimize Sourcing</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+            <span class="text-xs text-slate-400 flex items-center gap-1.5">
+              <i data-lucide="shield-alert" class="w-4 h-4 text-indigo-400"></i> Mitigate geopolitical & single-source risks
+            </span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="w-full max-w-sm rounded-2xl bg-gradient-to-b from-indigo-500/10 via-slate-900/80 to-[#0e122b] p-6 border border-indigo-500/20 shadow-2xl space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-white">Sourcing Impact Matrix</span>
+              <span class="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">Avg. 15-28% Savings</span>
+            </div>
+            <div class="space-y-2 text-xs">
+              <div class="flex justify-between text-slate-300">
+                <span>Vendor Risk Index</span>
+                <span class="text-emerald-400 font-mono">Reduced by 85%</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div class="w-5/6 h-full bg-indigo-500 rounded-full"></div>
+              </div>
+            </div>
+            <div class="space-y-2 text-xs">
+              <div class="flex justify-between text-slate-300">
+                <span>Sampling Cycle Time</span>
+                <span class="text-cyan-400 font-mono">Cut by 40%</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div class="w-2/3 h-full bg-cyan-400 rounded-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3D STACK CARD 4: Corporate & Technical Training -->
+    <div class="stack-card glass-panel border border-amber-500/30 bg-[#16120c] p-8 sm:p-12 shadow-2xl">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="flex items-center gap-3">
+            <span class="px-3 py-1 rounded-md bg-amber-500/20 text-amber-400 text-xs font-mono font-bold tracking-wider">PILLAR 04</span>
+            <span class="text-xs font-semibold text-slate-400">Workforce & Operational Upskilling</span>
+          </div>
+          <h3 class="font-heading text-2xl sm:text-4xl font-bold text-white leading-tight">
+            Corporate Training, <span class="text-gradient-gold">5S & Lean Toolkits</span>
+          </h3>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Upskill your internal workforce with certified courses designed to foster continuous improvement, workplace discipline, safety compliance, and audit readiness.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-white/10 flex items-center gap-3">
+              <i data-lucide="graduation-cap" class="w-4 h-4 text-amber-400"></i>
+              <span class="text-xs font-medium text-slate-200">Internal Auditor (ISO 9001, 14001, 45001)</span>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-white/10 flex items-center gap-3">
+              <i data-lucide="layout-grid" class="w-4 h-4 text-amber-400"></i>
+              <span class="text-xs font-medium text-slate-200">5S Methodology (Sort, Shine, Standardize)</span>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-white/10 flex items-center gap-3">
+              <i data-lucide="clock-4" class="w-4 h-4 text-amber-400"></i>
+              <span class="text-xs font-medium text-slate-200">Time Management & Productivity</span>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-white/10 flex items-center gap-3">
+              <i data-lucide="wrench" class="w-4 h-4 text-amber-400"></i>
+              <span class="text-xs font-medium text-slate-200">Customized Lean & Kaizen Workshops</span>
+            </div>
+          </div>
+
+          <div class="pt-4 flex items-center gap-4">
+            <button class="open-quote-modal btn-glow-primary px-6 py-3 rounded-xl text-xs font-bold flex items-center gap-2">
+              <span>Book Training Session</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+            <span class="text-xs text-slate-400 italic">
+              *Courses customizable for on-site or virtual delivery
+            </span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="w-full max-w-sm rounded-2xl bg-gradient-to-b from-amber-500/10 via-slate-900/80 to-[#16120c] p-6 border border-amber-500/20 shadow-2xl">
+            <h4 class="font-heading font-bold text-white text-sm mb-3">5S Workplace Framework</h4>
+            <div class="grid grid-cols-5 gap-1.5 text-center text-[10px] font-bold text-amber-300">
+              <div class="p-2 bg-amber-500/10 rounded-lg border border-amber-500/20">1. Sort</div>
+              <div class="p-2 bg-amber-500/10 rounded-lg border border-amber-500/20">2. Set</div>
+              <div class="p-2 bg-amber-500/10 rounded-lg border border-amber-500/20">3. Shine</div>
+              <div class="p-2 bg-amber-500/10 rounded-lg border border-amber-500/20">4. Std</div>
+              <div class="p-2 bg-amber-500/10 rounded-lg border border-amber-500/20">5. Sustain</div>
+            </div>
+            <div class="mt-4 p-3 rounded-xl bg-slate-900 border border-white/5 text-xs text-slate-300">
+              Empowering floor operators, supervisors, and department heads with actionable standard operating procedures.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE ISO AUDIT & ESTIMATION TOOL
+       ========================================================================== -->
+  <section id="estimator" class="py-20 relative max-w-7xl mx-auto px-4 md:px-8 perspective-container">
+    <div class="glass-panel rounded-3xl p-8 sm:p-14 border border-cyan-500/30 bg-gradient-to-b from-slate-900/90 to-[#090d16] shadow-2xl card-3d-reveal">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest block mb-2">Interactive Roadmap Calculator</span>
+        <h2 class="font-heading text-2xl sm:text-4xl font-bold text-white">
+          Estimate Your Compliance & <span class="text-gradient">Inspection Timeline</span>
+        </h2>
+        <p class="text-slate-300 text-xs sm:text-sm mt-2">
+          Select your requirements below to calculate estimated project milestones, stages, and implementation duration.
+        </p>
+      </div>
+
+      <!-- Estimator Controls -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wider">1. Select Standard / Service</label>
+          <select id="est-service" class="w-full bg-slate-950/90 border border-white/15 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-cyan-400">
+            <option value="iso-9001">ISO 9001:2015 (Quality Management)</option>
+            <option value="iso-14001">ISO 14001:2015 (Environmental)</option>
+            <option value="iso-45001">ISO 45001:2018 (Health & Safety)</option>
+            <option value="iatf">IATF 16949 (Automotive Standard)</option>
+            <option value="tpi">Third-Party Inspection (TPI Witness / FRI)</option>
+            <option value="sourcing">Strategic Sourcing & Vendor Audit</option>
+            <option value="training">Corporate & Internal Auditor Training</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wider">2. Organization / Batch Size</label>
+          <select id="est-size" class="w-full bg-slate-950/90 border border-white/15 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-cyan-400">
+            <option value="small">Small (1 - 50 Employees / Small Lot)</option>
+            <option value="medium" selected>Medium (51 - 250 Employees / Regular Lot)</option>
+            <option value="large">Enterprise (250+ Employees / Continuous Production)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wider">3. Industry Vertical</label>
+          <select id="est-industry" class="w-full bg-slate-950/90 border border-white/15 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-cyan-400">
+            <option value="manufacturing">Industrial Manufacturing & Engineering</option>
+            <option value="chemicals">Chemicals & Pesticides</option>
+            <option value="logistics">3PL Warehousing & Logistics Parks</option>
+            <option value="electronics">Electronics & Consumer Appliances</option>
+            <option value="datacenter">Data Centers & IT Infrastructure</option>
+            <option value="textiles">Synthetic Yarns, Printing & Packaging</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Estimator Dynamic Result Box -->
+      <div class="rounded-2xl bg-slate-950/80 border border-cyan-500/20 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="space-y-3 text-left w-full md:w-auto">
+          <div class="flex items-center gap-3">
+            <span class="text-xs text-slate-400 font-medium">Estimated Timeline:</span>
+            <span id="est-result-timeline" class="font-heading font-extrabold text-xl sm:text-2xl text-cyan-400">6 - 10 Weeks</span>
+          </div>
+          <div class="text-xs text-slate-300">
+            <span class="text-slate-400">Phase Breakdown:</span> <span id="est-result-phases" class="font-semibold text-white">4 Stages (Gap Audit → Process Design → Training → Certification)</span>
+          </div>
+          <div class="text-xs text-slate-300">
+            <span class="text-slate-400">Core Deliverables:</span> <span id="est-result-deliverables" class="font-semibold text-slate-200">SOPs, Internal Auditor Certifications, Quality Manual & Stage 1/2 Support</span>
+          </div>
+        </div>
+
+        <button class="open-quote-modal w-full md:w-auto shrink-0 btn-glow-primary px-8 py-4 rounded-xl text-xs font-bold tracking-wide flex items-center justify-center gap-2">
+          <span>Lock In This Roadmap</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       WHY CHOOSE US (3D Depth Cards)
+       ========================================================================== -->
+  <section id="why-us" class="py-24 relative max-w-7xl mx-auto px-4 md:px-8 perspective-container">
+    <div class="text-center max-w-3xl mx-auto mb-16 card-3d-reveal">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-3">
+        The MET-N-TEST Advantage
+      </div>
+      <h2 class="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-white">
+        Why Leading Enterprises <span class="text-gradient">Partner With Us</span>
+      </h2>
+      <p class="text-slate-300 text-sm sm:text-base mt-4">
+        We formulate effective strategies, streamline execution, and deliver measurable outcomes that protect brand equity.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Card 1 -->
+      <div class="tilt-card glass-panel rounded-3xl p-8 border border-white/10 card-3d-reveal delay-100 flex flex-col justify-between">
+        <div class="tilt-card-content">
+          <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center mb-6">
+            <i data-lucide="briefcase" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-white mb-3">Industry Expertise</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Our team of seasoned consultants brings deep cross-sector knowledge across heavy manufacturing, chemicals, and global supply chains.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/5 flex items-center gap-2 text-xs font-semibold text-cyan-400">
+          <i data-lucide="check" class="w-3.5 h-3.5"></i> Decades of Combined Experience
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="tilt-card glass-panel rounded-3xl p-8 border border-white/10 card-3d-reveal delay-200 flex flex-col justify-between">
+        <div class="tilt-card-content">
+          <div class="w-12 h-12 rounded-2xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center mb-6">
+            <i data-lucide="user-check" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-white mb-3">Client-Centric</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            We reject one-size-fits-all templates. Every process and audit roadmap is custom-tailored to solve your specific operational bottlenecks.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/5 flex items-center gap-2 text-xs font-semibold text-sky-400">
+          <i data-lucide="check" class="w-3.5 h-3.5"></i> Bespoke Tailored Solutions
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="tilt-card glass-panel rounded-3xl p-8 border border-white/10 card-3d-reveal delay-300 flex flex-col justify-between">
+        <div class="tilt-card-content">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-6">
+            <i data-lucide="trending-up" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-white mb-3">Proven Results</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            High client referral rates and verified audit certifications demonstrate our commitment to undeniable return on investment.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/5 flex items-center gap-2 text-xs font-semibold text-emerald-400">
+          <i data-lucide="check" class="w-3.5 h-3.5"></i> 100% Audit Track Record
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="tilt-card glass-panel rounded-3xl p-8 border border-white/10 card-3d-reveal delay-400 flex flex-col justify-between">
+        <div class="tilt-card-content">
+          <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-6">
+            <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-white mb-3">Agile & Continuous</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            We adapt alongside evolving global trade regulations, international standards, and changing market circumstances to keep you compliant.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/5 flex items-center gap-2 text-xs font-semibold text-amber-400">
+          <i data-lucide="check" class="w-3.5 h-3.5"></i> Ongoing Risk Governance
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE 3D INDUSTRY MATRIX
+       ========================================================================== -->
+  <section id="industries" class="py-24 relative max-w-7xl mx-auto px-4 md:px-8 perspective-container">
+    <div class="text-center max-w-3xl mx-auto mb-16 card-3d-reveal">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-3">
+        Versatile Domain Exposure
+      </div>
+      <h2 class="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-white">
+        Industries We Empower <span class="text-gradient">Globally</span>
+      </h2>
+      <p class="text-slate-300 text-sm sm:text-base mt-4">
+        Our specialized auditing frameworks are battle-tested across dynamic production environments, critical infrastructures, and high-precision verticals.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+      <!-- Industry 1 -->
+      <div class="tilt-card glass-panel rounded-2xl p-5 border border-white/10 hover:border-cyan-400/40 text-center card-3d-reveal delay-100">
+        <div class="tilt-card-content flex flex-col items-center">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-3">
+            <i data-lucide="flask-conical" class="w-6 h-6"></i>
+          </div>
+          <h4 class="font-heading font-bold text-white text-sm">Chemical Industries</h4>
+          <span class="text-[11px] text-slate-400 mt-1">Hazardous audits & EMS</span>
+        </div>
+      </div>
+
+      <!-- Industry 2 -->
+      <div class="tilt-card glass-panel rounded-2xl p-5 border border-white/10 hover:border-sky-400/40 text-center card-3d-reveal delay-150">
+        <div class="tilt-card-content flex flex-col items-center">
+          <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center mb-3">
+            <i data-lucide="truck" class="w-6 h-6"></i>
+          </div>
+          <h4 class="font-heading font-bold text-white text-sm">3PL Warehousing</h4>
+          <span class="text-[11px] text-slate-400 mt-1">Supply chain & SOPs</span>
+        </div>
+      </div>
+
+      <!-- Industry 3 -->
+      <div class="tilt-card glass-panel rounded-2xl p-5 border border-white/10 hover:border-indigo-400/40 text-center card-3d-reveal delay-200">
+        <div class="tilt-card-content flex flex-col items-center">
+          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-3">
+            <i data-lucide="server" class="w-6 h-6"></i>
+          </div>
+          <h4 class="font-heading font-bold text-white text-sm">Data Centers</h4>
+          <span class="text-[11px] text-slate-400 mt-1">ISO 27001 & Resilience</span>
+        </div>
+      </div>
+
+      <!-- Industry 4 -->
+      <div class="tilt-card glass-panel rounded-2xl p-5 border border-white/10 hover:border-emerald-400/40 text-center card-3d-reveal delay-250">
+        <div class="tilt-card-content flex flex-col items-center">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-3">
+            <i data-lucide="cpu" class="w-6 h-6"></i>
+          </div>
+          <h4 class="font-heading font-bold text-white text-sm">Electronics</h4>
+          <span class="text-[11px] text-slate-400 mt-1">Precision QA & TPI</span>
+        </div>
+      </div>
+
+      <!-- Industry 5 -->
+      <div class="tilt-card glass-panel rounded-2xl p-5 border border-white/10 hover:border-amber-400/40 text-center card-3d-reveal delay-300">
+        <div class="tilt-card-content flex flex-col items-center">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-3">
+            <i data-lucide="printer" class="w-6 h-6"></i>
+          </div>
+          <h4 class="font-heading font-bold text-white text-sm">Printing & Packaging</h4>
+          <span class="text-[11px] text-slate-400 mt-1">Batch QC & Material Tests</span>
+        </div>
+      </div>
+
+      <!-- Industry 6 -->
+      <div class="tilt-card glass-panel rounded-2xl p-5 border border-white/10 hover:border-cyan-400/40 text-center card-3d-reveal delay-350">
+        <div class="tilt-card-content flex flex-col items-center">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-3">
+            <i data-lucide="building-2" class="w-6 h-6"></i>
+          </div>
+          <h4 class="font-heading font-bold text-white text-sm">Logistics Parks</h4>
+          <span class="text-[11px] text-slate-400 mt-1">Safety & infrastructure</span>
+        </div>
+      </div>
+
+      <!-- Industry 7 -->
+      <div class="tilt-card glass-panel rounded-2xl p-5 border border-white/10 hover:border-sky-400/40 text-center card-3d-reveal delay-400">
+        <div class="tilt-card-content flex flex-col items-center">
+          <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center mb-3">
+            <i data-lucide="tv" class="w-6 h-6"></i>
+          </div>
+          <h4 class="font-heading font-bold text-white text-sm">Consumer Appliances</h4>
+          <span class="text-[11px] text-slate-400 mt-1">Product reliability</span>
+        </div>
+      </div>
+
+      <!-- Industry 8 -->
+      <div class="tilt-card glass-panel rounded-2xl p-5 border border-white/10 hover:border-emerald-400/40 text-center card-3d-reveal delay-450">
+        <div class="tilt-card-content flex flex-col items-center">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-3">
+            <i data-lucide="disc" class="w-6 h-6"></i>
+          </div>
+          <h4 class="font-heading font-bold text-white text-sm">Rubber Molding</h4>
+          <span class="text-[11px] text-slate-400 mt-1">Dimensional & NDT checks</span>
+        </div>
+      </div>
+
+      <!-- Industry 9 -->
+      <div class="tilt-card glass-panel rounded-2xl p-5 border border-white/10 hover:border-amber-400/40 text-center card-3d-reveal delay-500">
+        <div class="tilt-card-content flex flex-col items-center">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-3">
+            <i data-lucide="bug" class="w-6 h-6"></i>
+          </div>
+          <h4 class="font-heading font-bold text-white text-sm">Pesticides & Agri</h4>
+          <span class="text-[11px] text-slate-400 mt-1">Strict safety compliance</span>
+        </div>
+      </div>
+
+      <!-- Industry 10 -->
+      <div class="tilt-card glass-panel rounded-2xl p-5 border border-white/10 hover:border-indigo-400/40 text-center card-3d-reveal delay-500">
+        <div class="tilt-card-content flex flex-col items-center">
+          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-3">
+            <i data-lucide="layers" class="w-6 h-6"></i>
+          </div>
+          <h4 class="font-heading font-bold text-white text-sm">Synthetic Yarns</h4>
+          <span class="text-[11px] text-slate-400 mt-1">Tensile & lot inspections</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CALL TO ACTION & CONSULTATION HUB
+       ========================================================================== -->
+  <section id="contact" class="py-24 relative max-w-7xl mx-auto px-4 md:px-8 perspective-container">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+      <!-- Left Column: Direct Contact Details -->
+      <div class="lg:col-span-5 glass-panel rounded-3xl p-8 sm:p-10 border border-white/10 flex flex-col justify-between card-3d-reveal-left">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4">
+            Connect With Specialists
+          </div>
+          <h3 class="font-heading text-3xl font-bold text-white mb-4">
+            Ready to Achieve <span class="text-gradient">Operational Mastery?</span>
+          </h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-8">
+            Speak directly with our senior quality consultants to initiate an audit, request a TPI dispatch, or implement world-class ISO systems.
+          </p>
+
+          <div class="space-y-6">
+            <a href="tel:+917977965488" class="flex items-center gap-4 p-4 rounded-2xl bg-slate-900/80 border border-white/10 hover:border-cyan-400/50 transition-colors group">
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <i data-lucide="phone-call" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="text-xs text-slate-400 block">Direct Consultation Hotline</span>
+                <strong class="text-base text-white font-heading">+91 79779 65488</strong>
+                <span class="text-[11px] text-slate-400 block">Mon - Sat: 10:00 AM - 6:30 PM</span>
+              </div>
+            </a>
+
+            <a href="mailto:metntest@gmail.com" class="flex items-center gap-4 p-4 rounded-2xl bg-slate-900/80 border border-white/10 hover:border-sky-400/50 transition-colors group">
+              <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="text-xs text-slate-400 block">Official Inquiry Email</span>
+                <strong class="text-base text-white font-heading">metntest@gmail.com</strong>
+                <span class="text-[11px] text-slate-400 block">Fast response within 2 hours</span>
+              </div>
+            </a>
+
+            <a href="https://wa.me/917977965488?text=Hello%20MET-N-TEST,%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-emerald-950/40 border border-emerald-500/30 hover:border-emerald-400 transition-colors group">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <i data-lucide="message-square" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="text-xs text-emerald-300 block">WhatsApp Direct Chat</span>
+                <strong class="text-sm text-white font-heading">Instant Consultant Connect</strong>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-white/10 flex items-center gap-3 text-xs text-slate-400">
+          <i data-lucide="lock" class="w-4 h-4 text-cyan-400"></i>
+          <span>Non-disclosure agreements (NDAs) standard for all client engagements.</span>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Consultation Request Form -->
+      <div class="lg:col-span-7 glass-panel rounded-3xl p-8 sm:p-10 border border-white/10 card-3d-reveal-right">
+        <h4 class="font-heading text-2xl font-bold text-white mb-2">Request Proposal or Inspection</h4>
+        <p class="text-slate-300 text-xs sm:text-sm mb-6">Fill in your requirements below for a customized quotation.</p>
+
+        <form class="ajax-contact-form space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Full Name *</label>
+              <input type="text" required placeholder="e.g. Rajesh Kumar" class="w-full bg-slate-950/80 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 placeholder-slate-500">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Company / Organization *</label>
+              <input type="text" required placeholder="e.g. Alpha Industries Ltd" class="w-full bg-slate-950/80 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 placeholder-slate-500">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address *</label>
+              <input type="email" required placeholder="name@company.com" class="w-full bg-slate-950/80 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 placeholder-slate-500">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Mobile / Phone Number *</label>
+              <input type="tel" required placeholder="+91 98765 43210" class="w-full bg-slate-950/80 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 placeholder-slate-500">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Service Required *</label>
+            <select class="w-full bg-slate-950/80 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400">
+              <option>Management Systems (ISO 9001 / 14001 / 45001)</option>
+              <option>Third Party Inspection (TPI / Witness Testing)</option>
+              <option>IATF 16949 / Automotive Standards</option>
+              <option>Strategic Sourcing & Vendor Auditing</option>
+              <option>Corporate Training (5S / Internal Auditor)</option>
+              <option>Integrated Management Systems (IMS)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Project Scope / Message</label>
+            <textarea rows="4" placeholder="Briefly describe your requirements, timelines, location, and standards..." class="w-full bg-slate-950/80 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 placeholder-slate-500"></textarea>
+          </div>
+
+          <button type="submit" class="w-full btn-glow-primary py-4 rounded-xl text-sm font-bold tracking-wide flex items-center justify-center gap-2">
+            <span>Submit Consultation Request</span>
+            <i data-lucide="send" class="w-4 h-4"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FUTURISTIC FOOTER
+       ========================================================================== -->
+  <footer class="border-t border-white/10 bg-[#070b14] pt-16 pb-12 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-12 border-b border-white/10">
+        <!-- Col 1: Brand Info -->
+        <div class="lg:col-span-4 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-cyan-400 p-[1.5px]">
+              <div class="w-full h-full bg-[#090d16] rounded-[10px] flex items-center justify-center">
+                <i data-lucide="shield-check" class="w-5 h-5 text-cyan-400"></i>
+              </div>
+            </div>
+            <span class="font-heading font-bold text-xl text-white">MET-N-TEST</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+            An experienced team of professionals with customer-centric approach creating a win-win for our clients. We develop, support, and implement systems and processes to systematically mitigate business risk.
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <a href="https://www.linkedin.com/in/anant-khambete-54953617/" target="_blank" class="w-9 h-9 rounded-lg bg-slate-900 border border-white/10 flex items-center justify-center text-cyan-400 hover:text-white hover:border-cyan-400 transition-all" aria-label="LinkedIn">
+              <i data-lucide="linkedin" class="w-4 h-4"></i>
+            </a>
+            <a href="mailto:metntest@gmail.com" class="w-9 h-9 rounded-lg bg-slate-900 border border-white/10 flex items-center justify-center text-cyan-400 hover:text-white hover:border-cyan-400 transition-all" aria-label="Email">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+            </a>
+            <a href="tel:+917977965488" class="w-9 h-9 rounded-lg bg-slate-900 border border-white/10 flex items-center justify-center text-cyan-400 hover:text-white hover:border-cyan-400 transition-all" aria-label="Phone">
+              <i data-lucide="phone" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Services Quick Links -->
+        <div class="lg:col-span-3 space-y-3">
+          <h5 class="font-heading font-bold text-sm text-white uppercase tracking-wider">Services Directory</h5>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="#services-3d" class="hover:text-cyan-400 transition-colors">ISO 9001:2015 Certification</a></li>
+            <li><a href="#services-3d" class="hover:text-cyan-400 transition-colors">ISO 14001:2015 Environment</a></li>
+            <li><a href="#services-3d" class="hover:text-cyan-400 transition-colors">ISO 45001:2018 Health & Safety</a></li>
+            <li><a href="#services-3d" class="hover:text-cyan-400 transition-colors">Third-Party Inspection (TPI)</a></li>
+            <li><a href="#services-3d" class="hover:text-cyan-400 transition-colors">IATF 16949 Automotive Systems</a></li>
+            <li><a href="#services-3d" class="hover:text-cyan-400 transition-colors">5S & Lean Toolkits Training</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Consulting Sectors -->
+        <div class="lg:col-span-3 space-y-3">
+          <h5 class="font-heading font-bold text-sm text-white uppercase tracking-wider">Industries Served</h5>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="#industries" class="hover:text-cyan-400 transition-colors">Chemicals & Pesticides</a></li>
+            <li><a href="#industries" class="hover:text-cyan-400 transition-colors">3PL Warehousing & Logistics Parks</a></li>
+            <li><a href="#industries" class="hover:text-cyan-400 transition-colors">Printing & Packaging</a></li>
+            <li><a href="#industries" class="hover:text-cyan-400 transition-colors">Data Centers & IT Infrastructure</a></li>
+            <li><a href="#industries" class="hover:text-cyan-400 transition-colors">Consumer Appliances & Electronics</a></li>
+            <li><a href="#industries" class="hover:text-cyan-400 transition-colors">Rubber Molding & Synthetic Yarns</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Operational Hours -->
+        <div class="lg:col-span-2 space-y-3">
+          <h5 class="font-heading font-bold text-sm text-white uppercase tracking-wider">Office Hours</h5>
+          <div class="text-xs text-slate-400 space-y-1">
+            <p class="text-slate-200 font-semibold">Mon - Sat:</p>
+            <p>10:00 AM - 6:30 PM (IST)</p>
+            <p class="text-slate-200 font-semibold pt-2">Emergency Dispatch:</p>
+            <p class="text-cyan-400">24/7 Hotline Support</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <p>© 2026 MET-N-TEST Inspection & Consulting Services. All rights reserved.</p>
+        <p class="flex items-center gap-1">
+          Designed with <span class="text-cyan-400">3D Interactive Engine</span> for High Performance
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODAL: QUICK CONSULTATION & QUOTE REQUEST
+       ========================================================================== -->
+  <div id="quote-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="glass-panel rounded-3xl p-6 sm:p-8 max-w-lg w-full border border-cyan-500/40 shadow-2xl relative">
+      <button class="close-quote-modal absolute top-5 right-5 p-2 text-slate-400 hover:text-white" aria-label="Close">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center gap-3 mb-4">
+        <div class="p-2 rounded-xl bg-cyan-500/20 text-cyan-400">
+          <i data-lucide="shield-alert" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold text-xl text-white">Book Inspection / Audit</h4>
+          <span class="text-xs text-slate-400">Fast 2-hour consultant response guaranteed</span>
+        </div>
+      </div>
+
+      <form class="ajax-contact-form space-y-3 mt-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Your Name</label>
+          <input type="text" required placeholder="Full Name" class="w-full bg-slate-950 border border-white/15 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-cyan-400">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Phone Number</label>
+          <input type="tel" required placeholder="+91 79779 65488" class="w-full bg-slate-950 border border-white/15 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-cyan-400">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Target Standard / Service</label>
+          <select class="w-full bg-slate-950 border border-white/15 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-cyan-400">
+            <option>ISO 9001:2015 Quality Management</option>
+            <option>ISO 14001:2015 Environmental System</option>
+            <option>ISO 45001:2018 Occupational Health & Safety</option>
+            <option>Third Party Inspection (TPI Dispatch)</option>
+            <option>Strategic Sourcing & Vendor Assessment</option>
+            <option>5S & Internal Auditor Corporate Training</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Additional Notes</label>
+          <textarea rows="2" placeholder="Describe location or specific audit scope..." class="w-full bg-slate-950 border border-white/15 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-cyan-400"></textarea>
+        </div>
+        <button type="submit" class="w-full btn-glow-primary py-3 rounded-xl text-xs font-bold tracking-wide mt-2 flex items-center justify-center gap-2">
+          <span>Confirm Consultation Request</span>
+          <i data-lucide="check" class="w-4 h-4"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification (Success) -->
+  <div id="toast-success" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 glass-panel border border-emerald-500/50 bg-slate-950/95 text-white px-6 py-3.5 rounded-full shadow-2xl flex items-center gap-3 hidden opacity-0 transition-opacity duration-300">
+    <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+      <i data-lucide="check" class="w-4 h-4"></i>
+    </div>
+    <span class="text-xs font-semibold">Thank you! Your request has been received. Our team will contact you shortly.</span>
+  </div>
+
+  <!-- Back To Top Progress Button -->
+  <div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+    </svg>
+  </div>
+
+  <!-- Main JavaScript Engine Scripts -->
+  <script src="assets/js/particles-3d.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
