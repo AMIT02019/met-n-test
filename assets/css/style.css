@@ -224,6 +224,58 @@ body {
   100% { transform: translate(-20px, 20px) scale(0.95); }
 }
 
+/* 3D Gyroscopic Rings & Orbit Animation */
+.gyro-stage {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.gyro-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 162, 76, 0.4);
+  box-shadow: 0 0 25px rgba(212, 162, 76, 0.15), inset 0 0 20px rgba(212, 162, 76, 0.1);
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+
+.gyro-ring-1 {
+  width: 320px;
+  height: 320px;
+  animation: rotateGyro1 20s linear infinite;
+  border-color: rgba(212, 162, 76, 0.5);
+}
+
+.gyro-ring-2 {
+  width: 420px;
+  height: 420px;
+  animation: rotateGyro2 28s linear infinite reverse;
+  border-color: rgba(232, 189, 110, 0.35);
+  border-style: dashed;
+}
+
+.gyro-ring-3 {
+  width: 520px;
+  height: 520px;
+  animation: rotateGyro3 36s linear infinite;
+  border-color: rgba(212, 162, 76, 0.25);
+}
+
+@keyframes rotateGyro1 {
+  0% { transform: rotateX(65deg) rotateY(15deg) rotateZ(0deg); }
+  100% { transform: rotateX(65deg) rotateY(15deg) rotateZ(360deg); }
+}
+
+@keyframes rotateGyro2 {
+  0% { transform: rotateX(55deg) rotateY(-35deg) rotateZ(0deg); }
+  100% { transform: rotateX(55deg) rotateY(-35deg) rotateZ(360deg); }
+}
+
+@keyframes rotateGyro3 {
+  0% { transform: rotateX(75deg) rotateY(45deg) rotateZ(0deg); }
+  100% { transform: rotateX(75deg) rotateY(45deg) rotateZ(360deg); }
+}
+
 .hero-float-badge {
   animation: floatBadge 4s ease-in-out infinite alternate;
 }
@@ -417,18 +469,59 @@ body {
 .stack-card:nth-child(3) { z-index: 30; }
 .stack-card:nth-child(4) { z-index: 40; }
 
-/* 3D Reveal Engine */
-.card-3d-reveal {
+/* ==========================================================================
+   Comprehensive 3D On-Scroll Animation Engine
+   ========================================================================== */
+.card-3d-reveal,
+.scroll-reveal-up {
   opacity: 0;
-  transform: perspective(1000px) rotateX(12deg) translateY(40px) scale(0.96);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: perspective(1200px) rotateX(16deg) translateY(50px) scale(0.94);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
 }
 
-.card-3d-reveal.is-visible {
-  opacity: 1;
-  transform: perspective(1000px) rotateX(0deg) translateY(0) scale(1);
+.scroll-reveal-left {
+  opacity: 0;
+  transform: perspective(1200px) rotateY(-18deg) translateX(-60px) scale(0.94);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
 }
+
+.scroll-reveal-right {
+  opacity: 0;
+  transform: perspective(1200px) rotateY(18deg) translateX(60px) scale(0.94);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.scroll-reveal-scale {
+  opacity: 0;
+  transform: perspective(1200px) scale(0.88) translateY(35px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.card-3d-reveal.is-visible,
+.scroll-reveal-up.is-visible,
+.scroll-reveal-left.is-visible,
+.scroll-reveal-right.is-visible,
+.scroll-reveal-scale.is-visible {
+  opacity: 1;
+  transform: perspective(1200px) rotateX(0deg) rotateY(0deg) translateX(0) translateY(0) scale(1);
+}
+
+/* Stagger Delays */
+.delay-50  { transition-delay: 50ms; }
+.delay-100 { transition-delay: 100ms; }
+.delay-150 { transition-delay: 150ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-250 { transition-delay: 250ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-350 { transition-delay: 350ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-450 { transition-delay: 450ms; }
+.delay-500 { transition-delay: 500ms; }
+.delay-600 { transition-delay: 600ms; }
 
 /* Ambient Radial Glows */
 .glow-ambient {

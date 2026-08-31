@@ -123,9 +123,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     1. 3D On-Scroll Card Reveal Engine
+     1. Universal 3D On-Scroll Reveal Engine (Trigger on Every Section)
      ========================================================================== */
-  const revealElements = document.querySelectorAll('.card-3d-reveal, .card-3d-reveal-left, .card-3d-reveal-right');
+  const revealElements = document.querySelectorAll(
+    '.card-3d-reveal, .card-3d-reveal-left, .card-3d-reveal-right, .scroll-reveal-up, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale'
+  );
 
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -135,8 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, {
     root: null,
-    threshold: 0.12,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.08,
+    rootMargin: '0px 0px -40px 0px'
   });
 
   revealElements.forEach(el => revealObserver.observe(el));

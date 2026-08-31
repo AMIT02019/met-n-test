@@ -242,179 +242,155 @@
   </div>
 
   <!-- ==========================================================================
-       HERO SECTION (3D Interactive Editorial Hybrid Experience)
+       HERO SECTION (3D Gyroscopic Holographic Inspection & Certification Showcase)
        ========================================================================== -->
-  <section id="hero" class="hero-editorial-section pt-32 sm:pt-40 pb-16 sm:pb-24 relative overflow-hidden">
+  <section id="hero" class="hero-editorial-section pt-32 sm:pt-40 pb-20 sm:pb-28 relative overflow-hidden text-center">
     <!-- Ambient Radial Mesh & Glowing Orbs -->
-    <div class="hero-glow-orb w-96 h-96 bg-[#d4a24c]/20 -top-20 -left-20"></div>
-    <div class="hero-glow-orb w-[500px] h-[500px] bg-[#14365c]/40 top-1/3 -right-32" style="animation-delay: -5s;"></div>
-    <div class="hero-glow-orb w-80 h-80 bg-[#d4a24c]/15 -bottom-20 left-1/3" style="animation-delay: -8s;"></div>
+    <div class="hero-glow-orb w-[550px] h-[550px] bg-[#d4a24c]/15 -top-24 left-1/2 -translate-x-1/2"></div>
+    <div class="hero-glow-orb w-[600px] h-[600px] bg-[#14365c]/35 top-1/2 -left-40" style="animation-delay: -4s;"></div>
+    <div class="hero-glow-orb w-[600px] h-[600px] bg-[#d4a24c]/10 top-1/2 -right-40" style="animation-delay: -8s;"></div>
 
     <!-- 3D Interactive Canvas Particles -->
     <canvas id="hero-particle-canvas" class="hero-particle-canvas"></canvas>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-        
-        <!-- Left Column: Editorial Headline & Value Propositions -->
-        <div class="lg:col-span-7 text-left space-y-6">
-          <!-- Live Accreditation Pill -->
-          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#0a2540]/80 border border-[#d4a24c]/40 text-[#e8bd6e] text-xs font-bold tracking-wider uppercase backdrop-blur-xl shadow-lg shadow-black/40">
-            <span class="relative flex h-2.5 w-2.5">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#d4a24c] opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#d4a24c]"></span>
-            </span>
-            <span>NABL Accredited • ISO 9001:2015 & TPI Inspection Body</span>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      
+      <!-- Live Accreditation Badge -->
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#0a2540]/90 border border-[#d4a24c]/50 text-[#e8bd6e] text-xs font-bold tracking-wider uppercase backdrop-blur-xl shadow-xl shadow-black/50 mb-6 scroll-reveal-scale">
+        <span class="relative flex h-2.5 w-2.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#d4a24c] opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#d4a24c]"></span>
+        </span>
+        <span>NABCB & NABL Accredited • ISO 9001:2015 & TPI Inspection Body</span>
+      </div>
+
+      <!-- Editorial Display Headline -->
+      <h1 class="font-display font-bold text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white leading-[1.1] max-w-5xl mx-auto scroll-reveal-up delay-100">
+        Precision Engineering.
+        <span class="block text-slate-100 mt-1">Global ISO Certification.</span>
+        <span class="italic text-gradient-gold block mt-2">Zero-Defect Quality Assurance.</span>
+      </h1>
+
+      <!-- Editorial Subheadline -->
+      <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mt-6 leading-relaxed font-normal scroll-reveal-up delay-200">
+        Empowering India's engineering, automotive, defense, and manufacturing leaders with accredited Third-Party Technical Audits (TPI), vendor capability vetting, and certified ISO management systems.
+      </p>
+
+      <!-- CTA Cluster -->
+      <div class="flex flex-wrap items-center justify-center gap-4 mt-8 scroll-reveal-up delay-300">
+        <button class="open-quote-modal btn-gold px-9 py-4 rounded-full text-xs sm:text-sm font-bold tracking-wide flex items-center gap-2 shadow-2xl">
+          <span>Book Technical Consultation</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        </button>
+        <a href="#estimator" class="btn-outline-gold px-8 py-3.5 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-2">
+          <i data-lucide="calculator" class="w-4 h-4 text-[#d4a24c]"></i>
+          <span>Audit Timeline & Cost Estimator</span>
+        </a>
+      </div>
+
+      <!-- 3D Gyroscopic Holographic Inspection Stage -->
+      <div class="relative w-full max-w-4xl mx-auto mt-16 sm:mt-20 h-[380px] sm:h-[440px] flex items-center justify-center gyro-stage scroll-reveal-scale delay-400">
+        <!-- 3D Gyroscope Orbital Rings -->
+        <div class="gyro-ring gyro-ring-1"></div>
+        <div class="gyro-ring gyro-ring-2"></div>
+        <div class="gyro-ring gyro-ring-3"></div>
+
+        <!-- Central 3D Metallic Gold Shield -->
+        <div class="relative z-20 flex flex-col items-center justify-center p-8 rounded-3xl bg-gradient-to-b from-[#0a2540] to-[#07172b] border-2 border-[#d4a24c]/60 shadow-[0_0_50px_rgba(212,162,76,0.3)] backdrop-blur-2xl max-w-sm w-full mx-4" data-tilt>
+          <div class="relative mb-4">
+            <div class="absolute inset-0 rounded-full bg-[#d4a24c]/30 hero-radar-pulse"></div>
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[#d4a24c] via-[#e8bd6e] to-[#0a2540] p-[2px] shadow-xl shadow-[#d4a24c]/30 flex items-center justify-center">
+              <div class="w-full h-full bg-[#0a2540] rounded-[14px] flex items-center justify-center">
+                <i data-lucide="shield-check" class="w-8 h-8 text-[#d4a24c]"></i>
+              </div>
+            </div>
           </div>
-
-          <!-- Editorial Serif Headline -->
-          <h1 class="font-display font-bold text-4xl sm:text-6xl lg:text-[64px] tracking-tight text-white leading-[1.12]">
-            Engineering Quality.
-            <span class="block text-slate-100">Accelerating Compliance.</span>
-            <span class="italic text-gradient-gold block mt-1">Global ISO & TPI Advisory.</span>
-          </h1>
-
-          <!-- Editorial Subtitle -->
-          <p class="text-slate-300 text-base sm:text-lg max-w-xl font-normal leading-relaxed">
-            Empowering engineering, automotive, defense, and manufacturing leaders across India with accredited Third-Party Inspection (TPI), supplier vetting, and certified management system implementations.
-          </p>
-
-          <!-- Action Buttons Cluster -->
-          <div class="flex flex-wrap items-center gap-4 pt-2">
-            <button class="open-quote-modal btn-gold px-8 py-3.5 rounded-full text-xs sm:text-sm font-bold tracking-wide flex items-center gap-2 shadow-2xl">
-              <span>Book Technical Consultation</span>
-              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-            </button>
-            <a href="#estimator" class="btn-outline-gold px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-2">
-              <i data-lucide="calculator" class="w-4 h-4 text-[#d4a24c]"></i>
-              <span>Audit Timeline Estimator</span>
-            </a>
+          <span class="text-[11px] uppercase tracking-widest text-[#e8bd6e] font-bold">Tier 1 Inspection Authority</span>
+          <h3 class="font-display text-xl font-bold text-white mt-1">MET-N-TEST Quality Core</h3>
+          
+          <div class="w-full bg-slate-800/90 rounded-full h-2 mt-4 overflow-hidden">
+            <div class="bg-gradient-to-r from-[#d4a24c] to-emerald-400 h-full rounded-full w-[99.8%]"></div>
           </div>
-
-          <!-- Trust Badges & Metrics Row -->
-          <div class="pt-6 border-t border-white/10 flex flex-wrap items-center gap-6 text-xs text-slate-400">
-            <div class="flex items-center gap-2">
-              <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
-                <i data-lucide="check" class="w-3.5 h-3.5"></i>
-              </div>
-              <span class="text-slate-200 font-semibold">100% First-Time Audit Readiness</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <div class="w-6 h-6 rounded-full bg-[#d4a24c]/20 text-[#d4a24c] flex items-center justify-center">
-                <i data-lucide="zap" class="w-3.5 h-3.5"></i>
-              </div>
-              <span class="text-slate-200 font-semibold">&lt;48-Hour Inspector Mobilization</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <div class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center">
-                <i data-lucide="globe" class="w-3.5 h-3.5"></i>
-              </div>
-              <span class="text-slate-200 font-semibold">IAF & NABCB Globally Recognized</span>
-            </div>
+          <div class="flex items-center justify-between w-full text-[11px] text-slate-300 mt-2 font-mono">
+            <span>First-Time Pass Index</span>
+            <span class="text-emerald-400 font-bold">99.8%</span>
           </div>
         </div>
 
-        <!-- Right Column: Interactive 3D Inspection & Compliance Console Card -->
-        <div class="lg:col-span-5 relative mt-6 lg:mt-0">
-          <!-- Main 3D Card -->
-          <div class="card-navy-glass p-6 sm:p-8 rounded-3xl relative transition-all duration-300 shadow-2xl" data-tilt>
-            <!-- Card Header -->
-            <div class="flex items-center justify-between pb-5 border-b border-white/10 mb-6">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-[#d4a24c]/20 border border-[#d4a24c]/40 text-[#d4a24c] flex items-center justify-center">
-                  <i data-lucide="shield-check" class="w-5 h-5"></i>
-                </div>
-                <div>
-                  <h3 class="text-sm font-bold text-white tracking-wide">Technical Audit Console</h3>
-                  <span class="text-[11px] text-[#e8bd6e] font-mono">Live Telemetry • Active 2026</span>
-                </div>
-              </div>
-              <span class="px-2.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-[10px] font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-                Certified Live
-              </span>
-            </div>
-
-            <!-- Central Gauge / KPI Card -->
-            <div class="p-5 rounded-2xl bg-white/[0.04] border border-white/10 mb-6">
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-xs text-slate-300 font-semibold uppercase tracking-wider">Compliance Success Rate</span>
-                <span class="text-xs text-[#d4a24c] font-bold">99.8% Index</span>
-              </div>
-              <div class="w-full bg-slate-800/80 rounded-full h-2.5 overflow-hidden p-0.5">
-                <div class="bg-gradient-to-r from-[#d4a24c] via-[#e8bd6e] to-emerald-400 h-full rounded-full" style="width: 99.8%;"></div>
-              </div>
-              <div class="flex items-center justify-between text-[11px] text-slate-400 mt-2 font-mono">
-                <span>IATF 16949 • ISO 9001</span>
-                <span>Zero Non-Conformity Track</span>
-              </div>
-            </div>
-
-            <!-- Core Pillar Matrix Tiles -->
-            <div class="grid grid-cols-2 gap-3 mb-6">
-              <div class="p-3.5 rounded-xl bg-[#07172b]/80 border border-white/10 hover:border-[#d4a24c]/50 transition-colors">
-                <div class="flex items-center gap-2 mb-1">
-                  <i data-lucide="award" class="w-4 h-4 text-[#d4a24c]"></i>
-                  <span class="text-xs font-bold text-white">ISO Systems</span>
-                </div>
-                <span class="text-[10px] text-slate-400">9001, 14001, 45001, IMS</span>
-              </div>
-              <div class="p-3.5 rounded-xl bg-[#07172b]/80 border border-white/10 hover:border-[#d4a24c]/50 transition-colors">
-                <div class="flex items-center gap-2 mb-1">
-                  <i data-lucide="microscope" class="w-4 h-4 text-[#d4a24c]"></i>
-                  <span class="text-xs font-bold text-white">TPI Inspection</span>
-                </div>
-                <span class="text-[10px] text-slate-400">Witness & Pre-Shipment</span>
-              </div>
-              <div class="p-3.5 rounded-xl bg-[#07172b]/80 border border-white/10 hover:border-[#d4a24c]/50 transition-colors">
-                <div class="flex items-center gap-2 mb-1">
-                  <i data-lucide="git-branch" class="w-4 h-4 text-[#d4a24c]"></i>
-                  <span class="text-xs font-bold text-white">Vendor Vetting</span>
-                </div>
-                <span class="text-[10px] text-slate-400">Capability & Risk Scoring</span>
-              </div>
-              <div class="p-3.5 rounded-xl bg-[#07172b]/80 border border-white/10 hover:border-[#d4a24c]/50 transition-colors">
-                <div class="flex items-center gap-2 mb-1">
-                  <i data-lucide="graduation-cap" class="w-4 h-4 text-[#d4a24c]"></i>
-                  <span class="text-xs font-bold text-white">Corporate 5S</span>
-                </div>
-                <span class="text-[10px] text-slate-400">Lead Auditor & Lean</span>
-              </div>
-            </div>
-
-            <!-- Instant Contact Bar -->
-            <a href="tel:+917977965488" class="w-full py-3 px-4 rounded-xl bg-[#d4a24c]/15 hover:bg-[#d4a24c]/25 border border-[#d4a24c]/40 text-[#e8bd6e] text-xs font-bold flex items-center justify-between transition-colors">
-              <span class="flex items-center gap-2">
-                <i data-lucide="phone" class="w-3.5 h-3.5 animate-pulse"></i>
-                <span>Direct Hotline: +91 79779 65488</span>
-              </span>
-              <span class="text-[10px] font-mono text-slate-300">Call Now →</span>
-            </a>
+        <!-- Orbiting 3D Glass Pod 1 (Top Left) -->
+        <div class="hero-float-badge absolute top-2 left-2 sm:left-6 z-30 hidden md:flex items-center gap-3 p-3.5 rounded-2xl bg-[#0a2540]/90 border border-[#d4a24c]/40 shadow-2xl backdrop-blur-xl">
+          <div class="w-9 h-9 rounded-xl bg-[#d4a24c]/20 text-[#d4a24c] flex items-center justify-center shrink-0">
+            <i data-lucide="award" class="w-5 h-5"></i>
           </div>
-
-          <!-- Floating Depth Badges (Parallax Accents) -->
-          <div class="hero-float-badge absolute -top-5 -right-3 hidden sm:flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-[#0a2540] border border-[#d4a24c]/50 shadow-2xl backdrop-blur-xl z-20">
-            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
-              <i data-lucide="check-circle-2" class="w-4 h-4"></i>
-            </div>
-            <div>
-              <div class="text-xs font-bold text-white">10,000+ Inspections</div>
-              <div class="text-[10px] text-slate-300">Certified Across India</div>
-            </div>
+          <div class="text-left">
+            <div class="text-xs font-bold text-white">ISO 9001, 14001, 45001</div>
+            <div class="text-[10px] text-slate-300">IATF 16949 & IMS Certified</div>
           </div>
+        </div>
 
-          <div class="hero-float-badge absolute -bottom-5 -left-3 hidden sm:flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-[#0a2540] border border-[#d4a24c]/50 shadow-2xl backdrop-blur-xl z-20" style="animation-delay: -2s;">
-            <div class="w-8 h-8 rounded-lg bg-[#d4a24c]/20 text-[#d4a24c] flex items-center justify-center">
-              <i data-lucide="trending-up" class="w-4 h-4"></i>
-            </div>
-            <div>
-              <div class="text-xs font-bold text-white">300+ Enterprise Clients</div>
-              <div class="text-[10px] text-[#e8bd6e]">Tata, L&T, Bharat Forge Tiers</div>
-            </div>
+        <!-- Orbiting 3D Glass Pod 2 (Top Right) -->
+        <div class="hero-float-badge absolute top-4 right-2 sm:right-6 z-30 hidden md:flex items-center gap-3 p-3.5 rounded-2xl bg-[#0a2540]/90 border border-[#d4a24c]/40 shadow-2xl backdrop-blur-xl" style="animation-delay: -2s;">
+          <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+            <i data-lucide="microscope" class="w-5 h-5"></i>
+          </div>
+          <div class="text-left">
+            <div class="text-xs font-bold text-white">Third-Party Inspection</div>
+            <div class="text-[10px] text-slate-300">NDT & Witness Testing</div>
+          </div>
+        </div>
+
+        <!-- Orbiting 3D Glass Pod 3 (Bottom Left) -->
+        <div class="hero-float-badge absolute bottom-4 left-4 sm:left-10 z-30 hidden md:flex items-center gap-3 p-3.5 rounded-2xl bg-[#0a2540]/90 border border-[#d4a24c]/40 shadow-2xl backdrop-blur-xl" style="animation-delay: -3s;">
+          <div class="w-9 h-9 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0">
+            <i data-lucide="git-branch" class="w-5 h-5"></i>
+          </div>
+          <div class="text-left">
+            <div class="text-xs font-bold text-white">Strategic Sourcing</div>
+            <div class="text-[10px] text-slate-300">Zero-Defect Vendor Vetting</div>
+          </div>
+        </div>
+
+        <!-- Orbiting 3D Glass Pod 4 (Bottom Right) -->
+        <div class="hero-float-badge absolute bottom-2 right-4 sm:right-10 z-30 hidden md:flex items-center gap-3 p-3.5 rounded-2xl bg-[#0a2540]/90 border border-[#d4a24c]/40 shadow-2xl backdrop-blur-xl" style="animation-delay: -1.5s;">
+          <div class="w-9 h-9 rounded-xl bg-[#d4a24c]/20 text-[#d4a24c] flex items-center justify-center shrink-0">
+            <i data-lucide="zap" class="w-5 h-5"></i>
+          </div>
+          <div class="text-left">
+            <div class="text-xs font-bold text-white">10,000+ Technical Audits</div>
+            <div class="text-[10px] text-slate-300">&lt;48-Hour Mobilization</div>
           </div>
         </div>
 
       </div>
+
+      <!-- Trust Badges Strip -->
+      <div class="pt-10 mt-6 border-t border-white/10 flex flex-wrap items-center justify-center gap-8 text-xs text-slate-400 scroll-reveal-up delay-500">
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+            <i data-lucide="check" class="w-3.5 h-3.5"></i>
+          </div>
+          <span class="text-slate-200 font-semibold">100% First-Time Audit Readiness</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 rounded-full bg-[#d4a24c]/20 text-[#d4a24c] flex items-center justify-center">
+            <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+          </div>
+          <span class="text-slate-200 font-semibold">&lt;48-Hour Inspector Dispatch</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center">
+            <i data-lucide="globe" class="w-3.5 h-3.5"></i>
+          </div>
+          <span class="text-slate-200 font-semibold">IAF & NABCB Globally Recognized</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 rounded-full bg-amber-500/20 text-[#e8bd6e] flex items-center justify-center">
+            <i data-lucide="users" class="w-3.5 h-3.5"></i>
+          </div>
+          <span class="text-slate-200 font-semibold">300+ Manufacturing Clients</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -423,15 +399,15 @@
        ========================================================================== -->
   <section class="py-20 bg-[#f8f5ee] text-[#0f172a] relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 md:px-8">
-      <div class="text-center max-w-4xl mx-auto mb-14 card-3d-reveal">
+      <div class="text-center max-w-4xl mx-auto mb-14 scroll-reveal-up">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#d4a24c]/30 text-[#b0832f] text-xs font-bold tracking-wider uppercase mb-4 shadow-sm">
           <span class="w-2 h-2 rounded-full bg-[#d4a24c] animate-ping"></span>
           <span>Certified Excellence in Inspection & ISO Advisory</span>
         </div>
-        <h1 class="font-display font-bold text-3xl sm:text-5xl lg:text-6xl tracking-tight text-[#0a2540] mb-5 leading-tight">
+        <h2 class="font-display font-bold text-3xl sm:text-5xl lg:text-6xl tracking-tight text-[#0a2540] mb-5 leading-tight">
           Next-Gen Inspection, Certification &
           <span class="italic text-gradient-gold block mt-1">Strategic Management Solutions</span>
-        </h1>
+        </h2>
         <p class="text-[#64748b] text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
           MET-N-TEST delivers premier management consulting, ISO standard implementation, Third-Party Inspection (TPI), and strategic sourcing with uncompromised precision and compliance.
         </p>
@@ -450,7 +426,7 @@
       <!-- 3D Precision Stat Cards (Finvvritti Elevated White Cards) -->
       <div id="stats-section" class="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-5xl mx-auto">
         <!-- Stat 1 -->
-        <div class="card-white-elevated p-6 text-left card-3d-reveal delay-100">
+        <div class="card-white-elevated p-6 text-left scroll-reveal-up delay-100" data-tilt>
           <div class="flex items-center justify-between mb-3">
             <span class="text-xs font-bold text-[#64748b] uppercase tracking-wider">Pass Rate</span>
             <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center"><i data-lucide="shield-check" class="w-5 h-5"></i></div>
@@ -460,7 +436,7 @@
         </div>
 
         <!-- Stat 2 -->
-        <div class="card-white-elevated p-6 text-left card-3d-reveal delay-200">
+        <div class="card-white-elevated p-6 text-left scroll-reveal-up delay-200" data-tilt>
           <div class="flex items-center justify-between mb-3">
             <span class="text-xs font-bold text-[#64748b] uppercase tracking-wider">Standards</span>
             <div class="w-9 h-9 rounded-xl bg-amber-50 text-[#b0832f] flex items-center justify-center"><i data-lucide="award" class="w-5 h-5"></i></div>
@@ -470,7 +446,7 @@
         </div>
 
         <!-- Stat 3 -->
-        <div class="card-white-elevated p-6 text-left card-3d-reveal delay-300">
+        <div class="card-white-elevated p-6 text-left scroll-reveal-up delay-300" data-tilt>
           <div class="flex items-center justify-between mb-3">
             <span class="text-xs font-bold text-[#64748b] uppercase tracking-wider">Industries</span>
             <div class="w-9 h-9 rounded-xl bg-blue-50 text-[#14365c] flex items-center justify-center"><i data-lucide="factory" class="w-5 h-5"></i></div>
@@ -480,7 +456,7 @@
         </div>
 
         <!-- Stat 4 -->
-        <div class="card-white-elevated p-6 text-left card-3d-reveal delay-400">
+        <div class="card-white-elevated p-6 text-left scroll-reveal-up delay-400" data-tilt>
           <div class="flex items-center justify-between mb-3">
             <span class="text-xs font-bold text-[#64748b] uppercase tracking-wider">Turnaround</span>
             <div class="w-9 h-9 rounded-xl bg-amber-50 text-[#b0832f] flex items-center justify-center"><i data-lucide="clock" class="w-5 h-5"></i></div>
@@ -495,7 +471,7 @@
   <!-- ==========================================================================
        ACCREDITATION & STANDARDS MARQUEE (Midnight Navy & Gold Bar)
        ========================================================================== -->
-  <div class="py-5 border-y border-[#d4a24c]/25 bg-[#0a2540] overflow-hidden relative shadow-lg">
+  <div class="py-5 border-y border-[#d4a24c]/25 bg-[#0a2540] overflow-hidden relative shadow-lg scroll-reveal-scale">
     <div class="marquee-track flex items-center gap-12 text-slate-200 text-xs sm:text-sm font-bold tracking-wider uppercase">
       <div class="flex items-center gap-2 text-white"><i data-lucide="check-circle-2" class="w-4 h-4 text-[#d4a24c]"></i> ISO 9001:2015 Quality</div>
       <div class="flex items-center gap-2 text-white"><i data-lucide="check-circle-2" class="w-4 h-4 text-[#e8bd6e]"></i> ISO 14001:2015 Environment</div>
@@ -521,7 +497,7 @@
       <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         
         <!-- Left Column: Editorial Photo with Floating Metric Badges -->
-        <div class="lg:col-span-5 relative card-3d-reveal-left">
+        <div class="lg:col-span-5 relative scroll-reveal-left">
           <div class="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
             <img 
               src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80" 
@@ -532,7 +508,7 @@
           </div>
 
           <!-- Floating Badge 1 (Top Left): Audit Precision -->
-          <div class="absolute -left-4 sm:-left-6 top-8 w-[210px] sm:w-[240px] rounded-2xl bg-white/95 backdrop-blur-md shadow-xl p-4 border border-[#e2e8f0]">
+          <div class="absolute -left-4 sm:-left-6 top-8 w-[210px] sm:w-[240px] rounded-2xl bg-white/95 backdrop-blur-md shadow-xl p-4 border border-[#e2e8f0] scroll-reveal-scale delay-200">
             <div class="flex items-center justify-between">
               <div>
                 <p class="text-[10px] uppercase tracking-wider text-[#64748b] font-bold">Audit Accuracy</p>
@@ -546,7 +522,7 @@
           </div>
 
           <!-- Floating Badge 2 (Bottom Right): Trusted Enterprises -->
-          <div class="absolute -right-3 sm:-right-6 -bottom-6 flex items-center gap-3.5 rounded-2xl bg-white p-4 shadow-xl border border-[#e2e8f0]">
+          <div class="absolute -right-3 sm:-right-6 -bottom-6 flex items-center gap-3.5 rounded-2xl bg-white p-4 shadow-xl border border-[#e2e8f0] scroll-reveal-scale delay-300">
             <div class="h-12 w-12 rounded-xl gradient-gold flex items-center justify-center text-[#0a2540] shadow-md">
               <i data-lucide="award" class="w-6 h-6"></i>
             </div>
@@ -558,7 +534,7 @@
         </div>
 
         <!-- Right Column: Story & Who We Are -->
-        <div class="lg:col-span-7 card-3d-reveal-right">
+        <div class="lg:col-span-7 scroll-reveal-right">
           <span class="text-xs md:text-sm tracking-[0.2em] text-[#b0832f] font-bold uppercase">Who We Are</span>
           <h2 class="font-display mt-3 text-3xl sm:text-4xl lg:text-5xl text-[#0a2540] font-bold leading-tight">
             Smarter Compliance, <span class="italic text-gradient-gold">From Day One</span>
@@ -572,18 +548,18 @@
 
           <!-- 3 Value Pillars (Finvvritti Style) -->
           <div class="mt-8 grid grid-cols-3 gap-4 max-w-lg">
-            <div class="flex items-center gap-2 text-[#0a2540] font-bold text-sm">
+            <div class="flex items-center gap-2 text-[#0a2540] font-bold text-sm scroll-reveal-up delay-100">
               <i data-lucide="shield-check" class="w-5 h-5 text-[#d4a24c]"></i> Compliance
             </div>
-            <div class="flex items-center gap-2 text-[#0a2540] font-bold text-sm">
+            <div class="flex items-center gap-2 text-[#0a2540] font-bold text-sm scroll-reveal-up delay-200">
               <i data-lucide="check-circle" class="w-5 h-5 text-[#d4a24c]"></i> Accuracy
             </div>
-            <div class="flex items-center gap-2 text-[#0a2540] font-bold text-sm">
+            <div class="flex items-center gap-2 text-[#0a2540] font-bold text-sm scroll-reveal-up delay-300">
               <i data-lucide="trending-up" class="w-5 h-5 text-[#d4a24c]"></i> Growth
             </div>
           </div>
 
-          <div class="mt-8 flex items-center gap-4">
+          <div class="mt-8 flex items-center gap-4 scroll-reveal-up delay-400">
             <a href="about.html" class="btn-gold px-7 py-3 text-sm">
               <span>Learn More About Us</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
@@ -600,7 +576,7 @@
        ========================================================================== -->
   <section id="services-3d" class="py-24 bg-[#07172b] text-white relative">
     <div class="max-w-7xl mx-auto px-4 md:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16 card-3d-reveal">
+      <div class="text-center max-w-3xl mx-auto mb-16 scroll-reveal-up">
         <span class="text-xs tracking-[0.2em] text-[#e8bd6e] font-bold uppercase">Comprehensive Capabilities</span>
         <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight text-white mt-2">
           Our 4 Core <span class="italic text-gradient-gold">Service Pillars</span>
@@ -614,7 +590,7 @@
       <div class="services-deck-container space-y-12 max-w-5xl mx-auto">
         
         <!-- Pillar 1: ISO Certification & Management Systems -->
-        <div class="stack-card p-8 sm:p-12" id="pillar-iso">
+        <div class="stack-card p-8 sm:p-12 scroll-reveal-scale delay-100" id="pillar-iso">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div class="lg:col-span-7 space-y-4">
               <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#d4a24c]/15 border border-[#d4a24c]/30 text-[#e8bd6e] text-xs font-bold uppercase tracking-wider">
@@ -649,7 +625,7 @@
         </div>
 
         <!-- Pillar 2: Third Party Inspection (TPI) -->
-        <div class="stack-card p-8 sm:p-12" id="pillar-tpi">
+        <div class="stack-card p-8 sm:p-12 scroll-reveal-scale delay-200" id="pillar-tpi">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div class="lg:col-span-7 space-y-4">
               <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#d4a24c]/15 border border-[#d4a24c]/30 text-[#e8bd6e] text-xs font-bold uppercase tracking-wider">
@@ -684,7 +660,7 @@
         </div>
 
         <!-- Pillar 3: Strategic Sourcing & Supply Chain -->
-        <div class="stack-card p-8 sm:p-12" id="pillar-sourcing">
+        <div class="stack-card p-8 sm:p-12 scroll-reveal-scale delay-300" id="pillar-sourcing">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div class="lg:col-span-7 space-y-4">
               <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#d4a24c]/15 border border-[#d4a24c]/30 text-[#e8bd6e] text-xs font-bold uppercase tracking-wider">
@@ -719,7 +695,7 @@
         </div>
 
         <!-- Pillar 4: Corporate Training & 5S Implementation -->
-        <div class="stack-card p-8 sm:p-12" id="pillar-training">
+        <div class="stack-card p-8 sm:p-12 scroll-reveal-scale delay-400" id="pillar-training">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div class="lg:col-span-7 space-y-4">
               <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#d4a24c]/15 border border-[#d4a24c]/30 text-[#e8bd6e] text-xs font-bold uppercase tracking-wider">
@@ -762,7 +738,7 @@
        ========================================================================== -->
   <section id="estimator" class="py-24 bg-[#f8f5ee] text-[#0f172a] relative">
     <div class="max-w-5xl mx-auto px-4 md:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-12 card-3d-reveal">
+      <div class="text-center max-w-3xl mx-auto mb-12 scroll-reveal-up">
         <span class="text-xs tracking-[0.2em] text-[#b0832f] font-bold uppercase">Interactive Tool</span>
         <h2 class="font-display text-3xl sm:text-5xl font-bold text-[#0a2540] mt-2">
           ISO Audit & Timeline <span class="italic text-gradient-gold">Estimator</span>
@@ -773,7 +749,7 @@
       </div>
 
       <!-- Estimator Card Container -->
-      <div class="card-white-elevated p-8 sm:p-12">
+      <div class="card-white-elevated p-8 sm:p-12 scroll-reveal-scale delay-100" data-tilt>
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           <!-- Controls Column -->
@@ -853,7 +829,7 @@
        ========================================================================== -->
   <section id="why-us" class="py-24 bg-[#07172b] text-white relative">
     <div class="max-w-7xl mx-auto px-4 md:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16 card-3d-reveal">
+      <div class="text-center max-w-3xl mx-auto mb-16 scroll-reveal-up">
         <span class="text-xs tracking-[0.2em] text-[#e8bd6e] font-bold uppercase">The MET-N-TEST Advantage</span>
         <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight text-white mt-2">
           Why Industry Leaders <span class="italic text-gradient-gold">Rely on Us</span>
@@ -862,7 +838,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Feature 1 -->
-        <div class="card-navy-glass p-8 space-y-4">
+        <div class="card-navy-glass p-8 space-y-4 scroll-reveal-up delay-100" data-tilt>
           <div class="w-12 h-12 rounded-2xl bg-[#d4a24c]/15 text-[#d4a24c] flex items-center justify-center">
             <i data-lucide="check-check" class="w-6 h-6"></i>
           </div>
@@ -873,7 +849,7 @@
         </div>
 
         <!-- Feature 2 -->
-        <div class="card-navy-glass p-8 space-y-4">
+        <div class="card-navy-glass p-8 space-y-4 scroll-reveal-up delay-200" data-tilt>
           <div class="w-12 h-12 rounded-2xl bg-[#d4a24c]/15 text-[#d4a24c] flex items-center justify-center">
             <i data-lucide="clock-4" class="w-6 h-6"></i>
           </div>
@@ -884,7 +860,7 @@
         </div>
 
         <!-- Feature 3 -->
-        <div class="card-navy-glass p-8 space-y-4">
+        <div class="card-navy-glass p-8 space-y-4 scroll-reveal-up delay-300" data-tilt>
           <div class="w-12 h-12 rounded-2xl bg-[#d4a24c]/15 text-[#d4a24c] flex items-center justify-center">
             <i data-lucide="trending-up" class="w-6 h-6"></i>
           </div>
@@ -902,7 +878,7 @@
        ========================================================================== -->
   <section id="industries" class="py-24 bg-[#f8f5ee] text-[#0f172a]">
     <div class="max-w-7xl mx-auto px-4 md:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16 card-3d-reveal">
+      <div class="text-center max-w-3xl mx-auto mb-16 scroll-reveal-up">
         <span class="text-xs tracking-[0.2em] text-[#b0832f] font-bold uppercase">Sector Expertise</span>
         <h2 class="font-display text-3xl sm:text-5xl font-bold text-[#0a2540] mt-2">
           Transforming Quality Across <span class="italic text-gradient-gold">Every Sector</span>
@@ -911,7 +887,7 @@
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
         <!-- Industry 1 -->
-        <div class="card-white-elevated p-6 text-center group">
+        <div class="card-white-elevated p-6 text-center group scroll-reveal-up delay-100" data-tilt>
           <div class="w-12 h-12 rounded-2xl bg-amber-50 text-[#b0832f] flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
             <i data-lucide="car" class="w-6 h-6"></i>
           </div>
@@ -920,7 +896,7 @@
         </div>
 
         <!-- Industry 2 -->
-        <div class="card-white-elevated p-6 text-center group">
+        <div class="card-white-elevated p-6 text-center group scroll-reveal-up delay-200" data-tilt>
           <div class="w-12 h-12 rounded-2xl bg-blue-50 text-[#14365c] flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
             <i data-lucide="cog" class="w-6 h-6"></i>
           </div>
@@ -929,7 +905,7 @@
         </div>
 
         <!-- Industry 3 -->
-        <div class="card-white-elevated p-6 text-center group">
+        <div class="card-white-elevated p-6 text-center group scroll-reveal-up delay-300" data-tilt>
           <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
             <i data-lucide="pill" class="w-6 h-6"></i>
           </div>
@@ -938,7 +914,7 @@
         </div>
 
         <!-- Industry 4 -->
-        <div class="card-white-elevated p-6 text-center group">
+        <div class="card-white-elevated p-6 text-center group scroll-reveal-up delay-400" data-tilt>
           <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-700 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
             <i data-lucide="zap" class="w-6 h-6"></i>
           </div>
@@ -954,11 +930,11 @@
        ========================================================================== -->
   <section id="contact" class="py-24 bg-[#07172b] text-white relative">
     <div class="max-w-7xl mx-auto px-4 md:px-8">
-      <div class="card-navy-glass p-8 sm:p-14 max-w-5xl mx-auto">
+      <div class="card-navy-glass p-8 sm:p-14 max-w-5xl mx-auto scroll-reveal-scale" data-tilt>
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           <!-- Contact Info -->
-          <div class="lg:col-span-5 space-y-6">
+          <div class="lg:col-span-5 space-y-6 scroll-reveal-left delay-100">
             <span class="text-xs tracking-[0.2em] text-[#e8bd6e] font-bold uppercase">Get In Touch</span>
             <h2 class="font-display text-3xl sm:text-4xl font-bold text-white leading-tight">
               Ready to Upgrade Your <span class="italic text-gradient-gold">Quality Standards?</span>
@@ -990,7 +966,7 @@
           </div>
 
           <!-- Quick Form -->
-          <div class="lg:col-span-7 bg-[#0a2540] p-6 sm:p-8 rounded-2xl border border-[#d4a24c]/30 shadow-xl">
+          <div class="lg:col-span-7 bg-[#0a2540] p-6 sm:p-8 rounded-2xl border border-[#d4a24c]/30 shadow-xl scroll-reveal-right delay-200">
             <form class="ajax-contact-form space-y-4">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
