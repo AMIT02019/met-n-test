@@ -191,14 +191,23 @@ body {
   position: relative;
   min-height: 100vh;
   width: 100%;
-  background-color: #07172b;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: 36px 36px;
+  background: #0a243e;
+  background: radial-gradient(circle at 85% 85%, #18426d 0%, #103154 40%, #0a243e 75%, #071c32 100%);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   z-index: 10;
+}
+
+.hero-editorial-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .hero-particle-canvas {
