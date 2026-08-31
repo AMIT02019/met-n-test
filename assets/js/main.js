@@ -441,12 +441,32 @@ document.addEventListener('DOMContentLoaded', () => {
       baseWeeks = Math.max(1, Math.round(baseWeeks * 0.6));
     }
 
+    const cardParent = calcDuration.closest('.bg-\\[\\#0a2540\\]');
+    if (cardParent) {
+      cardParent.classList.remove('roadmap-pulse');
+      void cardParent.offsetWidth; // Trigger reflow
+      cardParent.classList.add('roadmap-pulse');
+    }
+
     if (selectedStandard === 'tpi') {
       calcDuration.textContent = '24 - 48 Hours';
     } else {
       calcDuration.textContent = `${baseWeeks} - ${baseWeeks + 2} Weeks`;
     }
   }
+
+  // Universal Spotlight Tracking on Cards
+  const spotlightTargets = document.querySelectorAll('.card-white-elevated, .card-navy-glass, [data-tilt]');
+  spotlightTargets.forEach(card => {
+    card.classList.add('spotlight-card');
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
 
   if (standardChips.length > 0) {
     standardChips.forEach(btn => {
