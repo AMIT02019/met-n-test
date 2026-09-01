@@ -538,194 +538,241 @@
   </section>
 
   <!-- ==========================================================================
-       3D SERVICE PILLARS (3D Cylindrical Rolling Carousel - Roll on Scroll)
+       3D SERVICE PILLARS (Luxury 3D Rolling Carousel - Roll on Scroll)
        ========================================================================== -->
   <section id="services-3d" class="cylinder-scroll-track relative bg-[#07172b] text-white">
     <!-- Pinned 100vh Sticky Viewport Stage -->
-    <div class="cylinder-sticky-viewport sticky top-0 h-screen w-full overflow-hidden z-20 flex flex-col justify-between py-3 sm:py-5">
+    <div class="cylinder-sticky-viewport sticky top-0 h-screen w-full overflow-hidden z-20 flex flex-col justify-between py-4 sm:py-6">
       
-      <!-- Ambient Radial Glows -->
-      <div class="hero-glow-orb w-[550px] h-[550px] bg-[#14365c]/40 top-1/4 -left-32"></div>
-      <div class="hero-glow-orb w-[500px] h-[500px] bg-[#d4a24c]/15 bottom-10 right-0"></div>
+      <!-- Ambient Radial Glows & Circular Backdrop Dish (Matching Screenshot) -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] h-[720px] rounded-full bg-gradient-to-tr from-white/[0.04] to-white/[0.01] border border-white/[0.08] pointer-events-none blur-[1px]"></div>
+      <div class="hero-glow-orb w-[550px] h-[550px] bg-[#14365c]/35 top-1/4 -left-32 pointer-events-none"></div>
+      <div class="hero-glow-orb w-[500px] h-[500px] bg-[#d4a24c]/10 bottom-10 right-0 pointer-events-none"></div>
 
       <!-- Top Header & Call-to-Action -->
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 text-center">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0a2540]/90 border border-[#d4a24c]/40 text-[#e8bd6e] text-[11px] font-bold uppercase tracking-wider mb-1.5 backdrop-blur-md shadow-lg">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0a2540]/90 border border-[#d4a24c]/40 text-[#e8bd6e] text-[11px] font-bold uppercase tracking-wider mb-2 backdrop-blur-md shadow-lg">
           <span class="w-2 h-2 rounded-full bg-[#d4a24c] animate-ping"></span>
           <span>Comprehensive Technical Capabilities</span>
         </div>
-        <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight">
+        <h2 class="font-display text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
           Our 6 Core <span class="italic text-gradient-gold">Service Pillars</span>
         </h2>
-        <p class="text-slate-300 text-xs sm:text-sm max-w-xl mx-auto mt-1 leading-relaxed hidden sm:block">
+        <p class="text-slate-300 text-xs sm:text-sm max-w-xl mx-auto mt-1.5 leading-relaxed hidden sm:block">
           Explore our end-to-end consulting, inspection, sourcing, and training architectures designed for enterprise excellence.
         </p>
-        <div class="mt-2 sm:mt-2.5">
-          <button class="open-quote-modal btn-gold px-6 py-2 rounded-full text-xs font-bold tracking-wide shadow-xl flex items-center gap-2 mx-auto">
+        <div class="mt-3">
+          <button class="open-quote-modal btn-gold px-7 py-2.5 rounded-full text-xs font-bold tracking-wide shadow-xl flex items-center gap-2 mx-auto">
             <span>Explore All Inspection Services</span>
             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </button>
         </div>
       </div>
 
-      <!-- Center: 3D Cylindrical Rolling Carousel Stage -->
+      <!-- Center: 3D Rolling Carousel Stage -->
       <div class="cylinder-3d-stage w-full relative z-10 my-auto" id="cylinder-stage">
-        <div class="cylinder-3d-ring" id="cylinder-ring">
-          
-          <!-- Card 0: ISO Certification -->
-          <div class="cylinder-card is-active flex flex-col justify-between p-5 sm:p-6" data-index="0">
-            <div class="relative z-10">
-              <span class="inline-block px-3 py-1 rounded-full bg-[#d4a24c] text-[#0a2540] text-[11px] font-extrabold uppercase tracking-wider shadow-md">
-                ISO CERTIFICATION
-              </span>
-            </div>
-            <!-- Card Image with Vignette -->
-            <div class="absolute inset-0 z-0 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="ISO Certification" class="w-full h-full object-cover">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#07172b] via-[#07172b]/70 to-transparent"></div>
-            </div>
-            <div class="relative z-10 text-left space-y-1.5">
-              <h3 class="font-display text-xl sm:text-2xl font-bold text-white leading-tight">
-                ISO 9001 & IMS Quality
-              </h3>
-              <p class="text-xl sm:text-2xl font-extrabold text-[#d4a24c] font-display">
-                100% Pass Rate
-              </p>
-              <span class="inline-block text-[11px] uppercase tracking-widest font-bold text-slate-300">
-                GUARANTEED COMPLIANCE
-              </span>
-            </div>
+        
+        <!-- Card 0: ISO Certification -->
+        <div class="cylinder-card is-active flex flex-col justify-between p-4 sm:p-5" data-index="0">
+          <div class="relative z-10">
+            <span class="inline-block px-3.5 py-1.5 rounded-xl bg-[#f59e0b] text-[#0a1e35] text-[11px] font-black tracking-wider uppercase shadow-md">
+              ISO CERTIFICATION
+            </span>
           </div>
-
-          <!-- Card 1: Third Party Inspection (TPI) -->
-          <div class="cylinder-card flex flex-col justify-between p-5 sm:p-6" data-index="1">
-            <div class="relative z-10">
-              <span class="inline-block px-3 py-1 rounded-full bg-[#d4a24c] text-[#0a2540] text-[11px] font-extrabold uppercase tracking-wider shadow-md">
-                TECHNICAL QA/QC
-              </span>
+          <!-- Photo Mosaic Grid -->
+          <div class="absolute inset-0 z-0 overflow-hidden p-2.5 pt-12 pb-24">
+            <div class="grid grid-cols-12 gap-1.5 h-full rounded-2xl overflow-hidden border border-white/10 opacity-70">
+              <div class="col-span-7 h-full">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="ISO Audit" class="w-full h-full object-cover">
+              </div>
+              <div class="col-span-5 grid grid-rows-2 gap-1.5 h-full">
+                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80" alt="Consulting" class="w-full h-full object-cover">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=400&q=80" alt="Certification" class="w-full h-full object-cover">
+              </div>
             </div>
-            <div class="absolute inset-0 z-0 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="TPI Inspection" class="w-full h-full object-cover">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#07172b] via-[#07172b]/70 to-transparent"></div>
-            </div>
-            <div class="relative z-10 text-left space-y-1.5">
-              <h3 class="font-display text-xl sm:text-2xl font-bold text-white leading-tight">
-                Third-Party Inspection
-              </h3>
-              <p class="text-xl sm:text-2xl font-extrabold text-[#d4a24c] font-display">
-                &lt;24-Hour Dispatch
-              </p>
-              <span class="inline-block text-[11px] uppercase tracking-widest font-bold text-slate-300">
-                PAN-INDIA AUDITORS
-              </span>
-            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0d1e34] via-[#0d1e34]/70 to-transparent"></div>
           </div>
-
-          <!-- Card 2: Strategic Sourcing -->
-          <div class="cylinder-card flex flex-col justify-between p-5 sm:p-6" data-index="2">
-            <div class="relative z-10">
-              <span class="inline-block px-3 py-1 rounded-full bg-[#d4a24c] text-[#0a2540] text-[11px] font-extrabold uppercase tracking-wider shadow-md">
-                SUPPLY CHAIN
-              </span>
-            </div>
-            <div class="absolute inset-0 z-0 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Strategic Sourcing" class="w-full h-full object-cover">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#07172b] via-[#07172b]/70 to-transparent"></div>
-            </div>
-            <div class="relative z-10 text-left space-y-1.5">
-              <h3 class="font-display text-xl sm:text-2xl font-bold text-white leading-tight">
-                Strategic Sourcing
-              </h3>
-              <p class="text-xl sm:text-2xl font-extrabold text-[#d4a24c] font-display">
-                Zero-Defect SLA
-              </p>
-              <span class="inline-block text-[11px] uppercase tracking-widest font-bold text-slate-300">
-                VERIFIED SUPPLIERS
-              </span>
-            </div>
+          <div class="relative z-10 text-left space-y-1">
+            <h3 class="font-display text-2xl font-bold text-white leading-tight">
+              ISO 9001 : 2015
+            </h3>
+            <p class="text-2xl font-extrabold text-[#e8bd6e] font-display">
+              100% Pass Rate
+            </p>
+            <span class="inline-block text-[10px] uppercase tracking-widest font-bold text-slate-400">
+              TURNKEY COMPLIANCE
+            </span>
           </div>
-
-          <!-- Card 3: Corporate Training & 5S -->
-          <div class="cylinder-card flex flex-col justify-between p-5 sm:p-6" data-index="3">
-            <div class="relative z-10">
-              <span class="inline-block px-3 py-1 rounded-full bg-[#d4a24c] text-[#0a2540] text-[11px] font-extrabold uppercase tracking-wider shadow-md">
-                PEOPLE & CULTURE
-              </span>
-            </div>
-            <div class="absolute inset-0 z-0 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80" alt="Corporate Training" class="w-full h-full object-cover">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#07172b] via-[#07172b]/70 to-transparent"></div>
-            </div>
-            <div class="relative z-10 text-left space-y-1.5">
-              <h3 class="font-display text-xl sm:text-2xl font-bold text-white leading-tight">
-                Corporate Training & 5S
-              </h3>
-              <p class="text-xl sm:text-2xl font-extrabold text-[#d4a24c] font-display">
-                Certified Auditors
-              </p>
-              <span class="inline-block text-[11px] uppercase tracking-widest font-bold text-slate-300">
-                KAIZEN WORKSHOPS
-              </span>
-            </div>
-          </div>
-
-          <!-- Card 4: Automotive IATF 16949 -->
-          <div class="cylinder-card flex flex-col justify-between p-5 sm:p-6" data-index="4">
-            <div class="relative z-10">
-              <span class="inline-block px-3 py-1 rounded-full bg-[#d4a24c] text-[#0a2540] text-[11px] font-extrabold uppercase tracking-wider shadow-md">
-                AUTOMOTIVE STANDARD
-              </span>
-            </div>
-            <div class="absolute inset-0 z-0 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80" alt="Automotive IATF 16949" class="w-full h-full object-cover">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#07172b] via-[#07172b]/70 to-transparent"></div>
-            </div>
-            <div class="relative z-10 text-left space-y-1.5">
-              <h3 class="font-display text-xl sm:text-2xl font-bold text-white leading-tight">
-                IATF 16949 Auto
-              </h3>
-              <p class="text-xl sm:text-2xl font-extrabold text-[#d4a24c] font-display">
-                Tier-1 Auto Ready
-              </p>
-              <span class="inline-block text-[11px] uppercase tracking-widest font-bold text-slate-300">
-                PPAP & APQP RIGOR
-              </span>
-            </div>
-          </div>
-
-          <!-- Card 5: SEDEX / SMETA Audits -->
-          <div class="cylinder-card flex flex-col justify-between p-5 sm:p-6" data-index="5">
-            <div class="relative z-10">
-              <span class="inline-block px-3 py-1 rounded-full bg-[#d4a24c] text-[#0a2540] text-[11px] font-extrabold uppercase tracking-wider shadow-md">
-                ESG & ETHICS
-              </span>
-            </div>
-            <div class="absolute inset-0 z-0 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80" alt="SEDEX SMETA Audit" class="w-full h-full object-cover">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#07172b] via-[#07172b]/70 to-transparent"></div>
-            </div>
-            <div class="relative z-10 text-left space-y-1.5">
-              <h3 class="font-display text-xl sm:text-2xl font-bold text-white leading-tight">
-                SEDEX & SMETA Audits
-              </h3>
-              <p class="text-xl sm:text-2xl font-extrabold text-[#d4a24c] font-display">
-                Global Buyer Pass
-              </p>
-              <span class="inline-block text-[11px] uppercase tracking-widest font-bold text-slate-300">
-                ETHICAL GOVERNANCE
-              </span>
-            </div>
-          </div>
-
         </div>
+
+        <!-- Card 1: Third Party Inspection (TPI) -->
+        <div class="cylinder-card flex flex-col justify-between p-4 sm:p-5" data-index="1">
+          <div class="relative z-10">
+            <span class="inline-block px-3.5 py-1.5 rounded-xl bg-[#f59e0b] text-[#0a1e35] text-[11px] font-black tracking-wider uppercase shadow-md">
+              TECHNICAL QA/QC
+            </span>
+          </div>
+          <div class="absolute inset-0 z-0 overflow-hidden p-2.5 pt-12 pb-24">
+            <div class="grid grid-cols-12 gap-1.5 h-full rounded-2xl overflow-hidden border border-white/10 opacity-70">
+              <div class="col-span-7 h-full">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="TPI Testing" class="w-full h-full object-cover">
+              </div>
+              <div class="col-span-5 grid grid-rows-2 gap-1.5 h-full">
+                <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=400&q=80" alt="Quality Inspection" class="w-full h-full object-cover">
+                <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=400&q=80" alt="Manufacturing QA" class="w-full h-full object-cover">
+              </div>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0d1e34] via-[#0d1e34]/70 to-transparent"></div>
+          </div>
+          <div class="relative z-10 text-left space-y-1">
+            <h3 class="font-display text-2xl font-bold text-white leading-tight">
+              Third-Party Inspection
+            </h3>
+            <p class="text-2xl font-extrabold text-[#e8bd6e] font-display">
+              &lt;24-Hour Dispatch
+            </p>
+            <span class="inline-block text-[10px] uppercase tracking-widest font-bold text-slate-400">
+              PAN-INDIA AUDITORS
+            </span>
+          </div>
+        </div>
+
+        <!-- Card 2: Strategic Sourcing -->
+        <div class="cylinder-card flex flex-col justify-between p-4 sm:p-5" data-index="2">
+          <div class="relative z-10">
+            <span class="inline-block px-3.5 py-1.5 rounded-xl bg-[#f59e0b] text-[#0a1e35] text-[11px] font-black tracking-wider uppercase shadow-md">
+              SUPPLY CHAIN
+            </span>
+          </div>
+          <div class="absolute inset-0 z-0 overflow-hidden p-2.5 pt-12 pb-24">
+            <div class="grid grid-cols-12 gap-1.5 h-full rounded-2xl overflow-hidden border border-white/10 opacity-70">
+              <div class="col-span-7 h-full">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Strategic Sourcing" class="w-full h-full object-cover">
+              </div>
+              <div class="col-span-5 grid grid-rows-2 gap-1.5 h-full">
+                <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=400&q=80" alt="Vendor Audit" class="w-full h-full object-cover">
+                <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=400&q=80" alt="Logistics SLA" class="w-full h-full object-cover">
+              </div>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0d1e34] via-[#0d1e34]/70 to-transparent"></div>
+          </div>
+          <div class="relative z-10 text-left space-y-1">
+            <h3 class="font-display text-2xl font-bold text-white leading-tight">
+              Strategic Sourcing
+            </h3>
+            <p class="text-2xl font-extrabold text-[#e8bd6e] font-display">
+              Zero-Defect SLA
+            </p>
+            <span class="inline-block text-[10px] uppercase tracking-widest font-bold text-slate-400">
+              VERIFIED SUPPLIERS
+            </span>
+          </div>
+        </div>
+
+        <!-- Card 3: Corporate Training & 5S -->
+        <div class="cylinder-card flex flex-col justify-between p-4 sm:p-5" data-index="3">
+          <div class="relative z-10">
+            <span class="inline-block px-3.5 py-1.5 rounded-xl bg-[#f59e0b] text-[#0a1e35] text-[11px] font-black tracking-wider uppercase shadow-md">
+              CONTINUOUS IMPROVEMENT
+            </span>
+          </div>
+          <div class="absolute inset-0 z-0 overflow-hidden p-2.5 pt-12 pb-24">
+            <div class="grid grid-cols-12 gap-1.5 h-full rounded-2xl overflow-hidden border border-white/10 opacity-70">
+              <div class="col-span-7 h-full">
+                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80" alt="Corporate Training" class="w-full h-full object-cover">
+              </div>
+              <div class="col-span-5 grid grid-rows-2 gap-1.5 h-full">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=400&q=80" alt="5S Kaizen" class="w-full h-full object-cover">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&q=80" alt="Lead Auditor" class="w-full h-full object-cover">
+              </div>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0d1e34] via-[#0d1e34]/70 to-transparent"></div>
+          </div>
+          <div class="relative z-10 text-left space-y-1">
+            <h3 class="font-display text-2xl font-bold text-white leading-tight">
+              Corporate Training & 5S
+            </h3>
+            <p class="text-2xl font-extrabold text-[#e8bd6e] font-display">
+              Certified Auditors
+            </p>
+            <span class="inline-block text-[10px] uppercase tracking-widest font-bold text-slate-400">
+              KAIZEN WORKSHOPS
+            </span>
+          </div>
+        </div>
+
+        <!-- Card 4: Automotive IATF 16949 -->
+        <div class="cylinder-card flex flex-col justify-between p-4 sm:p-5" data-index="4">
+          <div class="relative z-10">
+            <span class="inline-block px-3.5 py-1.5 rounded-xl bg-[#f59e0b] text-[#0a1e35] text-[11px] font-black tracking-wider uppercase shadow-md">
+              AUTOMOTIVE STANDARD
+            </span>
+          </div>
+          <div class="absolute inset-0 z-0 overflow-hidden p-2.5 pt-12 pb-24">
+            <div class="grid grid-cols-12 gap-1.5 h-full rounded-2xl overflow-hidden border border-white/10 opacity-70">
+              <div class="col-span-7 h-full">
+                <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=600&q=80" alt="Automotive IATF" class="w-full h-full object-cover">
+              </div>
+              <div class="col-span-5 grid grid-rows-2 gap-1.5 h-full">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=400&q=80" alt="Precision Testing" class="w-full h-full object-cover">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&q=80" alt="APQP PPAP" class="w-full h-full object-cover">
+              </div>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0d1e34] via-[#0d1e34]/70 to-transparent"></div>
+          </div>
+          <div class="relative z-10 text-left space-y-1">
+            <h3 class="font-display text-2xl font-bold text-white leading-tight">
+              IATF 16949 Auto
+            </h3>
+            <p class="text-2xl font-extrabold text-[#e8bd6e] font-display">
+              Tier-1 Auto Ready
+            </p>
+            <span class="inline-block text-[10px] uppercase tracking-widest font-bold text-slate-400">
+              PPAP & APQP RIGOR
+            </span>
+          </div>
+        </div>
+
+        <!-- Card 5: SEDEX / SMETA Audits -->
+        <div class="cylinder-card flex flex-col justify-between p-4 sm:p-5" data-index="5">
+          <div class="relative z-10">
+            <span class="inline-block px-3.5 py-1.5 rounded-xl bg-[#f59e0b] text-[#0a1e35] text-[11px] font-black tracking-wider uppercase shadow-md">
+              ESG & ETHICS
+            </span>
+          </div>
+          <div class="absolute inset-0 z-0 overflow-hidden p-2.5 pt-12 pb-24">
+            <div class="grid grid-cols-12 gap-1.5 h-full rounded-2xl overflow-hidden border border-white/10 opacity-70">
+              <div class="col-span-7 h-full">
+                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80" alt="SEDEX SMETA Audit" class="w-full h-full object-cover">
+              </div>
+              <div class="col-span-5 grid grid-rows-2 gap-1.5 h-full">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80" alt="Governance" class="w-full h-full object-cover">
+                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=400&q=80" alt="Compliance" class="w-full h-full object-cover">
+              </div>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0d1e34] via-[#0d1e34]/70 to-transparent"></div>
+          </div>
+          <div class="relative z-10 text-left space-y-1">
+            <h3 class="font-display text-2xl font-bold text-white leading-tight">
+              SEDEX & SMETA Audits
+            </h3>
+            <p class="text-2xl font-extrabold text-[#e8bd6e] font-display">
+              Global Buyer Pass
+            </p>
+            <span class="inline-block text-[10px] uppercase tracking-widest font-bold text-slate-400">
+              ETHICAL GOVERNANCE
+            </span>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Bottom Interactive Pill Prompt (Matching Screenshot) -->
+      <!-- Bottom Interactive Pill Prompt (Exact match to screenshot) -->
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 text-center">
-        <div class="inline-flex items-center gap-2 sm:gap-3 px-5 sm:px-7 py-2.5 rounded-full bg-[#0a2540]/90 border border-[#d4a24c]/40 text-slate-200 text-xs sm:text-sm font-bold tracking-wider backdrop-blur-xl shadow-2xl">
-          <span class="text-[#d4a24c]">↔</span>
-          <span>DRAG TO SPIN · SCROLL TO ROLL 3D CAROUSEL · CLICK CARD TO VIEW</span>
-          <span class="text-[#d4a24c]">↔</span>
+        <div class="inline-flex items-center gap-3 px-6 sm:px-8 py-2.5 rounded-full bg-[#0a1e35]/95 border border-[#d4a24c]/40 text-slate-200 text-xs sm:text-sm font-bold tracking-wider backdrop-blur-xl shadow-2xl">
+          <span class="text-[#f59e0b] font-bold">↔</span>
+          <span class="tracking-wide">DRAG TO SPIN · SCROLL TO ROLL 3D CAROUSEL · CLICK CARD TO VIEW</span>
+          <span class="text-[#f59e0b] font-bold">↔</span>
         </div>
       </div>
 
