@@ -480,11 +480,11 @@ body {
 .cylinder-3d-stage {
   position: relative;
   width: 100%;
-  height: 480px;
+  height: 440px;
   display: flex;
   align-items: center;
   justify-content: center;
-  perspective: 1400px;
+  perspective: 1300px;
   perspective-origin: 50% 50%;
   transform-style: preserve-3d;
   user-select: none;
@@ -495,21 +495,15 @@ body {
   cursor: grabbing;
 }
 
-.cylinder-3d-ring {
-  position: relative;
-  width: 340px;
-  height: 470px;
-  transform-style: preserve-3d;
-  will-change: transform;
-}
-
 .cylinder-card {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 340px;
-  height: 470px;
-  border-radius: 1.75rem;
+  top: 50%;
+  left: 50%;
+  width: 310px;
+  height: 430px;
+  margin-top: -215px;
+  margin-left: -155px;
+  border-radius: 1.5rem;
   overflow: hidden;
   background: #0d1e34;
   border: 1.5px solid rgba(212, 162, 76, 0.35);
@@ -525,31 +519,27 @@ body {
   box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.95), 0 0 45px rgba(212, 162, 76, 0.4);
 }
 
-@media (max-height: 800px) {
+@media (max-width: 1024px) {
   .cylinder-3d-stage {
-    height: 420px;
-  }
-  .cylinder-3d-ring {
-    width: 300px;
-    height: 410px;
+    height: 400px;
   }
   .cylinder-card {
-    width: 300px;
-    height: 410px;
+    width: 275px;
+    height: 390px;
+    margin-top: -195px;
+    margin-left: -137px;
   }
 }
 
 @media (max-width: 640px) {
   .cylinder-3d-stage {
-    height: 400px;
-  }
-  .cylinder-3d-ring {
-    width: 270px;
-    height: 390px;
+    height: 360px;
   }
   .cylinder-card {
-    width: 270px;
-    height: 390px;
+    width: 240px;
+    height: 350px;
+    margin-top: -175px;
+    margin-left: -120px;
   }
 }
 
