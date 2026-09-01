@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentSpin = heroSpin + heroScrollSmooth;
     heroRing.style.setProperty('--spin', currentSpin + 'deg');
 
-    const radius = window.innerWidth < 680 ? 250 : window.innerWidth < 1100 ? 340 : 420;
+    const radius = window.innerWidth < 680 ? 320 : window.innerWidth < 1100 ? 460 : 580;
 
     heroTiles.forEach((t, i) => {
       const baseAngle = i * (360 / totalHeroTiles);

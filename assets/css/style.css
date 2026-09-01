@@ -185,12 +185,12 @@ body {
 }
 
 /* ==========================================================================
-   Hero Pinned 3D Scroll Track & Sticky Viewport (Franchise-101 Signature)
+   Pure 3D Scroll Hero Section (Full-Screen 3D Orbital Experience)
    ========================================================================== */
 .hero-scroll-track {
   position: relative;
-  height: 240vh;
-  min-height: 240vh;
+  height: 260vh;
+  min-height: 260vh;
   width: 100%;
 }
 
@@ -202,115 +202,31 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background: #080B10;
-  background: radial-gradient(circle at 50% 25%, #0e2038 0%, #07172b 70%, #040d1a 100%);
+  background: radial-gradient(circle at 50% 50%, #0e2038 0%, #07172b 60%, #040d1a 100%);
   color: #fff;
-  padding-top: clamp(65px, 8vh, 85px);
-  padding-bottom: 0;
+  padding: 0;
   z-index: 20;
-}
-
-.hero-franchise .hero-grid {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 10px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-
-.badge-trust {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 4px 14px;
-  background: rgba(248, 250, 252, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 999px;
-  font-family: inherit;
-  font-size: 11px;
-  letter-spacing: 0.05em;
-  color: rgba(248, 250, 252, 0.9);
-}
-
-.badge-trust .pulse {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #00E599;
-  box-shadow: 0 0 10px #00E599;
-}
-
-.hero-franchise h1 {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(24px, 3.8vw, 46px);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: #ffffff;
-  max-width: 20ch;
-  margin: 0;
-}
-
-.hero-franchise h1 em {
-  font-style: normal;
-  color: #f59e0b;
-  position: relative;
-  display: inline-block;
-}
-
-.hero-franchise h1 .strike {
-  position: absolute;
-  left: -2%;
-  right: -2%;
-  bottom: 0.12em;
-  height: 0.09em;
-  background: #00E599;
-  transform: scaleX(0);
-  transform-origin: left;
-  border-radius: 99px;
-  animation: strikeSwipe 1s cubic-bezier(0.25, 1, 0.35, 1) 0.85s forwards;
-}
-
-@keyframes strikeSwipe {
-  to { transform: scaleX(1); }
-}
-
-.hero-sub {
-  max-width: 54ch;
-  color: rgba(248, 250, 252, 0.85);
-  font-size: clamp(12.5px, 1.2vw, 15px);
-  line-height: 1.45;
-  margin: 0;
-}
-
-.hero-cta-group {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 2px;
 }
 
 /* ---- 3D ROTATING ORBIT STAGE (STAGE & RING) ---- */
 .stage-3d {
   width: 100%;
-  height: clamp(260px, 34vh, 310px);
-  margin-top: clamp(8px, 1.5vh, 18px);
-  margin-bottom: 0;
-  perspective: 1300px;
-  perspective-origin: 50% 42%;
+  height: 100vh;
+  max-height: 100vh;
+  perspective: 1400px;
+  perspective-origin: 50% 50%;
   position: relative;
   cursor: grab;
   touch-action: pan-y;
   z-index: 10;
   user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
 }
 
 .stage-3d:active {
@@ -321,13 +237,13 @@ body {
   content: "";
   position: absolute;
   left: 50%;
-  bottom: 12px;
+  bottom: 8%;
   transform: translateX(-50%);
-  width: min(650px, 80%);
-  height: 40px;
+  width: min(850px, 85%);
+  height: 60px;
   border-radius: 50%;
-  background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.65), transparent 72%);
-  filter: blur(10px);
+  background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.75), transparent 72%);
+  filter: blur(16px);
   pointer-events: none;
 }
 
@@ -335,7 +251,7 @@ body {
   position: absolute;
   inset: 0;
   transform-style: preserve-3d;
-  transform: translateY(-16px) rotateX(-4deg) rotateY(var(--spin, 0deg));
+  transform: rotateX(-3deg) rotateY(var(--spin, 0deg));
   will-change: transform;
 }
 
@@ -343,31 +259,40 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 195px;
-  height: 255px;
-  margin: -127px 0 0 -97px;
-  border-radius: 16px;
+  width: 300px;
+  height: 420px;
+  margin: -210px 0 0 -150px;
+  border-radius: 22px;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0 20px 45px -12px rgba(0, 0, 0, 0.85);
-  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 25px 55px -14px rgba(0, 0, 0, 0.92);
+  border: 1.5px solid rgba(212, 162, 76, 0.35);
   backface-visibility: hidden;
   transition: border-color 0.25s, box-shadow 0.25s;
   background: #0d1e34;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 1024px) {
   .tile-3d {
-    width: 155px;
-    height: 215px;
-    margin: -107px 0 0 -77px;
-    border-radius: 12px;
+    width: 260px;
+    height: 380px;
+    margin: -190px 0 0 -130px;
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .tile-3d {
+    width: 220px;
+    height: 330px;
+    margin: -165px 0 0 -110px;
+    border-radius: 16px;
   }
 }
 
 .tile-3d:hover {
   border-color: #f59e0b;
-  box-shadow: 0 0 30px rgba(245, 158, 11, 0.65);
+  box-shadow: 0 0 35px rgba(245, 158, 11, 0.65);
 }
 
 .tile-3d img {
@@ -389,7 +314,7 @@ body {
   position: absolute;
   inset: 0;
   z-index: 2;
-  padding: 13px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -397,111 +322,96 @@ body {
   text-align: left;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 640px) {
   .tile-3d-in {
-    padding: 10px;
+    padding: 14px;
   }
 }
 
 .tile-cat {
   font-family: inherit;
-  font-size: 9.5px;
+  font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #07172b;
   background: #f59e0b;
-  padding: 3px 8px;
+  padding: 4px 12px;
   border-radius: 999px;
   align-self: flex-start;
   font-weight: 800;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-@media (max-width: 680px) {
+@media (max-width: 640px) {
   .tile-cat {
-    font-size: 8.5px;
-    padding: 2.5px 6px;
+    font-size: 9.5px;
+    padding: 3px 9px;
   }
 }
 
 .tile-mark {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 15px;
+  font-size: 20px;
   letter-spacing: -0.01em;
   line-height: 1.2;
   color: #f8fafc;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 640px) {
   .tile-mark {
-    font-size: 13px;
+    font-size: 16px;
   }
 }
 
 .tile-num {
   font-family: inherit;
-  font-size: 13px;
+  font-size: 18px;
   font-weight: 800;
   color: #e8bd6e;
-  margin-top: 3px;
+  margin-top: 4px;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
 }
 
 .tile-num span {
   display: block;
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(248, 250, 252, 0.75);
   font-weight: 600;
-  margin-top: 1.5px;
+  margin-top: 2px;
 }
 
 /* Drag Hint Pill */
 .drag-hint-wrap {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  position: relative;
-  z-index: 20;
+  z-index: 30;
 }
 
 .drag-hint {
-  font-size: 10.5px;
-  letter-spacing: 0.12em;
+  font-size: 11px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: rgba(248, 250, 252, 0.85);
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(10, 30, 53, 0.75);
-  padding: 6px 18px;
+  gap: 10px;
+  background: rgba(10, 30, 53, 0.85);
+  padding: 8px 24px;
   border-radius: 999px;
   border: 1px solid rgba(248, 250, 252, 0.18);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
   white-space: nowrap;
-}
-
-.drag-hint::before, .drag-hint::after {
-  content: "↔";
-  color: #f59e0b;
-}
-
-/* Hero Ticker Ribbon */
-.hero-ticker {
-  width: 100%;
-  margin-top: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  overflow: hidden;
-  background: rgba(0, 0, 0, 0.45);
-  padding-block: 3px;
 }
 
 .hero-ticker-row {

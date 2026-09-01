@@ -242,190 +242,149 @@
   </div>
 
   <!-- ==========================================================================
-       HERO SECTION (Matching Franchise-101 Signature 3D Architecture)
+       HERO SECTION (Pure Full-Screen 3D Scroll Carousel)
        ========================================================================== -->
   <div class="hero-scroll-track" id="hero-track">
     <header class="hero-sticky-viewport hero-franchise" id="hero">
       <!-- Ambient Radial Glow Layer -->
-    <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
-      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-[#d4a24c]/10 rounded-full blur-[140px]"></div>
-      <div class="absolute top-0 right-10 w-[450px] h-[450px] bg-[#14365c]/30 rounded-full blur-[120px]"></div>
-    </div>
-
-    <div class="hero-grid relative z-10">
-      <!-- Top Trust Pill Badge -->
-      <div class="badge-trust">
-        <span class="pulse"></span> Accredited Excellence &middot; Pan-India Inspection &amp; ISO Authority
+      <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
+        <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[#d4a24c]/10 rounded-full blur-[150px]"></div>
+        <div class="absolute top-10 right-10 w-[500px] h-[500px] bg-[#14365c]/35 rounded-full blur-[130px]"></div>
       </div>
 
-      <!-- Main Headline with Strike Accent -->
-      <h1>
-        Next-Gen Inspection, Certification &amp; <em>Strategic<span class="strike"></span></em> Management.
-      </h1>
+      <!-- SIGNATURE: Full-Screen Draggable, Auto-Spinning & Scroll-Driven 3D Carousel Stage -->
+      <div class="stage-3d" id="heroStage" aria-label="Featured inspection and ISO services">
+        <div class="ring-3d" id="heroRing">
+          
+          <!-- Tile 0: ISO 9001 -->
+          <div class="tile-3d open-quote-modal" data-pillar="iso-9001">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="ISO 9001 Quality Management" loading="lazy" />
+            <div class="tile-3d-in">
+              <span class="tile-cat">ISO CERTIFICATION</span>
+              <div>
+                <div class="tile-mark">ISO 9001 : 2015</div>
+                <div class="tile-num">100% Pass Rate<span>Guaranteed Pass</span></div>
+              </div>
+            </div>
+          </div>
 
-      <!-- Subtitle -->
-      <p class="hero-sub">
-        Premier ISO Certification, Third-Party Technical Inspection (TPI), and Strategic Sourcing. Audited compliance, zero-defect SLAs, and guaranteed 100% first-time audit pass rates.
-      </p>
+          <!-- Tile 1: TPI Inspection -->
+          <div class="tile-3d open-quote-modal" data-pillar="tpi">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Third-Party Inspection" loading="lazy" />
+            <div class="tile-3d-in">
+              <span class="tile-cat">TECHNICAL QA/QC</span>
+              <div>
+                <div class="tile-mark">Third-Party Inspection</div>
+                <div class="tile-num">&lt; 24-Hour<span>Pan-India Dispatch</span></div>
+              </div>
+            </div>
+          </div>
 
-      <!-- Action Button Group -->
-      <div class="hero-cta-group">
-        <button class="open-quote-modal btn-gold px-8 py-3.5 rounded-full text-xs sm:text-sm font-bold tracking-wide shadow-2xl flex items-center gap-2">
-          <span>Book a Consultation</span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </button>
-        <a href="#services-3d" class="btn-outline-gold px-7 py-3.5 rounded-full text-xs sm:text-sm font-bold tracking-wide flex items-center gap-2">
-          <span>Explore 3D Services</span>
-          <i data-lucide="layers" class="w-4 h-4 text-[#d4a24c]"></i>
-        </a>
+          <!-- Tile 2: Strategic Sourcing -->
+          <div class="tile-3d open-quote-modal" data-pillar="sourcing">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Strategic Sourcing" loading="lazy" />
+            <div class="tile-3d-in">
+              <span class="tile-cat">SUPPLY CHAIN</span>
+              <div>
+                <div class="tile-mark">Strategic Sourcing</div>
+                <div class="tile-num">Zero-Defect<span>Vetted Suppliers</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tile 3: Corporate Training -->
+          <div class="tile-3d open-quote-modal" data-pillar="training">
+            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80" alt="Corporate Training" loading="lazy" />
+            <div class="tile-3d-in">
+              <span class="tile-cat">PEOPLE & CULTURE</span>
+              <div>
+                <div class="tile-mark">Corporate Training</div>
+                <div class="tile-num">5S &amp; Kaizen<span>Certified Toolkits</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tile 4: IATF 16949 -->
+          <div class="tile-3d open-quote-modal" data-pillar="iatf">
+            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="IATF 16949 Automotive" loading="lazy" />
+            <div class="tile-3d-in">
+              <span class="tile-cat">AUTOMOTIVE</span>
+              <div>
+                <div class="tile-mark">IATF 16949 : 2016</div>
+                <div class="tile-num">Tier-1 Ready<span>Automotive QA</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tile 5: ISO 14001 -->
+          <div class="tile-3d open-quote-modal" data-pillar="iso-14001">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" alt="ISO 14001 Environmental" loading="lazy" />
+            <div class="tile-3d-in">
+              <span class="tile-cat">ENVIRONMENT</span>
+              <div>
+                <div class="tile-mark">ISO 14001 : 2015</div>
+                <div class="tile-num">Zero Non-Compliance<span>Green Audit</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tile 6: ISO 45001 -->
+          <div class="tile-3d open-quote-modal" data-pillar="iso-45001">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="ISO 45001 Safety" loading="lazy" />
+            <div class="tile-3d-in">
+              <span class="tile-cat">HEALTH & SAFETY</span>
+              <div>
+                <div class="tile-mark">ISO 45001 : 2018</div>
+                <div class="tile-num">Zero Hazard SLA<span>Workplace Safety</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tile 7: SEDEX SMETA -->
+          <div class="tile-3d open-quote-modal" data-pillar="sedex">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80" alt="SEDEX SMETA Audits" loading="lazy" />
+            <div class="tile-3d-in">
+              <span class="tile-cat">ESG &amp; ETHICS</span>
+              <div>
+                <div class="tile-mark">SEDEX / SMETA</div>
+                <div class="tile-num">Global Buyer Pass<span>Social Audit</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tile 8: Vendor QA -->
+          <div class="tile-3d open-quote-modal" data-pillar="vendor-vetting">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="Vendor Vetting" loading="lazy" />
+            <div class="tile-3d-in">
+              <span class="tile-cat">SUPPLIER QA</span>
+              <div>
+                <div class="tile-mark">Supplier QA Audits</div>
+                <div class="tile-num">48h SLA<span>Detailed Reporting</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tile 9: IMS Framework -->
+          <div class="tile-3d open-quote-modal" data-pillar="ims">
+            <img src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=600&q=80" alt="Integrated Management Systems" loading="lazy" />
+            <div class="tile-3d-in">
+              <span class="tile-cat">IMS FRAMEWORK</span>
+              <div>
+                <div class="tile-mark">Integrated Systems</div>
+                <div class="tile-num">3-in-1 Framework<span>9001 + 14001 + 45001</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
-    </div>
 
-    <!-- SIGNATURE: Draggable, Auto-Spinning & Scroll-Driven 3D Carousel Stage -->
-    <div class="stage-3d" id="heroStage" aria-label="Featured inspection and ISO services">
-      <div class="ring-3d" id="heroRing">
-        
-        <!-- Tile 0 -->
-        <div class="tile-3d open-quote-modal" data-pillar="iso-9001">
-          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="ISO 9001 Quality Management" loading="lazy" />
-          <div class="tile-3d-in">
-            <span class="tile-cat">ISO CERTIFICATION</span>
-            <div>
-              <div class="tile-mark">ISO 9001 : 2015</div>
-              <div class="tile-num">100% Pass Rate<span>Guaranteed Pass</span></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tile 1 -->
-        <div class="tile-3d open-quote-modal" data-pillar="tpi">
-          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Third-Party Inspection" loading="lazy" />
-          <div class="tile-3d-in">
-            <span class="tile-cat">TECHNICAL QA/QC</span>
-            <div>
-              <div class="tile-mark">Third-Party Inspection</div>
-              <div class="tile-num">&lt; 24-Hour<span>Pan-India Dispatch</span></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tile 2 -->
-        <div class="tile-3d open-quote-modal" data-pillar="sourcing">
-          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Strategic Sourcing" loading="lazy" />
-          <div class="tile-3d-in">
-            <span class="tile-cat">SUPPLY CHAIN</span>
-            <div>
-              <div class="tile-mark">Strategic Sourcing</div>
-              <div class="tile-num">Zero-Defect<span>Vetted Suppliers</span></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tile 3 -->
-        <div class="tile-3d open-quote-modal" data-pillar="training">
-          <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80" alt="Corporate Training" loading="lazy" />
-          <div class="tile-3d-in">
-            <span class="tile-cat">PEOPLE & CULTURE</span>
-            <div>
-              <div class="tile-mark">Corporate Training</div>
-              <div class="tile-num">5S &amp; Kaizen<span>Certified Toolkits</span></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tile 4 -->
-        <div class="tile-3d open-quote-modal" data-pillar="iatf">
-          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="IATF 16949 Automotive" loading="lazy" />
-          <div class="tile-3d-in">
-            <span class="tile-cat">AUTOMOTIVE</span>
-            <div>
-              <div class="tile-mark">IATF 16949 : 2016</div>
-              <div class="tile-num">Tier-1 Ready<span>Automotive QA</span></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tile 5 -->
-        <div class="tile-3d open-quote-modal" data-pillar="iso-14001">
-          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" alt="ISO 14001 Environmental" loading="lazy" />
-          <div class="tile-3d-in">
-            <span class="tile-cat">ENVIRONMENT</span>
-            <div>
-              <div class="tile-mark">ISO 14001 : 2015</div>
-              <div class="tile-num">Zero Non-Compliance<span>Green Audit</span></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tile 6 -->
-        <div class="tile-3d open-quote-modal" data-pillar="iso-45001">
-          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="ISO 45001 Safety" loading="lazy" />
-          <div class="tile-3d-in">
-            <span class="tile-cat">HEALTH & SAFETY</span>
-            <div>
-              <div class="tile-mark">ISO 45001 : 2018</div>
-              <div class="tile-num">Zero Hazard SLA<span>Workplace Safety</span></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tile 7 -->
-        <div class="tile-3d open-quote-modal" data-pillar="sedex">
-          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80" alt="SEDEX SMETA Audits" loading="lazy" />
-          <div class="tile-3d-in">
-            <span class="tile-cat">ESG &amp; ETHICS</span>
-            <div>
-              <div class="tile-mark">SEDEX / SMETA</div>
-              <div class="tile-num">Global Buyer Pass<span>Social Audit</span></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tile 8 -->
-        <div class="tile-3d open-quote-modal" data-pillar="vendor-vetting">
-          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="Vendor Vetting" loading="lazy" />
-          <div class="tile-3d-in">
-            <span class="tile-cat">SUPPLIER QA</span>
-            <div>
-              <div class="tile-mark">Supplier QA Audits</div>
-              <div class="tile-num">48h SLA<span>Detailed Reporting</span></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tile 9 -->
-        <div class="tile-3d open-quote-modal" data-pillar="ims">
-          <img src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=600&q=80" alt="Integrated Management Systems" loading="lazy" />
-          <div class="tile-3d-in">
-            <span class="tile-cat">IMS FRAMEWORK</span>
-            <div>
-              <div class="tile-mark">Integrated Systems</div>
-              <div class="tile-num">3-in-1 Framework<span>9001 + 14001 + 45001</span></div>
-            </div>
-          </div>
-        </div>
-
+      <!-- Drag Hint Capsule Pill -->
+      <div class="drag-hint-wrap">
+        <span class="drag-hint">↔ DRAG TO SPIN · SCROLL TO ROTATE 3D CAROUSEL · CLICK CARD FOR DETAILS ↔</span>
       </div>
-    </div>
 
-    <!-- Drag Hint Capsule Pill -->
-    <div class="drag-hint-wrap">
-      <span class="drag-hint">Drag to spin &middot; Click card for details</span>
-    </div>
-
-    <!-- Ticker Tape Ribbon -->
-    <div class="hero-ticker" aria-hidden="true">
-      <div class="hero-ticker-row" id="heroTickerRow">
-        <span class="hero-ticker-item"><b>100%</b> Pass Rate Guarantee</span>
-        <span class="hero-ticker-item"><span class="sep">&bull;</span> <b>&lt;24h</b> Pan-India Dispatch</span>
-        <span class="hero-ticker-item"><span class="sep">&bull;</span> <b>300+</b> Audits Executed</span>
-        <span class="hero-ticker-item"><span class="sep">&bull;</span> <b>50+</b> Industrial Hubs</span>
-        <span class="hero-ticker-item"><span class="sep">&bull;</span> <b>Zero</b> Major Non-Conformities</span>
-        <span class="hero-ticker-item"><span class="sep">&bull;</span> <b>ISO</b> 9001 &middot; 14001 &middot; 45001 &middot; IATF 16949</span>
-        <span class="hero-ticker-item"><span class="sep">&bull;</span> <b>TPI</b> Technical Assurance</span>
-      </div>
-    </div>
-  </header>
+    </header>
   </div>
 
   <!-- ==========================================================================
