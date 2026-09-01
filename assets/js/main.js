@@ -19,23 +19,40 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const heroRing = document.getElementById('heroRing');
+  const heroTrack = document.getElementById('hero-track');
   const heroTiles = heroRing ? [...heroRing.children] : [];
   const totalHeroTiles = heroTiles.length;
 
   let heroSpin = 0, heroVelocity = 0, heroDragging = false, heroLastX = 0;
+  let heroScrollTarget = 0, heroScrollSmooth = 0;
+
+  function onScrollHero() {
+    if (!heroTrack) return;
+    const rect = heroTrack.getBoundingClientRect();
+    const maxScroll = heroTrack.offsetHeight - window.innerHeight;
+    const scrollDist = -rect.top;
+    const scrollProgress = Math.max(0, Math.min(1, maxScroll > 0 ? scrollDist / maxScroll : 0));
+    heroScrollTarget = scrollProgress * 360 * 1.5; // Rotate 540 deg through the pinned scroll track
+  }
+
+  window.addEventListener('scroll', onScrollHero, { passive: true });
+  window.addEventListener('resize', onScrollHero, { passive: true });
+  onScrollHero();
 
   function renderHeroRing() {
     if (!heroRing || totalHeroTiles === 0) return;
+
     if (!heroDragging) {
       heroSpin += heroVelocity;
       heroVelocity *= 0.94;
-      heroSpin += 0.08; // Continuous gentle auto-spin
+      heroSpin += 0.05; // Gentle baseline rotation
     }
-    const scrollSpin = Math.min(window.scrollY, 900) * 0.06;
-    const currentSpin = heroSpin + scrollSpin;
+
+    heroScrollSmooth += (heroScrollTarget - heroScrollSmooth) * 0.085;
+    const currentSpin = heroSpin + heroScrollSmooth;
     heroRing.style.setProperty('--spin', currentSpin + 'deg');
 
-    const radius = window.innerWidth < 680 ? 260 : window.innerWidth < 1100 ? 350 : 430;
+    const radius = window.innerWidth < 680 ? 250 : window.innerWidth < 1100 ? 340 : 420;
 
     heroTiles.forEach((t, i) => {
       const baseAngle = i * (360 / totalHeroTiles);
