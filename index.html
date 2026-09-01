@@ -242,123 +242,189 @@
   </div>
 
   <!-- ==========================================================================
-       HERO SECTION (Exact Finvvritti Editorial Split Layout with Floating Widgets)
+       HERO SECTION (Matching Franchise-101 Signature 3D Architecture)
        ========================================================================== -->
-  <section id="hero" class="hero-editorial-section pt-32 sm:pt-40 pb-20 sm:pb-24 relative overflow-hidden">
-    <!-- Ambient Radial Glows -->
-    <div class="hero-glow-orb w-[600px] h-[600px] bg-[#14365c]/40 top-1/4 -left-32"></div>
-    <div class="hero-glow-orb w-[500px] h-[500px] bg-[#d4a24c]/15 bottom-10 right-0" style="animation-delay: -5s;"></div>
+  <header class="hero-franchise" id="hero">
+    <!-- Ambient Radial Glow Layer -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-[#d4a24c]/10 rounded-full blur-[140px]"></div>
+      <div class="absolute top-0 right-10 w-[450px] h-[450px] bg-[#14365c]/30 rounded-full blur-[120px]"></div>
+    </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+    <div class="hero-grid relative z-10">
+      <!-- Top Trust Pill Badge -->
+      <div class="badge-trust">
+        <span class="pulse"></span> Accredited Excellence &middot; Pan-India Inspection &amp; ISO Authority
+      </div>
+
+      <!-- Main Headline with Strike Accent -->
+      <h1>
+        Next-Gen Inspection, Certification &amp; <em>Strategic<span class="strike"></span></em> Management.
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="hero-sub">
+        Premier ISO Certification, Third-Party Technical Inspection (TPI), and Strategic Sourcing. Audited compliance, zero-defect SLAs, and guaranteed 100% first-time audit pass rates.
+      </p>
+
+      <!-- Action Button Group -->
+      <div class="hero-cta-group">
+        <button class="open-quote-modal btn-gold px-8 py-3.5 rounded-full text-xs sm:text-sm font-bold tracking-wide shadow-2xl flex items-center gap-2">
+          <span>Book a Consultation</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+        <a href="#services-3d" class="btn-outline-gold px-7 py-3.5 rounded-full text-xs sm:text-sm font-bold tracking-wide flex items-center gap-2">
+          <span>Explore 3D Services</span>
+          <i data-lucide="layers" class="w-4 h-4 text-[#d4a24c]"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- SIGNATURE: Draggable, Auto-Spinning & Scroll-Driven 3D Carousel Stage -->
+    <div class="stage-3d" id="heroStage" aria-label="Featured inspection and ISO services">
+      <div class="ring-3d" id="heroRing">
         
-        <!-- Left Column: Finvvritti Editorial Typography & Action Group -->
-        <div class="lg:col-span-6 text-left space-y-5 scroll-reveal-left">
-          
-          <!-- Top Pill Badge -->
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0a2540]/90 border border-white/15 text-slate-200 text-xs font-bold tracking-wider uppercase backdrop-blur-md shadow-sm">
-            <span class="w-2 h-2 rounded-full bg-[#d4a24c]"></span>
-            <span>INSPECTION AND TRUSTED ISO ADVISORY</span>
-          </div>
-
-          <!-- Main Editorial Heading -->
-          <h1 class="font-display font-bold text-4xl sm:text-6xl lg:text-[66px] tracking-tight text-white leading-[1.12]">
-            Your Quality, <br />
-            <span class="text-[#d4a24c] italic">Our Responsibility</span>
-          </h1>
-
-          <!-- Location Authority Chip -->
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0a2540]/90 border border-white/15 text-[#e8bd6e] text-xs sm:text-sm font-medium shadow-md">
-            <span>India's leading advisory and Quality Inspection Firm in Mumbai</span>
-          </div>
-
-          <!-- Description Paragraph -->
-          <p class="text-slate-300 text-sm sm:text-base max-w-xl font-normal leading-relaxed pt-1">
-            One-stop solution for quality, compliance & growth. We combine Lead Auditor & QA/QC expertise across ISO 9001, 14001, 45001, IATF 16949, and Third-Party Technical Inspections (TPI).
-          </p>
-
-          <!-- Action Buttons Cluster -->
-          <div class="flex flex-wrap items-center gap-4 pt-2">
-            <a href="#services-3d" class="btn-gold px-7 py-3 rounded-full text-xs sm:text-sm font-bold tracking-wide flex items-center gap-2 shadow-xl">
-              <span>Our Services</span>
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-            <button class="open-quote-modal px-7 py-3 rounded-full text-xs sm:text-sm font-bold tracking-wide border border-white/25 text-white hover:bg-white/10 transition-all flex items-center gap-2">
-              <span>Book Free Consultation</span>
-            </button>
-          </div>
-
-          <!-- Trust Triad Row -->
-          <div class="flex items-center gap-6 sm:gap-8 pt-5 border-t border-white/10 text-xs sm:text-sm text-slate-300">
-            <div class="flex items-center gap-2">
-              <i data-lucide="shield-check" class="w-4 h-4 text-[#d4a24c]"></i>
-              <span class="font-semibold text-white">Compliance</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <i data-lucide="file-text" class="w-4 h-4 text-[#d4a24c]"></i>
-              <span class="font-semibold text-white">Accuracy</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <i data-lucide="trending-up" class="w-4 h-4 text-[#d4a24c]"></i>
-              <span class="font-semibold text-white">Growth</span>
+        <!-- Tile 0 -->
+        <div class="tile-3d open-quote-modal" data-pillar="iso-9001">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="ISO 9001 Quality Management" loading="lazy" />
+          <div class="tile-3d-in">
+            <span class="tile-cat">ISO CERTIFICATION</span>
+            <div>
+              <div class="tile-mark">ISO 9001 : 2015</div>
+              <div class="tile-num">100% Pass Rate<span>Guaranteed Pass</span></div>
             </div>
           </div>
-
         </div>
 
-        <!-- Right Column: Hero Visual Container with 2 Floating Overlapping Cards -->
-        <div class="lg:col-span-6 relative mt-8 lg:mt-0 scroll-reveal-right">
-          
-          <!-- Main Hero Image Frame -->
-          <div class="relative rounded-[32px] overflow-hidden shadow-2xl border-2 border-white/15 aspect-[4/3] lg:h-[440px] w-full" data-tilt>
-            <img 
-              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" 
-              alt="Engineering and Quality Inspection Audits" 
-              class="w-full h-full object-cover"
-            />
-            <div class="absolute inset-0 bg-gradient-to-tr from-[#0a2540]/40 via-transparent to-transparent"></div>
-          </div>
-
-          <!-- Floating Badge 1 (Top Left Overlapping Card): Audit Pass Rate with SVG Sparkline -->
-          <div class="hero-float-badge absolute -top-5 sm:-top-7 -left-3 sm:-left-6 z-20 rounded-2xl bg-white shadow-2xl p-4 sm:p-5 border border-slate-100 min-w-[210px] sm:min-w-[230px]">
-            <div class="flex items-center justify-between gap-3 mb-1">
-              <span class="text-[10px] font-extrabold uppercase tracking-wider text-[#64748b]">Audit Pass Rate</span>
-              <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-600 text-[10px] font-bold">+18.4%</span>
-            </div>
-            <div class="text-2xl sm:text-3xl font-display font-extrabold text-[#0a2540] tracking-tight">
-              99.8%
-            </div>
-            <!-- Dynamic Mini SVG Sparkline Chart -->
-            <div class="mt-2 w-full h-9">
-              <svg class="w-full h-full overflow-visible" viewBox="0 0 160 36" fill="none">
-                <path d="M0 28 L25 24 L50 26 L75 16 L100 20 L125 8 L160 12" stroke="#0a2540" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M0 28 L25 24 L50 26 L75 16 L100 20 L125 8 L160 12 L160 36 L0 36 Z" fill="url(#sparkline-grad)" opacity="0.25"/>
-                <defs>
-                  <linearGradient id="sparkline-grad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#0a2540"/>
-                    <stop offset="100%" stop-color="#0a2540" stop-opacity="0"/>
-                  </linearGradient>
-                </defs>
-              </svg>
+        <!-- Tile 1 -->
+        <div class="tile-3d open-quote-modal" data-pillar="tpi">
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Third-Party Inspection" loading="lazy" />
+          <div class="tile-3d-in">
+            <span class="tile-cat">TECHNICAL QA/QC</span>
+            <div>
+              <div class="tile-mark">Third-Party Inspection</div>
+              <div class="tile-num">&lt; 24-Hour<span>Pan-India Dispatch</span></div>
             </div>
           </div>
+        </div>
 
-          <!-- Floating Badge 2 (Bottom Right Overlapping Card): Compliance 100% On-Time -->
-          <div class="hero-float-badge absolute -bottom-5 sm:-bottom-6 -right-2 sm:-right-5 z-20 rounded-2xl bg-white shadow-2xl p-3.5 sm:p-4 border border-slate-100 flex items-center gap-3.5" style="animation-delay: -2s;">
-            <div class="w-11 h-11 rounded-xl bg-[#d4a24c] text-[#0a2540] flex items-center justify-center shrink-0 shadow-md">
-              <i data-lucide="shield-check" class="w-6 h-6"></i>
-            </div>
-            <div class="text-left">
-              <p class="text-[10px] uppercase font-bold text-[#64748b] tracking-wider leading-none">Compliance</p>
-              <p class="font-display font-bold text-sm sm:text-base text-[#0a2540] mt-1 leading-tight">100% On-time</p>
+        <!-- Tile 2 -->
+        <div class="tile-3d open-quote-modal" data-pillar="sourcing">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Strategic Sourcing" loading="lazy" />
+          <div class="tile-3d-in">
+            <span class="tile-cat">SUPPLY CHAIN</span>
+            <div>
+              <div class="tile-mark">Strategic Sourcing</div>
+              <div class="tile-num">Zero-Defect<span>Vetted Suppliers</span></div>
             </div>
           </div>
+        </div>
 
+        <!-- Tile 3 -->
+        <div class="tile-3d open-quote-modal" data-pillar="training">
+          <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80" alt="Corporate Training" loading="lazy" />
+          <div class="tile-3d-in">
+            <span class="tile-cat">PEOPLE & CULTURE</span>
+            <div>
+              <div class="tile-mark">Corporate Training</div>
+              <div class="tile-num">5S &amp; Kaizen<span>Certified Toolkits</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tile 4 -->
+        <div class="tile-3d open-quote-modal" data-pillar="iatf">
+          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="IATF 16949 Automotive" loading="lazy" />
+          <div class="tile-3d-in">
+            <span class="tile-cat">AUTOMOTIVE</span>
+            <div>
+              <div class="tile-mark">IATF 16949 : 2016</div>
+              <div class="tile-num">Tier-1 Ready<span>Automotive QA</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tile 5 -->
+        <div class="tile-3d open-quote-modal" data-pillar="iso-14001">
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" alt="ISO 14001 Environmental" loading="lazy" />
+          <div class="tile-3d-in">
+            <span class="tile-cat">ENVIRONMENT</span>
+            <div>
+              <div class="tile-mark">ISO 14001 : 2015</div>
+              <div class="tile-num">Zero Non-Compliance<span>Green Audit</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tile 6 -->
+        <div class="tile-3d open-quote-modal" data-pillar="iso-45001">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="ISO 45001 Safety" loading="lazy" />
+          <div class="tile-3d-in">
+            <span class="tile-cat">HEALTH & SAFETY</span>
+            <div>
+              <div class="tile-mark">ISO 45001 : 2018</div>
+              <div class="tile-num">Zero Hazard SLA<span>Workplace Safety</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tile 7 -->
+        <div class="tile-3d open-quote-modal" data-pillar="sedex">
+          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80" alt="SEDEX SMETA Audits" loading="lazy" />
+          <div class="tile-3d-in">
+            <span class="tile-cat">ESG &amp; ETHICS</span>
+            <div>
+              <div class="tile-mark">SEDEX / SMETA</div>
+              <div class="tile-num">Global Buyer Pass<span>Social Audit</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tile 8 -->
+        <div class="tile-3d open-quote-modal" data-pillar="vendor-vetting">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="Vendor Vetting" loading="lazy" />
+          <div class="tile-3d-in">
+            <span class="tile-cat">SUPPLIER QA</span>
+            <div>
+              <div class="tile-mark">Supplier QA Audits</div>
+              <div class="tile-num">48h SLA<span>Detailed Reporting</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tile 9 -->
+        <div class="tile-3d open-quote-modal" data-pillar="ims">
+          <img src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=600&q=80" alt="Integrated Management Systems" loading="lazy" />
+          <div class="tile-3d-in">
+            <span class="tile-cat">IMS FRAMEWORK</span>
+            <div>
+              <div class="tile-mark">Integrated Systems</div>
+              <div class="tile-num">3-in-1 Framework<span>9001 + 14001 + 45001</span></div>
+            </div>
+          </div>
         </div>
 
       </div>
     </div>
-  </section>
+
+    <!-- Drag Hint Capsule Pill -->
+    <div class="drag-hint-wrap">
+      <span class="drag-hint">Drag to spin &middot; Click card for details</span>
+    </div>
+
+    <!-- Ticker Tape Ribbon -->
+    <div class="hero-ticker" aria-hidden="true">
+      <div class="hero-ticker-row" id="heroTickerRow">
+        <span class="hero-ticker-item"><b>100%</b> Pass Rate Guarantee</span>
+        <span class="hero-ticker-item"><span class="sep">&bull;</span> <b>&lt;24h</b> Pan-India Dispatch</span>
+        <span class="hero-ticker-item"><span class="sep">&bull;</span> <b>300+</b> Audits Executed</span>
+        <span class="hero-ticker-item"><span class="sep">&bull;</span> <b>50+</b> Industrial Hubs</span>
+        <span class="hero-ticker-item"><span class="sep">&bull;</span> <b>Zero</b> Major Non-Conformities</span>
+        <span class="hero-ticker-item"><span class="sep">&bull;</span> <b>ISO</b> 9001 &middot; 14001 &middot; 45001 &middot; IATF 16949</span>
+        <span class="hero-ticker-item"><span class="sep">&bull;</span> <b>TPI</b> Technical Assurance</span>
+      </div>
+    </div>
+  </header>
 
   <!-- ==========================================================================
        OVERVIEW & PERFORMANCE METRICS (Finvvritti Editorial Alabaster Cream Section)

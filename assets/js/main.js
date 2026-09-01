@@ -11,8 +11,83 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     0. 3D Interactive Particle Constellation Engine (Hero Background)
+     0.1 Signature 3D Hero Ring Orbit Engine (Matching Franchise-101)
      ========================================================================== */
+  const tRow = document.getElementById('heroTickerRow');
+  if (tRow) {
+    tRow.innerHTML += tRow.innerHTML;
+  }
+
+  const heroRing = document.getElementById('heroRing');
+  const heroTiles = heroRing ? [...heroRing.children] : [];
+  const totalHeroTiles = heroTiles.length;
+
+  let heroSpin = 0, heroVelocity = 0, heroDragging = false, heroLastX = 0;
+
+  function renderHeroRing() {
+    if (!heroRing || totalHeroTiles === 0) return;
+    if (!heroDragging) {
+      heroSpin += heroVelocity;
+      heroVelocity *= 0.94;
+      heroSpin += 0.08; // Continuous gentle auto-spin
+    }
+    const scrollSpin = Math.min(window.scrollY, 900) * 0.06;
+    const currentSpin = heroSpin + scrollSpin;
+    heroRing.style.setProperty('--spin', currentSpin + 'deg');
+
+    const radius = window.innerWidth < 680 ? 260 : window.innerWidth < 1100 ? 350 : 430;
+
+    heroTiles.forEach((t, i) => {
+      const baseAngle = i * (360 / totalHeroTiles);
+      let relAngle = ((baseAngle + currentSpin) % 360 + 540) % 360 - 180;
+      const rad = relAngle * (Math.PI / 180);
+      const cosVal = Math.cos(rad);
+
+      t.style.transform = `rotateY(${baseAngle}deg) translateZ(${radius}px)`;
+
+      if (cosVal > 0.08) {
+        t.style.visibility = 'visible';
+        t.style.pointerEvents = 'auto';
+        t.style.opacity = String(Math.min(1, Math.max(0, (cosVal - 0.08) / 0.72)));
+        t.style.zIndex = String(Math.round(cosVal * 100));
+        t.style.filter = `brightness(${0.75 + 0.25 * cosVal})`;
+      } else {
+        t.style.visibility = 'hidden';
+        t.style.pointerEvents = 'none';
+        t.style.opacity = '0';
+      }
+    });
+
+    requestAnimationFrame(renderHeroRing);
+  }
+  renderHeroRing();
+
+  const heroStage = document.getElementById('heroStage');
+  if (heroStage) {
+    const grab = (e) => {
+      heroDragging = true;
+      heroLastX = e.touches ? e.touches[0].clientX : e.clientX;
+      heroVelocity = 0;
+    };
+    const move = (e) => {
+      if (!heroDragging) return;
+      const x = e.touches ? e.touches[0].clientX : e.clientX;
+      const d = (x - heroLastX) * 0.32;
+      heroLastX = x;
+      heroSpin += d;
+      heroVelocity = d * 0.45;
+    };
+    const drop = () => {
+      heroDragging = false;
+    };
+
+    heroStage.addEventListener('mousedown', grab);
+    heroStage.addEventListener('touchstart', grab, { passive: true });
+    window.addEventListener('mousemove', move);
+    window.addEventListener('touchmove', move, { passive: true });
+    window.addEventListener('mouseup', drop);
+    window.addEventListener('touchend', drop);
+  }
   const heroCanvas = document.getElementById('hero-particle-canvas');
   if (heroCanvas) {
     const ctx = heroCanvas.getContext('2d');
