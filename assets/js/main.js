@@ -144,172 +144,131 @@ document.addEventListener('DOMContentLoaded', () => {
   revealElements.forEach(el => revealObserver.observe(el));
 
   /* ==========================================================================
-     2. Cartier WAW 2025 Luxury Panoramic 3D Spatial Scroller Engine
+     2. 3D Cylindrical Rolling Carousel Engine (Roll-on-Scroll 3D Cylinder)
      ========================================================================== */
-  const cartierScrollTrack = document.querySelector('.cartier-scroll-track');
-  const cartierHorizontalTrack = document.getElementById('cartier-track');
-  const cartierHorizontalCards = document.querySelectorAll('.cartier-horizontal-card');
-  const cartierNavBtns = document.querySelectorAll('.cartier-nav-btn');
-  const cartierStepLabel = document.getElementById('cartier-step-label');
-  const cartierProgressBar = document.getElementById('cartier-progress-bar');
+  const cylinderTrack = document.querySelector('.cylinder-scroll-track');
+  const cylinderStage = document.getElementById('cylinder-stage');
+  const cylinderRing = document.getElementById('cylinder-ring');
+  const cylinderCards = document.querySelectorAll('.cylinder-card');
 
-  const stepLabels = [
-    '01 / 04 — ISO Certification & Systems',
-    '02 / 04 — Third-Party Inspection (TPI)',
-    '03 / 04 — Strategic Sourcing & Vetting',
-    '04 / 04 — Corporate Training & 5S Kaizen'
-  ];
+  if (cylinderTrack && cylinderRing && cylinderCards.length > 0) {
+    const totalCards = cylinderCards.length;
+    const angleStep = 360 / totalCards; // 60 deg for 6 cards
+    let radius = window.innerWidth < 640 ? 300 : 420;
 
-  if (cartierScrollTrack && cartierHorizontalTrack && cartierHorizontalCards.length > 0) {
-    let targetProgress = 0;
-    let smoothProgress = 0;
-
-    function getCardCenters() {
-      const cardWidth = cartierHorizontalCards[0].offsetWidth;
-      const windowWidth = window.innerWidth;
-      const firstCardLeft = cartierHorizontalCards[0].offsetLeft;
-      const lastCardLeft = cartierHorizontalCards[cartierHorizontalCards.length - 1].offsetLeft;
-      
-      // Calculate total translation needed to center first card at start and last card at end
-      const startX = (windowWidth / 2) - (firstCardLeft + cardWidth / 2);
-      const endX = (windowWidth / 2) - (lastCardLeft + cardWidth / 2);
-      return { startX, endX, totalDist: startX - endX };
+    function updateCardLayout() {
+      radius = window.innerWidth < 640 ? 300 : 420;
+      cylinderCards.forEach((card, idx) => {
+        const cardBaseAngle = idx * angleStep;
+        card.style.transform = `rotateY(${cardBaseAngle}deg) translateZ(${radius}px)`;
+      });
     }
 
-    function onScrollCartier() {
-      const rect = cartierScrollTrack.getBoundingClientRect();
-      const scrollDist = -rect.top;
-      const maxScroll = cartierScrollTrack.offsetHeight - window.innerHeight;
-      targetProgress = Math.max(0, Math.min(1, maxScroll > 0 ? scrollDist / maxScroll : 0));
-    }
+    updateCardLayout();
+    window.addEventListener('resize', updateCardLayout, { passive: true });
 
-    window.addEventListener('scroll', onScrollCartier, { passive: true });
-    window.addEventListener('resize', onScrollCartier, { passive: true });
-    onScrollCartier();
-
-    // 60FPS Cartier Damped Momentum Loop
-    function cartierSpatialLoop() {
-      smoothProgress += (targetProgress - smoothProgress) * 0.09;
-
-      const { startX, endX } = getCardCenters();
-      const currentTrackX = startX + (endX - startX) * smoothProgress;
-      const screenCenter = window.innerWidth / 2;
-
-      // Translate the entire panoramic horizontal deck
-      cartierHorizontalTrack.style.transform = `translateX(${currentTrackX}px)`;
-
-      let closestIdx = 0;
-      let minDistance = Infinity;
-
-      // Calculate 3D turntable perspective, depth, scale, and parallax for each card
-      cartierHorizontalCards.forEach((card, idx) => {
-        const cardWidth = card.offsetWidth;
-        const cardCenter = card.offsetLeft + currentTrackX + cardWidth / 2;
-        const distFromCenter = cardCenter - screenCenter;
-        const absDist = Math.abs(distFromCenter);
-
-        if (absDist < minDistance) {
-          minDistance = absDist;
-          closestIdx = idx;
-        }
-
-        // Normalized distance factor from center (-1 to 1)
-        const u = Math.max(-1.5, Math.min(1.5, distFromCenter / (window.innerWidth * 0.55)));
-        const absU = Math.abs(u);
-
-        // Cartier 3D spatial rotation and scale curve
-        const rotateY = u * -18; // 3D Turntable rotation
-        const scale = 1 - Math.min(0.18, absU * 0.16);
-        const translateZ = Math.max(0, (1 - absU) * 40);
-        const opacity = Math.max(0.35, 1 - absU * 0.55);
-        const brightness = Math.max(0.45, 1 - absU * 0.50);
-        const blur = Math.min(4, absU * 3.5);
-
-        card.style.transform = `perspective(1600px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`;
-        card.style.opacity = `${opacity}`;
-        card.style.filter = `brightness(${brightness}) blur(${blur}px)`;
-
-        // Image Parallax within active card
-        const img = card.querySelector('.card-parallax-img');
-        if (img) {
-          img.style.transform = `scale(1.08) translateX(${u * 25}px)`;
-        }
-
-        if (absU < 0.35) {
-          card.classList.add('is-active');
-        } else {
-          card.classList.remove('is-active');
-        }
-      });
-
-      // Update Nav Pills & Telemetry
-      cartierNavBtns.forEach((btn, idx) => {
-        if (idx === closestIdx) {
-          btn.classList.add('active');
-        } else {
-          btn.classList.remove('active');
-        }
-      });
-
-      if (cartierStepLabel) {
-        cartierStepLabel.textContent = stepLabels[closestIdx];
-      }
-
-      if (cartierProgressBar) {
-        cartierProgressBar.style.width = `${Math.max(25, (closestIdx + 1) * 25)}%`;
-      }
-
-      requestAnimationFrame(cartierSpatialLoop);
-    }
-
-    requestAnimationFrame(cartierSpatialLoop);
-
-    // Interactive Navigation Buttons: Smooth Jump to Center Card
-    cartierNavBtns.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const step = parseInt(btn.getAttribute('data-step') || '0', 10);
-        const stepFrac = step / (cartierHorizontalCards.length - 1);
-        const rect = cartierScrollTrack.getBoundingClientRect();
-        const absoluteTop = window.scrollY + rect.top;
-        const maxScroll = cartierScrollTrack.offsetHeight - window.innerHeight;
-        const scrollToY = absoluteTop + stepFrac * maxScroll;
-
-        window.scrollTo({
-          top: scrollToY,
-          behavior: 'smooth'
-        });
-      });
-    });
-
-    // Touch and Drag Inertia Support
-    let isDragging = false;
+    let targetAngle = 0;
+    let smoothAngle = 0;
+    let isUserDragging = false;
     let dragStartX = 0;
-    let dragStartProgress = 0;
+    let dragStartAngle = 0;
 
-    cartierHorizontalTrack.addEventListener('mousedown', (e) => {
-      isDragging = true;
+    function onScrollCylinder() {
+      if (isUserDragging) return;
+      const rect = cylinderTrack.getBoundingClientRect();
+      const scrollDist = -rect.top;
+      const maxScroll = cylinderTrack.offsetHeight - window.innerHeight;
+      const scrollFrac = Math.max(0, Math.min(1, maxScroll > 0 ? scrollDist / maxScroll : 0));
+      // Roll cylinder across full circle plus extra rotation
+      targetAngle = -scrollFrac * (360 * 1.25);
+    }
+
+    window.addEventListener('scroll', onScrollCylinder, { passive: true });
+    onScrollCylinder();
+
+    // 60FPS 3D Cylindrical Rotation Loop
+    function cylinderAnimationLoop() {
+      smoothAngle += (targetAngle - smoothAngle) * 0.085;
+      cylinderRing.style.transform = `rotateY(${smoothAngle}deg)`;
+
+      cylinderCards.forEach((card, idx) => {
+        const cardBaseAngle = idx * angleStep;
+        let diff = (cardBaseAngle + smoothAngle) % 360;
+        if (diff > 180) diff -= 360;
+        if (diff < -180) diff += 360;
+        const absDiff = Math.abs(diff);
+
+        if (absDiff <= 35) {
+          // Centered Front Facing
+          card.classList.add('is-active');
+          card.style.opacity = '1';
+          card.style.filter = 'brightness(1) blur(0px)';
+          card.style.zIndex = '50';
+        } else if (absDiff <= 90) {
+          // Left & Right Flanks in 3D Arc
+          card.classList.remove('is-active');
+          card.style.opacity = '0.85';
+          card.style.filter = 'brightness(0.72) blur(0.5px)';
+          card.style.zIndex = '20';
+        } else {
+          // Rear Half of Cylinder
+          card.classList.remove('is-active');
+          card.style.opacity = '0.15';
+          card.style.filter = 'brightness(0.35) blur(3px)';
+          card.style.zIndex = '5';
+        }
+      });
+
+      requestAnimationFrame(cylinderAnimationLoop);
+    }
+
+    requestAnimationFrame(cylinderAnimationLoop);
+
+    // Mouse Drag to Spin
+    cylinderStage.addEventListener('mousedown', (e) => {
+      isUserDragging = true;
       dragStartX = e.clientX;
-      dragStartProgress = targetProgress;
+      dragStartAngle = targetAngle;
     });
 
     window.addEventListener('mousemove', (e) => {
-      if (!isDragging) return;
+      if (!isUserDragging) return;
       const deltaX = e.clientX - dragStartX;
-      const windowWidth = window.innerWidth;
-      const progressDelta = -deltaX / (windowWidth * 1.5);
-      targetProgress = Math.max(0, Math.min(1, dragStartProgress + progressDelta));
-      
-      const rect = cartierScrollTrack.getBoundingClientRect();
-      const absoluteTop = window.scrollY + rect.top;
-      const maxScroll = cartierScrollTrack.offsetHeight - window.innerHeight;
-      window.scrollTo({
-        top: absoluteTop + targetProgress * maxScroll,
-        behavior: 'auto'
-      });
+      targetAngle = dragStartAngle + deltaX * 0.35;
     });
 
     window.addEventListener('mouseup', () => {
-      isDragging = false;
+      isUserDragging = false;
+    });
+
+    // Touch Swipe to Spin
+    cylinderStage.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 1) {
+        isUserDragging = true;
+        dragStartX = e.touches[0].clientX;
+        dragStartAngle = targetAngle;
+      }
+    }, { passive: true });
+
+    window.addEventListener('touchmove', (e) => {
+      if (!isUserDragging || e.touches.length !== 1) return;
+      const deltaX = e.touches[0].clientX - dragStartX;
+      targetAngle = dragStartAngle + deltaX * 0.45;
+    }, { passive: true });
+
+    window.addEventListener('touchend', () => {
+      isUserDragging = false;
+    });
+
+    // Click Card to Rotate to Front
+    cylinderCards.forEach((card, idx) => {
+      card.addEventListener('click', () => {
+        const cardBaseAngle = idx * angleStep;
+        let diff = (cardBaseAngle + targetAngle) % 360;
+        if (diff > 180) diff -= 360;
+        if (diff < -180) diff += 360;
+        targetAngle -= diff;
+      });
     });
   }
 
