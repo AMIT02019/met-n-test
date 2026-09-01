@@ -144,134 +144,137 @@ document.addEventListener('DOMContentLoaded', () => {
   revealElements.forEach(el => revealObserver.observe(el));
 
   /* ==========================================================================
-     2. Luxury 3D Rolling Carousel Engine (Matching Reference)
+     2. True 3D Cylindrical Orbital Rotation Engine (Roll on Scroll)
      ========================================================================== */
   const cylinderTrack = document.querySelector('.cylinder-scroll-track');
   const cylinderStage = document.getElementById('cylinder-stage');
+  const cylinderRing = document.getElementById('cylinder-ring');
   const cylinderCards = document.querySelectorAll('.cylinder-card');
 
-  if (cylinderTrack && cylinderStage && cylinderCards.length > 0) {
+  if (cylinderTrack && cylinderRing && cylinderCards.length > 0) {
     const totalCards = cylinderCards.length;
-    let targetIndex = 0;
-    let smoothIndex = 0;
-    let isUserDragging = false;
-    let dragStartX = 0;
-    let dragStartIndex = 0;
+    const angleStep = 360 / totalCards; // 60 deg for 6 cards
 
-    function getCardSpacing() {
-      if (window.innerWidth < 640) return 250;
-      if (window.innerWidth < 1024) return 300;
-      return 350;
+    function getRadius() {
+      if (window.innerWidth < 640) return 320;
+      if (window.innerWidth < 1024) return 420;
+      return 500;
     }
 
-    function onScrollRolling() {
+    function positionCardsOn3DCylinder() {
+      const radius = getRadius();
+      cylinderCards.forEach((card, idx) => {
+        const cardBaseAngle = idx * angleStep;
+        card.style.transform = `rotateY(${cardBaseAngle}deg) translateZ(${radius}px)`;
+      });
+    }
+
+    positionCardsOn3DCylinder();
+    window.addEventListener('resize', positionCardsOn3DCylinder, { passive: true });
+
+    let targetAngle = 0;
+    let smoothAngle = 0;
+    let isUserDragging = false;
+    let dragStartX = 0;
+    let dragStartAngle = 0;
+
+    function onScroll3DRotate() {
       if (isUserDragging) return;
       const rect = cylinderTrack.getBoundingClientRect();
       const scrollDist = -rect.top;
       const maxScroll = cylinderTrack.offsetHeight - window.innerHeight;
       const scrollFrac = Math.max(0, Math.min(1, maxScroll > 0 ? scrollDist / maxScroll : 0));
-      targetIndex = scrollFrac * (totalCards - 1);
+      // Full 3D rotation across the entire cylinder on scroll
+      targetAngle = -scrollFrac * (360 * 1.5);
     }
 
-    window.addEventListener('scroll', onScrollRolling, { passive: true });
-    window.addEventListener('resize', onScrollRolling, { passive: true });
-    onScrollRolling();
+    window.addEventListener('scroll', onScroll3DRotate, { passive: true });
+    onScroll3DRotate();
 
-    // 60FPS Continuous 3D Arc Rolling Loop
-    function rollingAnimationLoop() {
-      smoothIndex += (targetIndex - smoothIndex) * 0.09;
-      const spacing = getCardSpacing();
+    // 60FPS Continuous 3D Orbital Rotation Loop
+    function orbital3DRotationLoop() {
+      smoothAngle += (targetAngle - smoothAngle) * 0.085;
+      cylinderRing.style.transform = `rotateY(${smoothAngle}deg)`;
 
       cylinderCards.forEach((card, idx) => {
-        const u = idx - smoothIndex; // Relative position offset from screen center
-        const absU = Math.abs(u);
+        const cardBaseAngle = idx * angleStep;
+        let diff = (cardBaseAngle + smoothAngle) % 360;
+        if (diff > 180) diff -= 360;
+        if (diff < -180) diff += 360;
+        const absAngle = Math.abs(diff);
 
-        if (absU <= 1.85) {
-          card.style.display = 'flex';
+        if (absAngle <= 25) {
+          // Center Front Active
+          card.classList.add('is-active');
+          card.style.opacity = '1';
+          card.style.filter = 'brightness(1) blur(0px)';
+          card.style.zIndex = '50';
           card.style.pointerEvents = 'auto';
-
-          const translateX = u * spacing;
-          const rotateY = u * -22; // 3D turntable curvature
-          const scale = 1 - Math.min(0.18, absU * 0.12);
-          const translateZ = (1 - Math.min(1, absU)) * 30 - absU * 20;
-          const opacity = Math.max(0, 1 - Math.max(0, (absU - 0.45) * 0.95));
-          const brightness = Math.max(0.4, 1 - absU * 0.35);
-          const blur = Math.max(0, (absU - 0.6) * 3);
-          const zIndex = Math.round((1 - Math.min(1, absU)) * 40) + 10;
-
-          card.style.transform = `perspective(1400px) translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`;
-          card.style.opacity = `${opacity}`;
-          card.style.filter = `brightness(${brightness}) blur(${blur}px)`;
-          card.style.zIndex = zIndex;
-
-          if (absU < 0.35) {
-            card.classList.add('is-active');
-          } else {
-            card.classList.remove('is-active');
-          }
+        } else if (absAngle <= 85) {
+          // Left & Right Flanks in 3D Orbital Arc
+          card.classList.remove('is-active');
+          const fade = (85 - absAngle) / 60; // 1 to 0
+          card.style.opacity = `${0.35 + 0.55 * fade}`;
+          card.style.filter = `brightness(${0.5 + 0.45 * fade}) blur(${(1 - fade) * 2}px)`;
+          card.style.zIndex = `${Math.round(20 * fade) + 5}`;
+          card.style.pointerEvents = 'auto';
         } else {
+          // Rear Hemisphere (Culled for crystal clarity)
+          card.classList.remove('is-active');
           card.style.opacity = '0';
           card.style.pointerEvents = 'none';
-          card.classList.remove('is-active');
         }
       });
 
-      requestAnimationFrame(rollingAnimationLoop);
+      requestAnimationFrame(orbital3DRotationLoop);
     }
 
-    requestAnimationFrame(rollingAnimationLoop);
+    requestAnimationFrame(orbital3DRotationLoop);
 
-    // Mouse Drag to Roll
+    // Mouse Drag to Rotate in 3D
     cylinderStage.addEventListener('mousedown', (e) => {
       isUserDragging = true;
       dragStartX = e.clientX;
-      dragStartIndex = targetIndex;
+      dragStartAngle = targetAngle;
     });
 
     window.addEventListener('mousemove', (e) => {
       if (!isUserDragging) return;
       const deltaX = e.clientX - dragStartX;
-      const spacing = getCardSpacing();
-      targetIndex = Math.max(0, Math.min(totalCards - 1, dragStartIndex - deltaX / spacing));
+      targetAngle = dragStartAngle + deltaX * 0.35;
     });
 
     window.addEventListener('mouseup', () => {
       isUserDragging = false;
     });
 
-    // Touch Swipe to Roll
+    // Touch Swipe to Rotate in 3D
     cylinderStage.addEventListener('touchstart', (e) => {
       if (e.touches.length === 1) {
         isUserDragging = true;
         dragStartX = e.touches[0].clientX;
-        dragStartIndex = targetIndex;
+        dragStartAngle = targetAngle;
       }
     }, { passive: true });
 
     window.addEventListener('touchmove', (e) => {
       if (!isUserDragging || e.touches.length !== 1) return;
       const deltaX = e.touches[0].clientX - dragStartX;
-      const spacing = getCardSpacing();
-      targetIndex = Math.max(0, Math.min(totalCards - 1, dragStartIndex - deltaX / spacing));
+      targetAngle = dragStartAngle + deltaX * 0.45;
     }, { passive: true });
 
     window.addEventListener('touchend', () => {
       isUserDragging = false;
     });
 
-    // Click Card to Roll to Center
+    // Click Card to Rotate Front
     cylinderCards.forEach((card, idx) => {
       card.addEventListener('click', () => {
-        targetIndex = idx;
-        const rect = cylinderTrack.getBoundingClientRect();
-        const absoluteTop = window.scrollY + rect.top;
-        const maxScroll = cylinderTrack.offsetHeight - window.innerHeight;
-        const scrollToY = absoluteTop + (idx / (totalCards - 1)) * maxScroll;
-
-        window.scrollTo({
-          top: scrollToY,
-          behavior: 'smooth'
-        });
+        const cardBaseAngle = idx * angleStep;
+        let diff = (cardBaseAngle + targetAngle) % 360;
+        if (diff > 180) diff -= 360;
+        if (diff < -180) diff += 360;
+        targetAngle -= diff;
       });
     });
   }

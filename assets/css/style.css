@@ -495,14 +495,20 @@ body {
   cursor: grabbing;
 }
 
+.cylinder-3d-ring {
+  position: relative;
+  width: 340px;
+  height: 470px;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
 .cylinder-card {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 320px;
-  height: 460px;
-  margin-top: -230px;
-  margin-left: -160px;
+  top: 0;
+  left: 0;
+  width: 340px;
+  height: 470px;
   border-radius: 1.75rem;
   overflow: hidden;
   background: #0d1e34;
@@ -523,11 +529,13 @@ body {
   .cylinder-3d-stage {
     height: 420px;
   }
-  .cylinder-card {
-    width: 290px;
+  .cylinder-3d-ring {
+    width: 300px;
     height: 410px;
-    margin-top: -205px;
-    margin-left: -145px;
+  }
+  .cylinder-card {
+    width: 300px;
+    height: 410px;
   }
 }
 
@@ -535,11 +543,13 @@ body {
   .cylinder-3d-stage {
     height: 400px;
   }
+  .cylinder-3d-ring {
+    width: 270px;
+    height: 390px;
+  }
   .cylinder-card {
     width: 270px;
     height: 390px;
-    margin-top: -195px;
-    margin-left: -135px;
   }
 }
 
