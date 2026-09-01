@@ -185,7 +185,7 @@ body {
 }
 
 /* ==========================================================================
-   Pure 3D Scroll Hero Section (650px Block Height 3D Orbital Experience)
+   Pure 3D Scroll Hero Section (650px Block Height with Ample Top/Bottom Spacing)
    ========================================================================== */
 .hero-scroll-track {
   position: relative;
@@ -208,15 +208,16 @@ body {
   background: #080B10;
   background: radial-gradient(circle at 50% 50%, #0e2038 0%, #07172b 60%, #040d1a 100%);
   color: #fff;
-  padding: 0;
+  padding-top: 50px;
+  padding-bottom: 30px;
   z-index: 20;
 }
 
 /* ---- 3D ROTATING ORBIT STAGE (STAGE & RING) ---- */
 .stage-3d {
   width: 100%;
-  height: 650px;
-  max-height: 650px;
+  height: 480px;
+  max-height: 480px;
   perspective: 1400px;
   perspective-origin: 50% 50%;
   position: relative;
@@ -227,7 +228,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 20px;
 }
 
 .stage-3d:active {
@@ -238,10 +240,10 @@ body {
   content: "";
   position: absolute;
   left: 50%;
-  bottom: 25px;
+  bottom: 10px;
   transform: translateX(-50%);
-  width: min(800px, 85%);
-  height: 50px;
+  width: min(750px, 80%);
+  height: 45px;
   border-radius: 50%;
   background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.75), transparent 72%);
   filter: blur(14px);
@@ -260,10 +262,10 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 275px;
-  height: 385px;
-  margin: -192px 0 0 -137px;
-  border-radius: 20px;
+  width: 250px;
+  height: 345px;
+  margin: -172px 0 0 -125px;
+  border-radius: 18px;
   overflow: hidden;
   cursor: pointer;
   box-shadow: 0 25px 55px -14px rgba(0, 0, 0, 0.92);
@@ -274,28 +276,36 @@ body {
 }
 
 @media (max-width: 1024px) {
-  .hero-sticky-viewport, .stage-3d {
-    height: 580px;
-    max-height: 580px;
+  .hero-sticky-viewport {
+    height: 600px;
+    max-height: 600px;
+  }
+  .stage-3d {
+    height: 440px;
+    max-height: 440px;
   }
   .tile-3d {
-    width: 245px;
-    height: 345px;
-    margin: -172px 0 0 -122px;
-    border-radius: 18px;
+    width: 225px;
+    height: 310px;
+    margin: -155px 0 0 -112px;
+    border-radius: 16px;
   }
 }
 
 @media (max-width: 640px) {
-  .hero-sticky-viewport, .stage-3d {
-    height: 520px;
-    max-height: 520px;
+  .hero-sticky-viewport {
+    height: 540px;
+    max-height: 540px;
+  }
+  .stage-3d {
+    height: 390px;
+    max-height: 390px;
   }
   .tile-3d {
-    width: 205px;
-    height: 295px;
-    margin: -147px 0 0 -102px;
-    border-radius: 16px;
+    width: 190px;
+    height: 270px;
+    margin: -135px 0 0 -95px;
+    border-radius: 14px;
   }
 }
 
