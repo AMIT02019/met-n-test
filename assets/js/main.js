@@ -154,10 +154,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (cylinderTrack && cylinderRing && cylinderCards.length > 0) {
     const totalCards = cylinderCards.length;
     const angleStep = 360 / totalCards; // 60 deg for 6 cards
-    let radius = window.innerWidth < 640 ? 300 : 420;
+    let radius = window.innerWidth < 640 ? 330 : (window.innerWidth < 1024 ? 420 : 490);
 
     function updateCardLayout() {
-      radius = window.innerWidth < 640 ? 300 : 420;
+      radius = window.innerWidth < 640 ? 330 : (window.innerWidth < 1024 ? 420 : 490);
       cylinderCards.forEach((card, idx) => {
         const cardBaseAngle = idx * angleStep;
         card.style.transform = `rotateY(${cardBaseAngle}deg) translateZ(${radius}px)`;
