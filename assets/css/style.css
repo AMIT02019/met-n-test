@@ -185,19 +185,20 @@ body {
 }
 
 /* ==========================================================================
-   Pure 3D Scroll Hero Section (Full-Screen 3D Orbital Experience)
+   Pure 3D Scroll Hero Section (650px Block Height 3D Orbital Experience)
    ========================================================================== */
 .hero-scroll-track {
   position: relative;
-  height: 260vh;
-  min-height: 260vh;
+  height: 200vh;
+  min-height: 200vh;
   width: 100%;
 }
 
 .hero-sticky-viewport {
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: 650px;
+  max-height: 650px;
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -214,8 +215,8 @@ body {
 /* ---- 3D ROTATING ORBIT STAGE (STAGE & RING) ---- */
 .stage-3d {
   width: 100%;
-  height: 100vh;
-  max-height: 100vh;
+  height: 650px;
+  max-height: 650px;
   perspective: 1400px;
   perspective-origin: 50% 50%;
   position: relative;
@@ -237,13 +238,13 @@ body {
   content: "";
   position: absolute;
   left: 50%;
-  bottom: 8%;
+  bottom: 25px;
   transform: translateX(-50%);
-  width: min(850px, 85%);
-  height: 60px;
+  width: min(800px, 85%);
+  height: 50px;
   border-radius: 50%;
   background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.75), transparent 72%);
-  filter: blur(16px);
+  filter: blur(14px);
   pointer-events: none;
 }
 
@@ -259,10 +260,10 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 300px;
-  height: 420px;
-  margin: -210px 0 0 -150px;
-  border-radius: 22px;
+  width: 275px;
+  height: 385px;
+  margin: -192px 0 0 -137px;
+  border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
   box-shadow: 0 25px 55px -14px rgba(0, 0, 0, 0.92);
@@ -273,19 +274,27 @@ body {
 }
 
 @media (max-width: 1024px) {
+  .hero-sticky-viewport, .stage-3d {
+    height: 580px;
+    max-height: 580px;
+  }
   .tile-3d {
-    width: 260px;
-    height: 380px;
-    margin: -190px 0 0 -130px;
+    width: 245px;
+    height: 345px;
+    margin: -172px 0 0 -122px;
     border-radius: 18px;
   }
 }
 
 @media (max-width: 640px) {
+  .hero-sticky-viewport, .stage-3d {
+    height: 520px;
+    max-height: 520px;
+  }
   .tile-3d {
-    width: 220px;
-    height: 330px;
-    margin: -165px 0 0 -110px;
+    width: 205px;
+    height: 295px;
+    margin: -147px 0 0 -102px;
     border-radius: 16px;
   }
 }
