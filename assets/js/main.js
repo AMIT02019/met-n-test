@@ -45,14 +45,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!heroDragging) {
       heroSpin += heroVelocity;
       heroVelocity *= 0.94;
-      heroSpin += 0.05; // Gentle baseline rotation
+      // Removed auto-spin: rotates strictly on user scroll and manual drag
     }
 
     heroScrollSmooth += (heroScrollTarget - heroScrollSmooth) * 0.085;
     const currentSpin = heroSpin + heroScrollSmooth;
     heroRing.style.setProperty('--spin', currentSpin + 'deg');
 
-    const radius = window.innerWidth < 680 ? 250 : window.innerWidth < 1100 ? 350 : 450;
+    const radius = window.innerWidth < 680 ? 275 : window.innerWidth < 1100 ? 385 : 495;
 
     heroTiles.forEach((t, i) => {
       const baseAngle = i * (360 / totalHeroTiles);

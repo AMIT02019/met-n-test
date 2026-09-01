@@ -261,10 +261,10 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 230px;
-  height: 315px;
-  margin: -157px 0 0 -115px;
-  border-radius: 18px;
+  width: 255px;
+  height: 350px;
+  margin: -175px 0 0 -127px;
+  border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
   box-shadow: 0 25px 55px -14px rgba(0, 0, 0, 0.92);
@@ -276,39 +276,35 @@ body {
 
 @media (max-width: 1024px) {
   .hero-sticky-viewport {
-    height: 640px;
-    max-height: 640px;
     padding-top: 90px;
     padding-bottom: 50px;
   }
   .stage-3d {
-    height: 380px;
-    max-height: 380px;
+    height: 400px;
+    max-height: 400px;
   }
   .tile-3d {
-    width: 205px;
-    height: 285px;
-    margin: -142px 0 0 -102px;
-    border-radius: 16px;
+    width: 226px;
+    height: 315px;
+    margin: -157px 0 0 -113px;
+    border-radius: 18px;
   }
 }
 
 @media (max-width: 640px) {
   .hero-sticky-viewport {
-    height: 560px;
-    max-height: 560px;
     padding-top: 80px;
     padding-bottom: 40px;
   }
   .stage-3d {
-    height: 330px;
-    max-height: 330px;
+    height: 350px;
+    max-height: 350px;
   }
   .tile-3d {
-    width: 175px;
-    height: 245px;
-    margin: -122px 0 0 -87px;
-    border-radius: 14px;
+    width: 195px;
+    height: 270px;
+    margin: -135px 0 0 -97px;
+    border-radius: 16px;
   }
 }
 
